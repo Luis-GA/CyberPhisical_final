@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cyberPhisical_finalDiagram dslVersion="1.0.0.0" Id="95ce9e4e-43ee-4d14-8d19-4c6a1c4f299e" absoluteBounds="0, 0, 11, 8.5" name="Sample">
+  <ioTMoniker Id="6b6333eb-885d-4df1-b70d-624627667fca" />
+  <nestedChildShapes>
+    <exampleShape Id="94c5ba1f-3b8c-40ab-a2d7-63d7b6623f32" absoluteBounds="1.75, 0.625, 3.375, 1.375">
+      <deviceMoniker name="/6b6333eb-885d-4df1-b70d-624627667fca/Device1" />
+    </exampleShape>
+    <geometryShape1 Id="05e8054b-2105-47db-b954-4af82a01b4ec" absoluteBounds="4.375, 1.5, 0.75, 0.5">
+      <sensorMoniker Id="79d9c091-f37d-4247-bd3a-4ab060a90612" />
+    </geometryShape1>
+    <geometryShape2 Id="78821683-ca87-4e69-ae7e-f35654b6ab86" absoluteBounds="1.875, 1.375, 0.75, 0.5">
+      <actuatorMoniker Id="7e3ebf7b-1645-4a1b-8bc8-fba526ac9ad0" />
+    </geometryShape2>
+  </nestedChildShapes>
+</cyberPhisical_finalDiagram>

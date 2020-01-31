@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ioT xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f386182d-ff8d-4ffa-a34d-702c51fbf63f" xmlns="http://schemas.microsoft.com/dsltools/CyberPhisical_final">
+  <elements>
+    <device Id="763ffc53-c434-485f-8d36-347dc8c0fe7e" name="Device1">
+      <sensors>
+        <deviceHasSensors Id="268da28e-4d06-4eeb-8282-c054e376b6a6">
+          <temperature Id="68cdc1fb-ca6a-4ee6-9d26-ccd5ca1375b8" measure="78" />
+        </deviceHasSensors>
+        <deviceHasSensors Id="de01885c-d526-4fb5-bff7-ef26845efb49">
+          <humidity Id="82673f65-5a37-42c2-bba5-88e63c2d6a37" measure="0" />
+        </deviceHasSensors>
+      </sensors>
+    </device>
+  </elements>
+</ioT>

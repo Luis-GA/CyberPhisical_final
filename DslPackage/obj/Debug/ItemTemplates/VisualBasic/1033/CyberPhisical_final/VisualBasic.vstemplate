@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{487ab726-fb70-4e8c-9620-8c7dd3f46ebe}</TemplateID>
+		<Name Package="{d98a8d8e-03f6-4c2d-9bad-81cd31a78fb2}" ID="103"/>
+		<Description Package="{d98a8d8e-03f6-4c2d-9bad-81cd31a78fb2}" ID="102"/>
+		<Icon Package="{d98a8d8e-03f6-4c2d-9bad-81cd31a78fb2}" ID="201" />
+		<ProjectType>VisualBasic</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>CyberPhisical_final.CyberPhisicalfinal</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.CyberPhisicalfinal">CyberPhisicalfinal.CyberPhisicalfinal</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.CyberPhisicalfinal.diagram">CyberPhisicalfinal.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

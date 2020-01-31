@@ -1,0 +1,32 @@
+﻿<VSTemplateManifest Version="1.0" Locale="1033" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\1033\CyberPhisical_final</RelativePathOnDisk>
+    <TemplateFileName>CSharp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>{03db74d4-ced8-4d04-97ce-af9316951f51}</TemplateID>
+        <Name Package="{d98a8d8e-03f6-4c2d-9bad-81cd31a78fb2}" ID="103" />
+        <Description Package="{d98a8d8e-03f6-4c2d-9bad-81cd31a78fb2}" ID="102" />
+        <Icon Package="{d98a8d8e-03f6-4c2d-9bad-81cd31a78fb2}" ID="201" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>360</SortOrder>
+        <DefaultName>CyberPhisical_final.CyberPhisicalfinal</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VisualBasic\1033\CyberPhisical_final</RelativePathOnDisk>
+    <TemplateFileName>VisualBasic.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>{487ab726-fb70-4e8c-9620-8c7dd3f46ebe}</TemplateID>
+        <Name Package="{d98a8d8e-03f6-4c2d-9bad-81cd31a78fb2}" ID="103" />
+        <Description Package="{d98a8d8e-03f6-4c2d-9bad-81cd31a78fb2}" ID="102" />
+        <Icon Package="{d98a8d8e-03f6-4c2d-9bad-81cd31a78fb2}" ID="201" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>360</SortOrder>
+        <DefaultName>CyberPhisical_final.CyberPhisicalfinal</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

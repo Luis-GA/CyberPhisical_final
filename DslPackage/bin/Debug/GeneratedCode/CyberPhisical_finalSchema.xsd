@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="CyberPhisical_finalSchema" targetNamespace="http://schemas.microsoft.com/dsltools/CyberPhisical_final" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/CyberPhisical_final" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
+  <!-- IoT -->
+  <xsd:element name="ioT" type="IoT" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="IoT">
+    <xsd:annotation>
+      <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: IoTHasElements -->
+          <xsd:element name="elements" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of IoTHasElements</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+                  <xsd:element ref="ioTHasElements">
+                    <xsd:annotation>
+                      <xsd:documentation>[Relationship deriving from IoTHasElements needs to be serialized in full-form]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element ref="device" >
+                    <xsd:annotation>
+                      <xsd:documentation>[Target role-player]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:choice>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- dslVersion -->
+        <xsd:attribute name="dslVersion" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Version of the model serialized in this file.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- IoT Moniker -->
+  <xsd:element name="ioTMoniker" type="IoTMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="IoTMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for IoT instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Device -->
+  <xsd:element name="device" type="Device" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Device">
+    <xsd:annotation>
+      <xsd:documentation>Elements embedded in the model. Appear as boxes on the diagram.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: DeviceHasSensors -->
+          <xsd:element name="sensors" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of DeviceHasSensors</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="deviceHasSensors" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of DeviceHasSensors needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" use="required" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Device Moniker -->
+  <xsd:element name="deviceMoniker" type="DeviceMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DeviceMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Device instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="name" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Sensor -->
+  <xsd:element name="sensor" abstract="true" type="Sensor" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Sensor" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Measure -->
+        <xsd:attribute name="measure" type="xsd:double" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Sensor Moniker -->
+  <xsd:element name="sensorMoniker" abstract="true" type="SensorMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="SensorMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Sensor instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Temperature -->
+  <xsd:element name="temperature" type="Temperature" substitutionGroup="sensor" />
+  <xsd:complexType name="Temperature">
+    <xsd:complexContent>
+      <xsd:extension base="Sensor">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Temperature Moniker -->
+  <xsd:element name="temperatureMoniker" type="TemperatureMoniker" substitutionGroup="sensorMoniker" />
+  <xsd:complexType name="TemperatureMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Temperature instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="SensorMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Humidity -->
+  <xsd:element name="humidity" type="Humidity" substitutionGroup="sensor" />
+  <xsd:complexType name="Humidity">
+    <xsd:complexContent>
+      <xsd:extension base="Sensor">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Humidity Moniker -->
+  <xsd:element name="humidityMoniker" type="HumidityMoniker" substitutionGroup="sensorMoniker" />
+  <xsd:complexType name="HumidityMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Humidity instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="SensorMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- CO2Level -->
+  <xsd:element name="cO2Level" type="CO2Level" substitutionGroup="sensor" />
+  <xsd:complexType name="CO2Level">
+    <xsd:complexContent>
+      <xsd:extension base="Sensor">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- CO2Level Moniker -->
+  <xsd:element name="cO2LevelMoniker" type="CO2LevelMoniker" substitutionGroup="sensorMoniker" />
+  <xsd:complexType name="CO2LevelMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for CO2Level instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="SensorMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SmokeSensor -->
+  <xsd:element name="smokeSensor" type="SmokeSensor" substitutionGroup="sensor" />
+  <xsd:complexType name="SmokeSensor">
+    <xsd:complexContent>
+      <xsd:extension base="Sensor">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SmokeSensor Moniker -->
+  <xsd:element name="smokeSensorMoniker" type="SmokeSensorMoniker" substitutionGroup="sensorMoniker" />
+  <xsd:complexType name="SmokeSensorMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SmokeSensor instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="SensorMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AirConditioning -->
+  <xsd:element name="airConditioning" type="AirConditioning" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="AirConditioning">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AirConditioning Moniker -->
+  <xsd:element name="airConditioningMoniker" type="AirConditioningMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="AirConditioningMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for AirConditioning instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- WaterPump -->
+  <xsd:element name="waterPump" type="WaterPump" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="WaterPump">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- WaterPump Moniker -->
+  <xsd:element name="waterPumpMoniker" type="WaterPumpMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="WaterPumpMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for WaterPump instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DomainClass1 -->
+  <xsd:element name="domainClass1" type="DomainClass1" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DomainClass1">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DomainClass1 Moniker -->
+  <xsd:element name="domainClass1Moniker" type="DomainClass1Moniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DomainClass1Moniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DomainClass1 instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- IoTHasElements -->
+  <xsd:element name="ioTHasElements" abstract="true" type="IoTHasElements" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="IoTHasElements" abstract="true" >
+    <xsd:annotation>
+      <xsd:documentation>Embedding relationship between the Model and Elements</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Device -->
+          <xsd:element ref="device" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- IoTHasElements Moniker -->
+  <xsd:element name="ioTHasElementsMoniker" type="IoTHasElementsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="IoTHasElementsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for IoTHasElements instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DeviceHasSensors -->
+  <xsd:element name="deviceHasSensors" type="DeviceHasSensors" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DeviceHasSensors">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Sensor -->
+          <xsd:element ref="sensor" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DeviceHasSensors Moniker -->
+  <xsd:element name="deviceHasSensorsMoniker" type="DeviceHasSensorsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DeviceHasSensorsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DeviceHasSensors instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+</xsd:schema>
+

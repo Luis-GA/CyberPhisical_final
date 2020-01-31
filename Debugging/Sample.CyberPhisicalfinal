@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ioT xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="6b6333eb-885d-4df1-b70d-624627667fca" xmlns="http://schemas.microsoft.com/dsltools/CyberPhisical_final">
+  <elements>
+    <device Id="242591d0-2002-4224-9644-abc03dff3cb4" name="Device1">
+      <sensors>
+        <deviceHasSensors Id="3cb8304f-5278-4860-9760-83c36603befb">
+          <sensor Id="79d9c091-f37d-4247-bd3a-4ab060a90612" />
+        </deviceHasSensors>
+      </sensors>
+      <actuators>
+        <deviceHasActuators Id="fa3be863-cc16-4495-b73b-c49d85745cc2">
+          <actuator Id="7e3ebf7b-1645-4a1b-8bc8-fba526ac9ad0" />
+        </deviceHasActuators>
+      </actuators>
+    </device>
+  </elements>
+</ioT>

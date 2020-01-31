@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cyberPhisical_finalDiagram dslVersion="1.0.0.0" Id="8822175a-8887-4511-8f74-0c58b5dbb44c" absoluteBounds="0, 0, 11, 8.5" name="Test">
+  <ioTMoniker Id="f386182d-ff8d-4ffa-a34d-702c51fbf63f" />
+  <nestedChildShapes>
+    <exampleShape Id="d7b8b562-bbcc-4f30-af2b-b3d5d327e4b4" absoluteBounds="3.875, 2.25, 2, 0.75">
+      <deviceMoniker name="/f386182d-ff8d-4ffa-a34d-702c51fbf63f/Device1" />
+    </exampleShape>
+    <temperatureImage Id="45d47832-a2ec-4bbe-b2e1-608b91556d89" absoluteBounds="4.25, 2.5, 3.2221035957336426, 3.2221035957336426">
+      <temperatureMoniker Id="68cdc1fb-ca6a-4ee6-9d26-ccd5ca1375b8" />
+    </temperatureImage>
+    <humidityImage Id="5765e66c-f95e-4220-bf27-4131952c3c57" absoluteBounds="4.125, 2.75, 3.0833332538604736, 1.78125">
+      <humidityMoniker Id="82673f65-5a37-42c2-bba5-88e63c2d6a37" />
+    </humidityImage>
+  </nestedChildShapes>
+</cyberPhisical_finalDiagram>
