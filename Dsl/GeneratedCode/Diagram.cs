@@ -98,21 +98,90 @@ namespace Company.CyberPhisical_final
 			return true;
 		}
 		
+		/// <summary>
+		/// Called during view fixup to configure the given child element, after it has been created.
+		/// </summary>
+		/// <remarks>
+		/// Custom code for choosing the shapes attached to either end of a connector is called from here.
+		/// </remarks>
+		protected override void OnChildConfiguring(DslDiagrams::ShapeElement child, bool createdDuringViewFixup)
+		{
+			DslDiagrams::NodeShape sourceShape;
+			DslDiagrams::NodeShape targetShape;
+			DslDiagrams::BinaryLinkShape connector = child as DslDiagrams::BinaryLinkShape;
+			if(connector == null)
+			{
+				base.OnChildConfiguring(child, createdDuringViewFixup);
+				return;
+			}
+			this.GetSourceAndTargetForConnector(connector, out sourceShape, out targetShape);
+			
+			global::System.Diagnostics.Debug.Assert(sourceShape != null && targetShape != null, "Unable to find source and target shapes for connector.");
+			connector.Connect(sourceShape, targetShape);
+		}
 		
 		/// <summary>
-		/// Most connectors are mapped to element links, but there can be exceptions. This method tell if a connector should be
-		/// mapped to an element link.
+		/// helper method to find the shapes for either end of a connector, including calling the user's custom code
 		/// </summary>
-		public override bool IsConnectorMappedToLink(DslDiagrams::BinaryLinkShape connector)
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		internal void GetSourceAndTargetForConnector(DslDiagrams::BinaryLinkShape connector, out DslDiagrams::NodeShape sourceShape, out DslDiagrams::NodeShape targetShape)
 		{
-			#region Check Parameters
-			global::System.Diagnostics.Debug.Assert(connector != null);
-			if (connector == null)
-				throw new global::System.ArgumentNullException("connector");
-			#endregion
-			if (connector.GetType() == typeof(global::Company.CyberPhisical_final.ExampleConnector))
-				return false;
-			return base.IsConnectorMappedToLink(connector);
+			sourceShape = null;
+			targetShape = null;
+			
+			if (sourceShape == null || targetShape == null)
+			{
+				DslDiagrams::NodeShape[] endShapes = GetEndShapesForConnector(connector);
+				if(sourceShape == null)
+				{
+					sourceShape = endShapes[0];
+				}
+				if(targetShape == null)
+				{
+					targetShape = endShapes[1];
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Helper method to find shapes for either end of a connector by looking for shapes associated with either end of the relationship mapped to the connector.
+		/// </summary>
+		private DslDiagrams::NodeShape[] GetEndShapesForConnector(DslDiagrams::BinaryLinkShape connector)
+		{
+			DslModeling::ElementLink link = connector.ModelElement as DslModeling::ElementLink;
+			DslDiagrams::NodeShape sourceShape = null, targetShape = null;
+			if (link != null)
+			{
+				global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::ModelElement> linkedElements = link.LinkedElements;
+				if (linkedElements.Count == 2)
+				{
+					DslDiagrams::Diagram currentDiagram = this.Diagram;
+					DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> presentationElements = DslDiagrams::PresentationViewsSubject.GetPresentation(linkedElements[0]);
+					foreach (DslDiagrams::PresentationElement presentationElement in presentationElements)
+					{
+						DslDiagrams::NodeShape shape = presentationElement as DslDiagrams::NodeShape;
+						if (shape != null && shape.Diagram == currentDiagram)
+						{
+							sourceShape = shape;
+							break;
+						}
+					}
+					
+					presentationElements = DslDiagrams::PresentationViewsSubject.GetPresentation(linkedElements[1]);
+					foreach (DslDiagrams::PresentationElement presentationElement in presentationElements)
+					{
+						DslDiagrams::NodeShape shape = presentationElement as DslDiagrams::NodeShape;
+						if (shape != null && shape.Diagram == currentDiagram)
+						{
+							targetShape = shape;
+							break;
+						}
+					}
+		
+				}
+			}
+			
+			return new DslDiagrams::NodeShape[] { sourceShape, targetShape };
 		}
 		
 		/// <summary>
@@ -134,10 +203,51 @@ namespace Company.CyberPhisical_final
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::Company.CyberPhisical_final.Siren)
+			{
+				global::Company.CyberPhisical_final.SirenImage newShape = new global::Company.CyberPhisical_final.SirenImage(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.CyberPhisical_final.AirConditioning)
+			{
+				global::Company.CyberPhisical_final.AirConditioningImage newShape = new global::Company.CyberPhisical_final.AirConditioningImage(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.CyberPhisical_final.CO2Level)
+			{
+				global::Company.CyberPhisical_final.Co2IS newShape = new global::Company.CyberPhisical_final.Co2IS(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.CyberPhisical_final.SmokeSensor)
+			{
+				global::Company.CyberPhisical_final.ImageShape1 newShape = new global::Company.CyberPhisical_final.ImageShape1(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.CyberPhisical_final.Alarms)
+			{
+				global::Company.CyberPhisical_final.AlarmsGS newShape = new global::Company.CyberPhisical_final.AlarmsGS(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::Company.CyberPhisical_final.Device)
 			{
 				global::Company.CyberPhisical_final.ExampleShape newShape = new global::Company.CyberPhisical_final.ExampleShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.CyberPhisical_final.Controller)
+			{
+				global::Company.CyberPhisical_final.ControllerIS newShape = new global::Company.CyberPhisical_final.ControllerIS(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.CyberPhisical_final.ControllerReferencesThing)
+			{
+				global::Company.CyberPhisical_final.ExampleConnector newShape = new global::Company.CyberPhisical_final.ExampleConnector(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -152,6 +262,7 @@ namespace Company.CyberPhisical_final
 		{
 			base.InitializeShapeFields(shapeFields);
 			global::Company.CyberPhisical_final.ExampleShape.DecoratorsInitialized += ExampleShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Company.CyberPhisical_final.AlarmsGS.DecoratorsInitialized += AlarmsGSDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
@@ -172,7 +283,135 @@ namespace Company.CyberPhisical_final
 			}
 		}
 		
+		/// <summary>
+		/// Class containing decorator path traversal methods for AlarmsGS.
+		/// </summary>
+		internal static partial class AlarmsGSDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for AlarmsGS.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.CyberPhisical_final.Alarms.nameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "name").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.CyberPhisical_final.Alarms.conditionDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "condition").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.CyberPhisical_final.Alarms.advertenceDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "advertence").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
 		#endregion
+		
+		#region Connect actions
+		private bool changingMouseAction;
+		private global::Company.CyberPhisical_final.ConnectionTool1ConnectAction connectionTool1ConnectAction;
+		/// <summary>
+		/// Virtual method to provide a filter when to select the mouse action
+		/// </summary>
+		/// <param name="activeView">Currently active view</param>
+		/// <param name="filter">filter string used to filter the toolbox items</param>
+		protected virtual bool SelectedToolboxItemSupportsFilterString(DslDiagrams::DiagramView activeView, string filter)
+		{
+			return activeView.SelectedToolboxItemSupportsFilterString(filter);
+		}
+		/// <summary>
+		/// Override to provide the right mouse action when trying
+		/// to create links on the diagram
+		/// </summary>
+		/// <param name="pointArgs"></param>
+		public override void OnViewMouseEnter(DslDiagrams::DiagramPointEventArgs pointArgs)
+		{
+			if (pointArgs  == null) throw new global::System.ArgumentNullException("pointArgs");
+		
+			DslDiagrams::DiagramView activeView = this.ActiveDiagramView;
+			if(activeView != null)
+			{
+				DslDiagrams::MouseAction action = null;
+				if (SelectedToolboxItemSupportsFilterString(activeView, global::Company.CyberPhisical_final.CyberPhisical_finalToolboxHelper.ConnectionTool1FilterString))
+				{
+					if (this.connectionTool1ConnectAction == null)
+					{
+						this.connectionTool1ConnectAction = new global::Company.CyberPhisical_final.ConnectionTool1ConnectAction(this);
+						this.connectionTool1ConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.connectionTool1ConnectAction;
+				} 
+				else
+				{
+					action = null;
+				}
+				
+				if (pointArgs.DiagramClientView.ActiveMouseAction != action)
+				{
+					try
+					{
+						this.changingMouseAction = true;
+						pointArgs.DiagramClientView.ActiveMouseAction = action;
+					}
+					finally
+					{
+						this.changingMouseAction = false;
+					}
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Snap toolbox selection back to regular pointer after using a custom connect action.
+		/// </summary>
+		private void OnConnectActionDeactivated(object sender, DslDiagrams::DiagramEventArgs e)
+		{
+			OnMouseActionDeactivated();
+		}
+		
+		/// <summary>
+		/// Overridable method to manage the mouse deactivation. The default implementation snap stoolbox selection back to regular pointer 
+		/// after using a custom connect action.
+		/// </summary>
+		protected virtual void OnMouseActionDeactivated()
+		{
+			DslDiagrams::DiagramView activeView = this.ActiveDiagramView;
+		
+			if (activeView != null && activeView.Toolbox != null)
+			{
+				// If we're not changing mouse action due to changing toolbox selection change,
+				// reset toolbox selection.
+				if (!this.changingMouseAction)
+				{
+					activeView.Toolbox.SelectedToolboxItemUsed();
+				}
+			}
+		}
+		#endregion
+		
+		/// <summary>
+		/// Dispose of connect actions.
+		/// </summary>
+		protected override void Dispose(bool disposing)
+		{
+			try
+			{
+				if(disposing)
+				{
+					if(this.connectionTool1ConnectAction != null)
+					{
+						this.connectionTool1ConnectAction.Dispose();
+						this.connectionTool1ConnectAction = null;
+					}
+				}
+			}
+			finally
+			{
+				base.Dispose(disposing);
+			}
+		}
 		#region Constructors, domain class Id
 	
 		/// <summary>
@@ -221,7 +460,14 @@ namespace Company.CyberPhisical_final
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Temperature), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Humidity), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Siren), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.AirConditioning), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.CO2Level), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.SmokeSensor), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Alarms), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Device), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Controller), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.ControllerReferencesThing), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -233,6 +479,10 @@ namespace Company.CyberPhisical_final
 				if (this.SkipFixup(childElement))
 					return;
 				DslModeling::ModelElement parentElement;
+				if(childElement is DslModeling::ElementLink)
+				{
+					parentElement = GetParentForRelationship((DslModeling::ElementLink)childElement);
+				} else
 				if(childElement is global::Company.CyberPhisical_final.Temperature)
 				{
 					parentElement = GetParentForTemperature((global::Company.CyberPhisical_final.Temperature)childElement);
@@ -241,9 +491,33 @@ namespace Company.CyberPhisical_final
 				{
 					parentElement = GetParentForHumidity((global::Company.CyberPhisical_final.Humidity)childElement);
 				} else
+				if(childElement is global::Company.CyberPhisical_final.Siren)
+				{
+					parentElement = GetParentForSiren((global::Company.CyberPhisical_final.Siren)childElement);
+				} else
+				if(childElement is global::Company.CyberPhisical_final.AirConditioning)
+				{
+					parentElement = GetParentForAirConditioning((global::Company.CyberPhisical_final.AirConditioning)childElement);
+				} else
+				if(childElement is global::Company.CyberPhisical_final.CO2Level)
+				{
+					parentElement = GetParentForCO2Level((global::Company.CyberPhisical_final.CO2Level)childElement);
+				} else
+				if(childElement is global::Company.CyberPhisical_final.SmokeSensor)
+				{
+					parentElement = GetParentForSmokeSensor((global::Company.CyberPhisical_final.SmokeSensor)childElement);
+				} else
+				if(childElement is global::Company.CyberPhisical_final.Alarms)
+				{
+					parentElement = GetParentForAlarms((global::Company.CyberPhisical_final.Alarms)childElement);
+				} else
 				if(childElement is global::Company.CyberPhisical_final.Device)
 				{
 					parentElement = GetParentForDevice((global::Company.CyberPhisical_final.Device)childElement);
+				} else
+				if(childElement is global::Company.CyberPhisical_final.Controller)
+				{
+					parentElement = GetParentForController((global::Company.CyberPhisical_final.Controller)childElement);
 				} else
 				{
 					parentElement = null;
@@ -281,7 +555,199 @@ namespace Company.CyberPhisical_final
 				if ( result == null ) return null;
 				return result;
 			}
+			public static global::Company.CyberPhisical_final.IoT GetParentForSiren( global::Company.CyberPhisical_final.Actuators root )
+			{
+				// Segments 0 and 1
+				global::Company.CyberPhisical_final.Device root2 = root.Device;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.CyberPhisical_final.IoT result = root2.IoT;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.CyberPhisical_final.IoT GetParentForAirConditioning( global::Company.CyberPhisical_final.Actuators root )
+			{
+				// Segments 0 and 1
+				global::Company.CyberPhisical_final.Device root2 = root.Device;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.CyberPhisical_final.IoT result = root2.IoT;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.CyberPhisical_final.IoT GetParentForAlarms( global::Company.CyberPhisical_final.Alarms root )
+			{
+				// Segments 0 and 1
+				global::Company.CyberPhisical_final.IoT result = root.IoT;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.CyberPhisical_final.IoT GetParentForController( global::Company.CyberPhisical_final.Controller root )
+			{
+				// Segments 0 and 1
+				global::Company.CyberPhisical_final.IoT result = root.IoT;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.CyberPhisical_final.IoT GetParentForCO2Level( global::Company.CyberPhisical_final.Sensor root )
+			{
+				// Segments 0 and 1
+				global::Company.CyberPhisical_final.Device root2 = root.Device;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.CyberPhisical_final.IoT result = root2.IoT;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.CyberPhisical_final.IoT GetParentForSmokeSensor( global::Company.CyberPhisical_final.Sensor root )
+			{
+				// Segments 0 and 1
+				global::Company.CyberPhisical_final.Device root2 = root.Device;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.CyberPhisical_final.IoT result = root2.IoT;
+				if ( result == null ) return null;
+				return result;
+			}
+			private static DslModeling::ModelElement GetParentForRelationship(DslModeling::ElementLink elementLink)
+			{
+				global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::ModelElement> linkedElements = elementLink.LinkedElements;
+	
+				if (linkedElements.Count == 2)
+				{
+					DslDiagrams::ShapeElement sourceShape = linkedElements[0] as DslDiagrams::ShapeElement;
+					DslDiagrams::ShapeElement targetShape = linkedElements[1] as DslDiagrams::ShapeElement;
+	
+					if(sourceShape == null)
+					{
+						DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> presentationElements = DslDiagrams::PresentationViewsSubject.GetPresentation(linkedElements[0]);
+						foreach (DslDiagrams::PresentationElement presentationElement in presentationElements)
+						{
+							DslDiagrams::ShapeElement shape = presentationElement as DslDiagrams::ShapeElement;
+							if (shape != null)
+							{
+								sourceShape = shape;
+								break;
+							}
+						}
+					}
+					
+					if(targetShape == null)
+					{
+						DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> presentationElements = DslDiagrams::PresentationViewsSubject.GetPresentation(linkedElements[1]);
+						foreach (DslDiagrams::PresentationElement presentationElement in presentationElements)
+						{
+							DslDiagrams::ShapeElement shape = presentationElement as DslDiagrams::ShapeElement;
+							if (shape != null)
+							{
+								targetShape = shape;
+								break;
+							}
+						}
+					}
+					
+					if(sourceShape == null || targetShape == null)
+					{
+						global::System.Diagnostics.Debug.Fail("Unable to find source and/or target shape for view fixup.");
+						return null;
+					}
+	
+					DslDiagrams::ShapeElement sourceParent = sourceShape.ParentShape;
+					DslDiagrams::ShapeElement targetParent = targetShape.ParentShape;
+	
+					while (sourceParent != targetParent && sourceParent != null)
+					{
+						DslDiagrams::ShapeElement curParent = targetParent;
+						while (sourceParent != curParent && curParent != null)
+						{
+							curParent = curParent.ParentShape;
+						}
+	
+						if(sourceParent == curParent)
+						{
+							break;
+						}
+						else
+						{
+							sourceParent = sourceParent.ParentShape;
+						}
+					}
+	
+					while (sourceParent != null)
+					{
+						// ensure that the parent can parent connectors (i.e., a diagram or a swimlane).
+						if(sourceParent is DslDiagrams::Diagram || sourceParent is DslDiagrams::SwimlaneShape)
+						{
+							break;
+						}
+						else
+						{
+							sourceParent = sourceParent.ParentShape;
+						}
+					}
+	
+					global::System.Diagnostics.Debug.Assert(sourceParent != null && sourceParent.ModelElement != null, "Unable to find common parent for view fixup.");
+					return sourceParent.ModelElement;
+				}
+	
+				return null;
+			}
 		}
 		
 	
+		/// <summary>
+		/// Reroute a connector when the role players of its underlying relationship change
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.ControllerReferencesThing), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
+		{
+			/// <summary>
+			/// Reroute a connector when the role players of its underlying relationship change
+			/// </summary>
+			public override void RolePlayerChanged(DslModeling::RolePlayerChangedEventArgs e)
+			{
+				if (e == null) throw new global::System.ArgumentNullException("e");
+	
+				global::System.Collections.ObjectModel.ReadOnlyCollection<DslDiagrams::PresentationViewsSubject> connectorLinks = DslDiagrams::PresentationViewsSubject.GetLinksToPresentation(e.ElementLink);
+				foreach (DslDiagrams::PresentationViewsSubject connectorLink in connectorLinks)
+				{
+					// Fix up any binary link shapes attached to the element link.
+					DslDiagrams::BinaryLinkShape linkShape = connectorLink.Presentation as DslDiagrams::BinaryLinkShape;
+					if (linkShape != null)
+					{
+						global::Company.CyberPhisical_final.CyberPhisical_finalDiagram diagram = linkShape.Diagram as global::Company.CyberPhisical_final.CyberPhisical_finalDiagram;
+						if (diagram != null)
+						{
+							if (e.NewRolePlayer != null)
+							{
+								DslDiagrams::NodeShape fromShape;
+								DslDiagrams::NodeShape toShape;
+								diagram.GetSourceAndTargetForConnector(linkShape, out fromShape, out toShape);
+								if (fromShape != null && toShape != null)
+								{
+									if (!object.Equals(fromShape, linkShape.FromShape))
+									{
+										linkShape.FromShape = fromShape;
+									}
+									if (!object.Equals(linkShape.ToShape, toShape))
+									{
+										linkShape.ToShape = toShape;
+									}
+								}
+								else
+								{
+									// delete the connector if we cannot find an appropriate target shape.
+									linkShape.Delete();
+								}
+							}
+							else
+							{
+								// delete the connector if the new role player is null.
+								linkShape.Delete();
+							}
+						}
+					}
+				}
+			}
+		}
 	}

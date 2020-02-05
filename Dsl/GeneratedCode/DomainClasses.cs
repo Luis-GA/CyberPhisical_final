@@ -62,6 +62,36 @@ namespace Company.CyberPhisical_final
 			}
 		}
 		#endregion
+		#region Controllers opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Controllers.
+		/// Description for Company.CyberPhisical_final.IoTHasControllers.IoT
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Controller> Controllers
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Controller>, Controller>(global::Company.CyberPhisical_final.IoTHasControllers.IoTDomainRoleId);
+			}
+		}
+		#endregion
+		#region Alarm opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Alarm.
+		/// Description for Company.CyberPhisical_final.IoTHasAlarm.IoT
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Alarms> Alarm
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Alarms>, Alarms>(global::Company.CyberPhisical_final.IoTHasAlarm.IoTDomainRoleId);
+			}
+		}
+		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -81,6 +111,16 @@ namespace Company.CyberPhisical_final
 			if (rootElement != null)
 			{
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.CyberPhisical_final.Alarms.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.CyberPhisical_final.Controller.DomainClassId)) 
+				{
+					return true;
+				}
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Company.CyberPhisical_final.Device.DomainClassId)) 
 				{
@@ -111,11 +151,29 @@ namespace Company.CyberPhisical_final
 			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
 		
 				
-			global::Company.CyberPhisical_final.Device sourceDevice1 = sourceElement as global::Company.CyberPhisical_final.Device;
-			if (sourceDevice1 != null)
+			global::Company.CyberPhisical_final.Alarms sourceAlarms1 = sourceElement as global::Company.CyberPhisical_final.Alarms;
+			if (sourceAlarms1 != null)
+			{
+				// Create link for path IoTHasAlarm.Alarm
+				this.Alarm.Add(sourceAlarms1);
+
+				return;
+			}
+				
+			global::Company.CyberPhisical_final.Controller sourceController2 = sourceElement as global::Company.CyberPhisical_final.Controller;
+			if (sourceController2 != null)
+			{
+				// Create link for path IoTHasControllers.Controllers
+				this.Controllers.Add(sourceController2);
+
+				return;
+			}
+				
+			global::Company.CyberPhisical_final.Device sourceDevice3 = sourceElement as global::Company.CyberPhisical_final.Device;
+			if (sourceDevice3 != null)
 			{
 				// Create link for path IoTHasElements.Elements
-				this.Elements.Add(sourceDevice1);
+				this.Elements.Add(sourceDevice3);
 
 				return;
 			}
@@ -142,12 +200,40 @@ namespace Company.CyberPhisical_final
 		{
 			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
 				
-			global::Company.CyberPhisical_final.Device sourceDevice1 = sourceElement as global::Company.CyberPhisical_final.Device;
-			if (sourceDevice1 != null)
+			global::Company.CyberPhisical_final.Alarms sourceAlarms1 = sourceElement as global::Company.CyberPhisical_final.Alarms;
+			if (sourceAlarms1 != null)
+			{
+				// Delete link for path IoTHasAlarm.Alarm
+				
+				foreach (DslModeling::ElementLink link in global::Company.CyberPhisical_final.IoTHasAlarm.GetLinks((global::Company.CyberPhisical_final.IoT)this, sourceAlarms1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.CyberPhisical_final.IoTHasAlarm.IoTDomainRoleId, global::Company.CyberPhisical_final.IoTHasAlarm.AlarmsDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::Company.CyberPhisical_final.Controller sourceController2 = sourceElement as global::Company.CyberPhisical_final.Controller;
+			if (sourceController2 != null)
+			{
+				// Delete link for path IoTHasControllers.Controllers
+				
+				foreach (DslModeling::ElementLink link in global::Company.CyberPhisical_final.IoTHasControllers.GetLinks((global::Company.CyberPhisical_final.IoT)this, sourceController2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.CyberPhisical_final.IoTHasControllers.IoTDomainRoleId, global::Company.CyberPhisical_final.IoTHasControllers.ControllerDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::Company.CyberPhisical_final.Device sourceDevice3 = sourceElement as global::Company.CyberPhisical_final.Device;
+			if (sourceDevice3 != null)
 			{
 				// Delete link for path IoTHasElements.Elements
 				
-				foreach (DslModeling::ElementLink link in global::Company.CyberPhisical_final.IoTHasElements.GetLinks((global::Company.CyberPhisical_final.IoT)this, sourceDevice1))
+				foreach (DslModeling::ElementLink link in global::Company.CyberPhisical_final.IoTHasElements.GetLinks((global::Company.CyberPhisical_final.IoT)this, sourceDevice3))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::Company.CyberPhisical_final.IoTHasElements.IoTDomainRoleId, global::Company.CyberPhisical_final.IoTHasElements.ElementDomainRoleId);
@@ -323,6 +409,21 @@ namespace Company.CyberPhisical_final
 			}
 		}
 		#endregion
+		#region Actuator opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Actuator.
+		/// Description for Company.CyberPhisical_final.DeviceHasActuator.Device
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Actuators> Actuator
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Actuators>, Actuators>(global::Company.CyberPhisical_final.DeviceHasActuator.DeviceDomainRoleId);
+			}
+		}
+		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -344,6 +445,11 @@ namespace Company.CyberPhisical_final
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Company.CyberPhisical_final.Sensor.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.CyberPhisical_final.Actuators.DomainClassId)) 
 				{
 					return true;
 				}
@@ -377,6 +483,15 @@ namespace Company.CyberPhisical_final
 			{
 				// Create link for path DeviceHasSensors.Sensors
 				this.Sensors.Add(sourceSensor1);
+
+				return;
+			}
+				
+			global::Company.CyberPhisical_final.Actuators sourceActuators2 = sourceElement as global::Company.CyberPhisical_final.Actuators;
+			if (sourceActuators2 != null)
+			{
+				// Create link for path DeviceHasActuator.Actuator
+				this.Actuator.Add(sourceActuators2);
 
 				return;
 			}
@@ -416,6 +531,20 @@ namespace Company.CyberPhisical_final
 
 				return;
 			}
+				
+			global::Company.CyberPhisical_final.Actuators sourceActuators2 = sourceElement as global::Company.CyberPhisical_final.Actuators;
+			if (sourceActuators2 != null)
+			{
+				// Delete link for path DeviceHasActuator.Actuator
+				
+				foreach (DslModeling::ElementLink link in global::Company.CyberPhisical_final.DeviceHasActuator.GetLinks((global::Company.CyberPhisical_final.Device)this, sourceActuators2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.CyberPhisical_final.DeviceHasActuator.DeviceDomainRoleId, global::Company.CyberPhisical_final.DeviceHasActuator.ActuatorsDomainRoleId);
+				}
+
+				return;
+			}
 			// Fall through to base class if this class hasn't handled the unmerge.
 			base.MergeDisconnect(sourceElement);
 		}
@@ -433,7 +562,7 @@ namespace Company.CyberPhisical_final
 	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("ee1b923b-99cf-44b2-9c74-1c489b1e42c4")]
-	public abstract partial class Sensor : DslModeling::ModelElement
+	public abstract partial class Sensor : Things
 	{
 		#region Constructors, domain class Id
 	
@@ -451,59 +580,59 @@ namespace Company.CyberPhisical_final
 		{
 		}
 		#endregion
-		#region Measure domain property code
+		#region type_measure domain property code
 		
 		/// <summary>
-		/// Measure domain property Id.
+		/// type_measure domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid MeasureDomainPropertyId = new global::System.Guid(0x1d201e7b, 0x3d92, 0x498e, 0xa3, 0x25, 0x4b, 0x16, 0x12, 0x86, 0x70, 0x89);
+		public static readonly global::System.Guid type_measureDomainPropertyId = new global::System.Guid(0x1d201e7b, 0x3d92, 0x498e, 0xa3, 0x25, 0x4b, 0x16, 0x12, 0x86, 0x70, 0x89);
 		
 		/// <summary>
-		/// Storage for Measure
+		/// Storage for type_measure
 		/// </summary>
-		private global::System.Double measurePropertyStorage;
+		private global::System.String type_measurePropertyStorage = string.Empty;
 		
 		/// <summary>
-		/// Gets or sets the value of Measure domain property.
-		/// Description for Company.CyberPhisical_final.Sensor.Measure
+		/// Gets or sets the value of type_measure domain property.
+		/// Description for Company.CyberPhisical_final.Sensor.Type_measure
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Sensor/Measure.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.CyberPhisical_final.Sensor/Measure.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Sensor/type_measure.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.Sensor/type_measure.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("1d201e7b-3d92-498e-a325-4b1612867089")]
-		public global::System.Double Measure
+		public global::System.String type_measure
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return measurePropertyStorage;
+				return type_measurePropertyStorage;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				MeasurePropertyHandler.Instance.SetValue(this, value);
+				type_measurePropertyHandler.Instance.SetValue(this, value);
 			}
 		}
 		/// <summary>
-		/// Value handler for the Sensor.Measure domain property.
+		/// Value handler for the Sensor.type_measure domain property.
 		/// </summary>
-		internal sealed partial class MeasurePropertyHandler : DslModeling::DomainPropertyValueHandler<Sensor, global::System.Double>
+		internal sealed partial class type_measurePropertyHandler : DslModeling::DomainPropertyValueHandler<Sensor, global::System.String>
 		{
-			private MeasurePropertyHandler() { }
+			private type_measurePropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the Sensor.Measure domain property value handler.
+			/// Gets the singleton instance of the Sensor.type_measure domain property value handler.
 			/// </summary>
-			public static readonly MeasurePropertyHandler Instance = new MeasurePropertyHandler();
+			public static readonly type_measurePropertyHandler Instance = new type_measurePropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the Sensor.Measure domain property.
+			/// Gets the Id of the Sensor.type_measure domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
 				[global::System.Diagnostics.DebuggerStepThrough]
 				get
 				{
-					return MeasureDomainPropertyId;
+					return type_measureDomainPropertyId;
 				}
 			}
 			
@@ -512,10 +641,10 @@ namespace Company.CyberPhisical_final
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.Double GetValue(Sensor element)
+			public override sealed global::System.String GetValue(Sensor element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.measurePropertyStorage;
+				return element.type_measurePropertyStorage;
 			}
 		
 			/// <summary>
@@ -523,16 +652,15 @@ namespace Company.CyberPhisical_final
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(Sensor element, global::System.Double newValue)
+			public override sealed void SetValue(Sensor element, global::System.String newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
-				global::System.Double oldValue = GetValue(element);
-				// double type precision is guaranteed only to 15th digit.
-				if (global::System.Math.Abs(newValue - oldValue) > 1e-15)
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
 				{
 					ValueChanging(element, oldValue, newValue);
-					element.measurePropertyStorage = newValue;
+					element.type_measurePropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
@@ -735,7 +863,7 @@ namespace Company.CyberPhisical_final
 	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("e7387979-1b82-4db6-9f43-7488484b652a")]
-	public partial class AirConditioning : DslModeling::ModelElement
+	public partial class AirConditioning : Actuators
 	{
 		#region Constructors, domain class Id
 	
@@ -768,20 +896,20 @@ namespace Company.CyberPhisical_final
 namespace Company.CyberPhisical_final
 {
 	/// <summary>
-	/// DomainClass WaterPump
-	/// Description for Company.CyberPhisical_final.WaterPump
+	/// DomainClass Siren
+	/// Description for Company.CyberPhisical_final.Siren
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.WaterPump.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.CyberPhisical_final.WaterPump.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Siren.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.Siren.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("d29e4c68-900f-4a34-9421-38cb1bb83432")]
-	public partial class WaterPump : DslModeling::ModelElement
+	public partial class Siren : Actuators
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// WaterPump domain class Id.
+		/// Siren domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xd29e4c68, 0x900f, 0x4a34, 0x94, 0x21, 0x38, 0xcb, 0x1b, 0xb8, 0x34, 0x32);
 		/// <summary>
@@ -789,7 +917,7 @@ namespace Company.CyberPhisical_final
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public WaterPump(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public Siren(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -799,7 +927,7 @@ namespace Company.CyberPhisical_final
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public WaterPump(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public Siren(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -809,28 +937,78 @@ namespace Company.CyberPhisical_final
 namespace Company.CyberPhisical_final
 {
 	/// <summary>
-	/// DomainClass DomainClass1
-	/// Description for Company.CyberPhisical_final.DomainClass1
+	/// DomainClass Actuators
+	/// Description for Company.CyberPhisical_final.Actuators
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.DomainClass1.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.CyberPhisical_final.DomainClass1.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Actuators.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.Actuators.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("1250097d-8a44-4cde-be0d-6e8e468ac023")]
-	public partial class DomainClass1 : DslModeling::ModelElement
+	public abstract partial class Actuators : Things
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// DomainClass1 domain class Id.
+		/// Actuators domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x1250097d, 0x8a44, 0x4cde, 0xbe, 0x0d, 0x6e, 0x8e, 0x46, 0x8a, 0xc0, 0x23);
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		protected Actuators(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Device opposite domain role accessor
+		/// <summary>
+		/// Gets or sets Device.
+		/// Description for Company.CyberPhisical_final.DeviceHasActuator.Actuators
+		/// </summary>
+		public virtual Device Device
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.CyberPhisical_final.DeviceHasActuator.ActuatorsDomainRoleId) as Device;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.CyberPhisical_final.DeviceHasActuator.ActuatorsDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainClass Controller
+	/// Description for Company.CyberPhisical_final.Controller
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Controller.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.Controller.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("b26fec0f-d73c-4bc8-84fa-acf11637d229")]
+	public partial class Controller : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Controller domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb26fec0f, 0xd73c, 0x4bc8, 0x84, 0xfa, 0xac, 0xf1, 0x16, 0x37, 0xd2, 0x29);
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public DomainClass1(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public Controller(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -840,9 +1018,410 @@ namespace Company.CyberPhisical_final
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public DomainClass1(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public Controller(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
+		}
+		#endregion
+		#region IoT opposite domain role accessor
+		/// <summary>
+		/// Gets or sets IoT.
+		/// Description for Company.CyberPhisical_final.IoTHasControllers.Controller
+		/// </summary>
+		public virtual IoT IoT
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.CyberPhisical_final.IoTHasControllers.ControllerDomainRoleId) as IoT;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.CyberPhisical_final.IoTHasControllers.ControllerDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region Thing opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Thing.
+		/// Description for Company.CyberPhisical_final.ControllerReferencesThing.Controller
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Things> Thing
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Things>, Things>(global::Company.CyberPhisical_final.ControllerReferencesThing.ControllerDomainRoleId);
+			}
+		}
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainClass Alarms
+	/// Description for Company.CyberPhisical_final.Alarms
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Alarms.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.Alarms.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("3f35d373-8d61-4246-aa24-3b1383304ef7")]
+	public partial class Alarms : Things
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Alarms domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x3f35d373, 0x8d61, 0x4246, 0xaa, 0x24, 0x3b, 0x13, 0x83, 0x30, 0x4e, 0xf7);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Alarms(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Alarms(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region name domain property code
+		
+		/// <summary>
+		/// name domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid nameDomainPropertyId = new global::System.Guid(0x3e751e1e, 0x8e43, 0x4be2, 0x80, 0x07, 0xc9, 0xf9, 0xe5, 0x5a, 0x0d, 0x7f);
+		
+		/// <summary>
+		/// Storage for name
+		/// </summary>
+		private global::System.String namePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of name domain property.
+		/// Description for Company.CyberPhisical_final.Alarms.Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Alarms/name.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.Alarms/name.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("3e751e1e-8e43-4be2-8007-c9f9e55a0d7f")]
+		public global::System.String name
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return namePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				namePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Alarms.name domain property.
+		/// </summary>
+		internal sealed partial class namePropertyHandler : DslModeling::DomainPropertyValueHandler<Alarms, global::System.String>
+		{
+			private namePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Alarms.name domain property value handler.
+			/// </summary>
+			public static readonly namePropertyHandler Instance = new namePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Alarms.name domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return nameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Alarms element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.namePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Alarms element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.namePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region condition domain property code
+		
+		/// <summary>
+		/// condition domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid conditionDomainPropertyId = new global::System.Guid(0x938b0120, 0x2f33, 0x473a, 0xa5, 0x4e, 0xed, 0x27, 0x4d, 0xc8, 0x67, 0x68);
+		
+		/// <summary>
+		/// Storage for condition
+		/// </summary>
+		private global::System.String conditionPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of condition domain property.
+		/// Description for Company.CyberPhisical_final.Alarms.Condition
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Alarms/condition.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.Alarms/condition.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("938b0120-2f33-473a-a54e-ed274dc86768")]
+		public global::System.String condition
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return conditionPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				conditionPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Alarms.condition domain property.
+		/// </summary>
+		internal sealed partial class conditionPropertyHandler : DslModeling::DomainPropertyValueHandler<Alarms, global::System.String>
+		{
+			private conditionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Alarms.condition domain property value handler.
+			/// </summary>
+			public static readonly conditionPropertyHandler Instance = new conditionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Alarms.condition domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return conditionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Alarms element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.conditionPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Alarms element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.conditionPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region advertence domain property code
+		
+		/// <summary>
+		/// advertence domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid advertenceDomainPropertyId = new global::System.Guid(0xfbe86373, 0x5c0d, 0x4440, 0x91, 0x61, 0x19, 0x22, 0xf9, 0xcc, 0xc2, 0xaf);
+		
+		/// <summary>
+		/// Storage for advertence
+		/// </summary>
+		private global::System.String advertencePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of advertence domain property.
+		/// Description for Company.CyberPhisical_final.Alarms.Advertence
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Alarms/advertence.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.Alarms/advertence.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("fbe86373-5c0d-4440-9161-1922f9ccc2af")]
+		public global::System.String advertence
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return advertencePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				advertencePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Alarms.advertence domain property.
+		/// </summary>
+		internal sealed partial class advertencePropertyHandler : DslModeling::DomainPropertyValueHandler<Alarms, global::System.String>
+		{
+			private advertencePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Alarms.advertence domain property value handler.
+			/// </summary>
+			public static readonly advertencePropertyHandler Instance = new advertencePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Alarms.advertence domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return advertenceDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Alarms element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.advertencePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Alarms element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.advertencePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region IoT opposite domain role accessor
+		/// <summary>
+		/// Gets or sets IoT.
+		/// Description for Company.CyberPhisical_final.IoTHasAlarm.Alarms
+		/// </summary>
+		public virtual IoT IoT
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.CyberPhisical_final.IoTHasAlarm.AlarmsDomainRoleId) as IoT;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.CyberPhisical_final.IoTHasAlarm.AlarmsDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainClass Things
+	/// Description for Company.CyberPhisical_final.Things
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Things.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.Things.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("302e1d16-0280-4047-918d-0cf5b1ea7df7")]
+	public abstract partial class Things : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Things domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x302e1d16, 0x0280, 0x4047, 0x91, 0x8d, 0x0c, 0xf5, 0xb1, 0xea, 0x7d, 0xf7);
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		protected Things(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Controllers opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Controllers.
+		/// Description for Company.CyberPhisical_final.ControllerReferencesThing.Things
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Controller> Controllers
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Controller>, Controller>(global::Company.CyberPhisical_final.ControllerReferencesThing.ThingsDomainRoleId);
+			}
 		}
 		#endregion
 	}

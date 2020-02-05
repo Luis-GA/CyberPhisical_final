@@ -905,6 +905,17 @@ namespace Company.CyberPhisical_final
 		
 		#endregion
 		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1, 1);
+			}
+		}
 		#endregion
 		#region Shape styles
 		#endregion
@@ -941,6 +952,947 @@ namespace Company.CyberPhisical_final
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
 		public HumidityImage(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainClass SirenImage
+	/// Description for Company.CyberPhisical_final.SirenImage
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.SirenImage.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.SirenImage.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("d1a6ae15-fda6-4b08-aa3c-04727d85570e")]
+	public partial class SirenImage : DslDiagrams::ImageShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with SirenImage.
+		/// </summary>
+		public static DslDiagrams::Decorator FindSirenImageDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(0.5, 0.5);
+			}
+		}
+		#endregion
+		#region Shape styles
+		#endregion
+		/// <summary>
+		/// Provide the specific Image for this Shape class
+		/// </summary>
+		protected override global::System.Drawing.Image Image
+		{
+			get
+			{
+				global::System.Resources.ResourceManager resourceManager = global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel.SingletonResourceManager;
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("SirenImageImage"));
+			}
+		}
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// SirenImage domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xd1a6ae15, 0xfda6, 0x4b08, 0xaa, 0x3c, 0x04, 0x72, 0x7d, 0x85, 0x57, 0x0e);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SirenImage(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SirenImage(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainClass AirConditioningImage
+	/// Description for Company.CyberPhisical_final.AirConditioningImage
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.AirConditioningImage.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.AirConditioningImage.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("afe4a4b9-7baf-4e69-94e2-2a7a588a3b86")]
+	public partial class AirConditioningImage : DslDiagrams::ImageShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with AirConditioningImage.
+		/// </summary>
+		public static DslDiagrams::Decorator FindAirConditioningImageDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(0.5, 0.5);
+			}
+		}
+		#endregion
+		#region Shape styles
+		#endregion
+		/// <summary>
+		/// Provide the specific Image for this Shape class
+		/// </summary>
+		protected override global::System.Drawing.Image Image
+		{
+			get
+			{
+				global::System.Resources.ResourceManager resourceManager = global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel.SingletonResourceManager;
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("AirConditioningImageImage"));
+			}
+		}
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// AirConditioningImage domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xafe4a4b9, 0x7baf, 0x4e69, 0x94, 0xe2, 0x2a, 0x7a, 0x58, 0x8a, 0x3b, 0x86);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AirConditioningImage(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AirConditioningImage(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainClass AlarmsGS
+	/// Description for Company.CyberPhisical_final.AlarmsGS
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.AlarmsGS.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.AlarmsGS.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("461c2def-db50-4e61-96c3-3d3e7e3586a2")]
+	public partial class AlarmsGS : DslDiagrams::NodeShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with AlarmsGS.
+		/// </summary>
+		public static DslDiagrams::Decorator FindAlarmsGSDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.5, 1);
+			}
+		}
+		#endregion
+		#region Shape styles
+		/// <summary>
+		/// Indicates whether this shape displays a background gradient.
+		/// </summary>
+		public override bool HasBackgroundGradient
+		{
+			get
+			{
+				return true;
+			}
+		}
+		
+		/// <summary>
+		/// Indicates the direction of the gradient.
+		/// </summary>
+		public override global::System.Drawing.Drawing2D.LinearGradientMode BackgroundGradientMode
+		{
+			get
+			{
+				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+			}
+		}
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("name");
+			field1.DefaultText = global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel.SingletonResourceManager.GetString("AlarmsGSnameDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field1);
+			
+			DslDiagrams::TextField field2 = new DslDiagrams::TextField("condition");
+			field2.DefaultText = global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel.SingletonResourceManager.GetString("AlarmsGSconditionDefaultText");
+			field2.DefaultFocusable = true;
+			field2.DefaultAutoSize = true;
+			field2.AnchoringBehavior.MinimumHeightInLines = 1;
+			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field2);
+			
+			DslDiagrams::TextField field3 = new DslDiagrams::TextField("advertence");
+			field3.DefaultText = global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel.SingletonResourceManager.GetString("AlarmsGSadvertenceDefaultText");
+			field3.DefaultFocusable = true;
+			field3.DefaultAutoSize = true;
+			field3.AnchoringBehavior.MinimumHeightInLines = 1;
+			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field3);
+			
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "name");
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator1);
+				
+			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "condition");
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator2);
+				
+			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "advertence");
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator3);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// AlarmsGS domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x461c2def, 0xdb50, 0x4e61, 0x96, 0xc3, 0x3d, 0x3e, 0x7e, 0x35, 0x86, 0xa2);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AlarmsGS(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AlarmsGS(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainClass ControllerIS
+	/// Description for Company.CyberPhisical_final.ControllerIS
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.ControllerIS.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.ControllerIS.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("405598f7-1607-4124-853a-617fff159590")]
+	public partial class ControllerIS : DslDiagrams::ImageShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with ControllerIS.
+		/// </summary>
+		public static DslDiagrams::Decorator FindControllerISDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(0.4, 0.2);
+			}
+		}
+		#endregion
+		#region Shape styles
+		#endregion
+		/// <summary>
+		/// Provide the specific Image for this Shape class
+		/// </summary>
+		protected override global::System.Drawing.Image Image
+		{
+			get
+			{
+				global::System.Resources.ResourceManager resourceManager = global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel.SingletonResourceManager;
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ControllerISImage"));
+			}
+		}
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ControllerIS domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x405598f7, 0x1607, 0x4124, 0x85, 0x3a, 0x61, 0x7f, 0xff, 0x15, 0x95, 0x90);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ControllerIS(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ControllerIS(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainClass Co2IS
+	/// Description for Company.CyberPhisical_final.Co2IS
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Co2IS.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.Co2IS.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("0dc1d5ed-8b0d-4631-82c6-95d386567188")]
+	public partial class Co2IS : DslDiagrams::ImageShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with Co2IS.
+		/// </summary>
+		public static DslDiagrams::Decorator FindCo2ISDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(0.5, 0.5);
+			}
+		}
+		#endregion
+		#region Shape styles
+		#endregion
+		/// <summary>
+		/// Provide the specific Image for this Shape class
+		/// </summary>
+		protected override global::System.Drawing.Image Image
+		{
+			get
+			{
+				global::System.Resources.ResourceManager resourceManager = global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel.SingletonResourceManager;
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("Co2ISImage"));
+			}
+		}
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Co2IS domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x0dc1d5ed, 0x8b0d, 0x4631, 0x82, 0xc6, 0x95, 0xd3, 0x86, 0x56, 0x71, 0x88);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Co2IS(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Co2IS(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainClass ImageShape1
+	/// Description for Company.CyberPhisical_final.ImageShape1
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.ImageShape1.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.ImageShape1.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("14a0de5f-2303-416e-81ae-f79186abd675")]
+	public partial class ImageShape1 : DslDiagrams::ImageShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with ImageShape1.
+		/// </summary>
+		public static DslDiagrams::Decorator FindImageShape1Decorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(0.5, 0.5);
+			}
+		}
+		#endregion
+		#region Shape styles
+		#endregion
+		/// <summary>
+		/// Provide the specific Image for this Shape class
+		/// </summary>
+		protected override global::System.Drawing.Image Image
+		{
+			get
+			{
+				global::System.Resources.ResourceManager resourceManager = global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel.SingletonResourceManager;
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ImageShape1Image"));
+			}
+		}
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ImageShape1 domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x14a0de5f, 0x2303, 0x416e, 0x81, 0xae, 0xf7, 0x91, 0x86, 0xab, 0xd6, 0x75);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ImageShape1(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ImageShape1(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

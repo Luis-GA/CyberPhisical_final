@@ -75,18 +75,32 @@ namespace Company.CyberPhisical_final
 				typeof(CO2Level),
 				typeof(SmokeSensor),
 				typeof(AirConditioning),
-				typeof(WaterPump),
-				typeof(DomainClass1),
+				typeof(Siren),
+				typeof(Actuators),
+				typeof(Controller),
+				typeof(Alarms),
+				typeof(Things),
 				typeof(IoTHasElements),
 				typeof(DeviceHasSensors),
+				typeof(DeviceHasActuator),
+				typeof(IoTHasControllers),
+				typeof(IoTHasAlarm),
+				typeof(ControllerReferencesThing),
 				typeof(CyberPhisical_finalDiagram),
 				typeof(ExampleConnector),
 				typeof(ExampleShape),
 				typeof(GeometryShape1),
 				typeof(GeometryShape2),
+				typeof(AlarmsGS),
 				typeof(TemperatureImage),
 				typeof(HumidityImage),
+				typeof(SirenImage),
+				typeof(AirConditioningImage),
+				typeof(ControllerIS),
+				typeof(Co2IS),
+				typeof(ImageShape1),
 				typeof(global::Company.CyberPhisical_final.FixUpDiagram),
+				typeof(global::Company.CyberPhisical_final.ConnectorRolePlayerChanged),
 			};
 		}
 		/// <summary>
@@ -99,7 +113,10 @@ namespace Company.CyberPhisical_final
 			return new DomainMemberInfo[]
 			{
 				new DomainMemberInfo(typeof(Device), "Name", Device.NameDomainPropertyId, typeof(Device.NamePropertyHandler)),
-				new DomainMemberInfo(typeof(Sensor), "Measure", Sensor.MeasureDomainPropertyId, typeof(Sensor.MeasurePropertyHandler)),
+				new DomainMemberInfo(typeof(Sensor), "type_measure", Sensor.type_measureDomainPropertyId, typeof(Sensor.type_measurePropertyHandler)),
+				new DomainMemberInfo(typeof(Alarms), "name", Alarms.nameDomainPropertyId, typeof(Alarms.namePropertyHandler)),
+				new DomainMemberInfo(typeof(Alarms), "condition", Alarms.conditionDomainPropertyId, typeof(Alarms.conditionPropertyHandler)),
+				new DomainMemberInfo(typeof(Alarms), "advertence", Alarms.advertenceDomainPropertyId, typeof(Alarms.advertencePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -114,6 +131,14 @@ namespace Company.CyberPhisical_final
 				new DomainRolePlayerInfo(typeof(IoTHasElements), "Element", IoTHasElements.ElementDomainRoleId),
 				new DomainRolePlayerInfo(typeof(DeviceHasSensors), "Device", DeviceHasSensors.DeviceDomainRoleId),
 				new DomainRolePlayerInfo(typeof(DeviceHasSensors), "Sensor", DeviceHasSensors.SensorDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DeviceHasActuator), "Device", DeviceHasActuator.DeviceDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DeviceHasActuator), "Actuators", DeviceHasActuator.ActuatorsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(IoTHasControllers), "IoT", IoTHasControllers.IoTDomainRoleId),
+				new DomainRolePlayerInfo(typeof(IoTHasControllers), "Controller", IoTHasControllers.ControllerDomainRoleId),
+				new DomainRolePlayerInfo(typeof(IoTHasAlarm), "IoT", IoTHasAlarm.IoTDomainRoleId),
+				new DomainRolePlayerInfo(typeof(IoTHasAlarm), "Alarms", IoTHasAlarm.AlarmsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ControllerReferencesThing), "Controller", ControllerReferencesThing.ControllerDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ControllerReferencesThing), "Things", ControllerReferencesThing.ThingsDomainRoleId),
 			};
 		}
 		#endregion
@@ -135,7 +160,7 @@ namespace Company.CyberPhisical_final
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(17);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(26);
 				createElementMap.Add(typeof(IoT), 0);
 				createElementMap.Add(typeof(Device), 1);
 				createElementMap.Add(typeof(Temperature), 2);
@@ -143,15 +168,22 @@ namespace Company.CyberPhisical_final
 				createElementMap.Add(typeof(CO2Level), 4);
 				createElementMap.Add(typeof(SmokeSensor), 5);
 				createElementMap.Add(typeof(AirConditioning), 6);
-				createElementMap.Add(typeof(WaterPump), 7);
-				createElementMap.Add(typeof(DomainClass1), 8);
-				createElementMap.Add(typeof(CyberPhisical_finalDiagram), 9);
-				createElementMap.Add(typeof(ExampleConnector), 10);
-				createElementMap.Add(typeof(ExampleShape), 11);
-				createElementMap.Add(typeof(GeometryShape1), 12);
-				createElementMap.Add(typeof(GeometryShape2), 13);
-				createElementMap.Add(typeof(TemperatureImage), 14);
-				createElementMap.Add(typeof(HumidityImage), 15);
+				createElementMap.Add(typeof(Siren), 7);
+				createElementMap.Add(typeof(Controller), 8);
+				createElementMap.Add(typeof(Alarms), 9);
+				createElementMap.Add(typeof(CyberPhisical_finalDiagram), 10);
+				createElementMap.Add(typeof(ExampleConnector), 11);
+				createElementMap.Add(typeof(ExampleShape), 12);
+				createElementMap.Add(typeof(GeometryShape1), 13);
+				createElementMap.Add(typeof(GeometryShape2), 14);
+				createElementMap.Add(typeof(AlarmsGS), 15);
+				createElementMap.Add(typeof(TemperatureImage), 16);
+				createElementMap.Add(typeof(HumidityImage), 17);
+				createElementMap.Add(typeof(SirenImage), 18);
+				createElementMap.Add(typeof(AirConditioningImage), 19);
+				createElementMap.Add(typeof(ControllerIS), 20);
+				createElementMap.Add(typeof(Co2IS), 21);
+				createElementMap.Add(typeof(ImageShape1), 22);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -172,15 +204,22 @@ namespace Company.CyberPhisical_final
 				case 4: return new CO2Level(partition, propertyAssignments);
 				case 5: return new SmokeSensor(partition, propertyAssignments);
 				case 6: return new AirConditioning(partition, propertyAssignments);
-				case 7: return new WaterPump(partition, propertyAssignments);
-				case 8: return new DomainClass1(partition, propertyAssignments);
-				case 9: return new CyberPhisical_finalDiagram(partition, propertyAssignments);
-				case 10: return new ExampleConnector(partition, propertyAssignments);
-				case 11: return new ExampleShape(partition, propertyAssignments);
-				case 12: return new GeometryShape1(partition, propertyAssignments);
-				case 13: return new GeometryShape2(partition, propertyAssignments);
-				case 14: return new TemperatureImage(partition, propertyAssignments);
-				case 15: return new HumidityImage(partition, propertyAssignments);
+				case 7: return new Siren(partition, propertyAssignments);
+				case 8: return new Controller(partition, propertyAssignments);
+				case 9: return new Alarms(partition, propertyAssignments);
+				case 10: return new CyberPhisical_finalDiagram(partition, propertyAssignments);
+				case 11: return new ExampleConnector(partition, propertyAssignments);
+				case 12: return new ExampleShape(partition, propertyAssignments);
+				case 13: return new GeometryShape1(partition, propertyAssignments);
+				case 14: return new GeometryShape2(partition, propertyAssignments);
+				case 15: return new AlarmsGS(partition, propertyAssignments);
+				case 16: return new TemperatureImage(partition, propertyAssignments);
+				case 17: return new HumidityImage(partition, propertyAssignments);
+				case 18: return new SirenImage(partition, propertyAssignments);
+				case 19: return new AirConditioningImage(partition, propertyAssignments);
+				case 20: return new ControllerIS(partition, propertyAssignments);
+				case 21: return new Co2IS(partition, propertyAssignments);
+				case 22: return new ImageShape1(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -203,9 +242,13 @@ namespace Company.CyberPhisical_final
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(6);
 				createElementLinkMap.Add(typeof(IoTHasElements), 0);
 				createElementLinkMap.Add(typeof(DeviceHasSensors), 1);
+				createElementLinkMap.Add(typeof(DeviceHasActuator), 2);
+				createElementLinkMap.Add(typeof(IoTHasControllers), 3);
+				createElementLinkMap.Add(typeof(IoTHasAlarm), 4);
+				createElementLinkMap.Add(typeof(ControllerReferencesThing), 5);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -222,6 +265,10 @@ namespace Company.CyberPhisical_final
 			{
 				case 0: return new IoTHasElements(partition, roleAssignments, propertyAssignments);
 				case 1: return new DeviceHasSensors(partition, roleAssignments, propertyAssignments);
+				case 2: return new DeviceHasActuator(partition, roleAssignments, propertyAssignments);
+				case 3: return new IoTHasControllers(partition, roleAssignments, propertyAssignments);
+				case 4: return new IoTHasAlarm(partition, roleAssignments, propertyAssignments);
+				case 5: return new ControllerReferencesThing(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -342,6 +389,7 @@ namespace Company.CyberPhisical_final
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.EnableRule(typeof(global::Company.CyberPhisical_final.FixUpDiagram));
+			ruleManager.EnableRule(typeof(global::Company.CyberPhisical_final.ConnectorRolePlayerChanged));
 		}
 		
 		/// <summary>
@@ -353,6 +401,7 @@ namespace Company.CyberPhisical_final
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.DisableRule(typeof(global::Company.CyberPhisical_final.FixUpDiagram));
+			ruleManager.DisableRule(typeof(global::Company.CyberPhisical_final.ConnectorRolePlayerChanged));
 		}
 		#endregion
 	}
@@ -390,6 +439,9 @@ namespace Company.CyberPhisical_final
 			#region Initialize DomainData Table
 			DomainRoles.Add(global::Company.CyberPhisical_final.IoTHasElements.ElementDomainRoleId, true);
 			DomainRoles.Add(global::Company.CyberPhisical_final.DeviceHasSensors.SensorDomainRoleId, true);
+			DomainRoles.Add(global::Company.CyberPhisical_final.DeviceHasActuator.ActuatorsDomainRoleId, true);
+			DomainRoles.Add(global::Company.CyberPhisical_final.IoTHasControllers.ControllerDomainRoleId, true);
+			DomainRoles.Add(global::Company.CyberPhisical_final.IoTHasAlarm.AlarmsDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

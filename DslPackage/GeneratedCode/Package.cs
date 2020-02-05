@@ -52,6 +52,46 @@ namespace Company.CyberPhisical_final
 					"@iconHumidityToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
 					0xff00ff,
 					Index = 2)]
+	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
+					"@SirenToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
+					"Company.CyberPhisical_final.SirenToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Siren", 
+					"@SirenToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
+					0xff00ff,
+					Index = 3)]
+	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
+					"@AirConditioningToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
+					"Company.CyberPhisical_final.AirConditioningToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"AirConditioning", 
+					"@AirConditioningToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
+					0xff00ff,
+					Index = 4)]
+	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
+					"@controllerToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
+					"Company.CyberPhisical_final.controllerToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"controller", 
+					"@controllerToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
+					0xff00ff,
+					Index = 5)]
+	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
+					"@alarmToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
+					"Company.CyberPhisical_final.alarmToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"alarm", 
+					"@alarmToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
+					0xff00ff,
+					Index = 6)]
+	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
+					"@ConnectionTool1ToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
+					"Company.CyberPhisical_final.ConnectionTool1ToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ConnectionTool1", 
+					"@ConnectionTool1ToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
+					0xff00ff,
+					Index = 7)]
 	[VSShell::ProvideEditorFactory(typeof(CyberPhisical_finalEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(CyberPhisical_finalEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(CyberPhisical_finalEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

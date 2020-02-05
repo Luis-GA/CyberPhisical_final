@@ -485,3 +485,940 @@ namespace Company.CyberPhisical_final
 		#endregion
 	}
 }
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainRelationship DeviceHasActuator
+	/// Description for Company.CyberPhisical_final.DeviceHasActuator
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.DeviceHasActuator.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.DeviceHasActuator.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("05c552e7-7d97-430c-a99d-8f58eed9580d")]
+	public partial class DeviceHasActuator : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// DeviceHasActuator domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x05c552e7, 0x7d97, 0x430c, 0xa9, 0x9d, 0x8f, 0x58, 0xee, 0xd9, 0x58, 0x0d);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a DeviceHasActuator link in the same Partition as the given Device
+		/// </summary>
+		/// <param name="source">Device to use as the source of the relationship.</param>
+		/// <param name="target">Actuators to use as the target of the relationship.</param>
+		public DeviceHasActuator(Device source, Actuators target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(DeviceHasActuator.DeviceDomainRoleId, source), new DslModeling::RoleAssignment(DeviceHasActuator.ActuatorsDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DeviceHasActuator(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DeviceHasActuator(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DeviceHasActuator(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DeviceHasActuator(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Device domain role code
+		
+		/// <summary>
+		/// Device domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid DeviceDomainRoleId = new global::System.Guid(0x9f14e0bd, 0xbcd2, 0x4767, 0x92, 0xd5, 0xa4, 0xbe, 0xec, 0x36, 0x79, 0x87);
+		
+		/// <summary>
+		/// DomainRole Device
+		/// Description for Company.CyberPhisical_final.DeviceHasActuator.Device
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.DeviceHasActuator/Device.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.DeviceHasActuator/Device.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Actuator", PropertyDisplayNameKey="Company.CyberPhisical_final.DeviceHasActuator/Device.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("9f14e0bd-bcd2-4767-92d5-a4beec367987")]
+		public virtual Device Device
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Device)DslModeling::DomainRoleInfo.GetRolePlayer(this, DeviceDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, DeviceDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Device of a Actuators
+		/// <summary>
+		/// Gets Device.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static Device GetDevice(Actuators element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ActuatorsDomainRoleId) as Device;
+		}
+		
+		/// <summary>
+		/// Sets Device.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetDevice(Actuators element, Device newDevice)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ActuatorsDomainRoleId, newDevice);
+		}
+		#endregion
+		#region Actuators domain role code
+		
+		/// <summary>
+		/// Actuators domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ActuatorsDomainRoleId = new global::System.Guid(0xb571352a, 0x7a3c, 0x442c, 0xaa, 0x22, 0xd5, 0xd4, 0xa7, 0xcb, 0xde, 0x6c);
+		
+		/// <summary>
+		/// DomainRole Actuators
+		/// Description for Company.CyberPhisical_final.DeviceHasActuator.Actuators
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.DeviceHasActuator/Actuators.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.DeviceHasActuator/Actuators.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Device", PropertyDisplayNameKey="Company.CyberPhisical_final.DeviceHasActuator/Actuators.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("b571352a-7a3c-442c-aa22-d5d4a7cbde6c")]
+		public virtual Actuators Actuators
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Actuators)DslModeling::DomainRoleInfo.GetRolePlayer(this, ActuatorsDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ActuatorsDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Actuator of a Device
+		/// <summary>
+		/// Gets a list of Actuator.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Actuators> GetActuator(Device element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Actuators>, Actuators>(element, DeviceDomainRoleId);
+		}
+		#endregion
+		#region Device link accessor
+		/// <summary>
+		/// Get the list of DeviceHasActuator links to a Device.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.CyberPhisical_final.DeviceHasActuator> GetLinksToActuator ( global::Company.CyberPhisical_final.Device deviceInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.DeviceHasActuator>(deviceInstance, global::Company.CyberPhisical_final.DeviceHasActuator.DeviceDomainRoleId);
+		}
+		#endregion
+		#region Actuators link accessor
+		/// <summary>
+		/// Get the DeviceHasActuator link to a Actuators.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.CyberPhisical_final.DeviceHasActuator GetLinkToDevice (global::Company.CyberPhisical_final.Actuators actuatorsInstance)
+		{
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.DeviceHasActuator> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.DeviceHasActuator>(actuatorsInstance, global::Company.CyberPhisical_final.DeviceHasActuator.ActuatorsDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Actuators not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region DeviceHasActuator instance accessors
+		
+		/// <summary>
+		/// Get any DeviceHasActuator links between a given Device and a Actuators.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.CyberPhisical_final.DeviceHasActuator> GetLinks( global::Company.CyberPhisical_final.Device source, global::Company.CyberPhisical_final.Actuators target )
+		{
+			global::System.Collections.Generic.List<global::Company.CyberPhisical_final.DeviceHasActuator> outLinks = new global::System.Collections.Generic.List<global::Company.CyberPhisical_final.DeviceHasActuator>();
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.DeviceHasActuator> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.DeviceHasActuator>(source, global::Company.CyberPhisical_final.DeviceHasActuator.DeviceDomainRoleId);
+			foreach ( global::Company.CyberPhisical_final.DeviceHasActuator link in links )
+			{
+				if ( target.Equals(link.Actuators) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one DeviceHasActuator link between a given Deviceand a Actuators.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.CyberPhisical_final.DeviceHasActuator GetLink( global::Company.CyberPhisical_final.Device source, global::Company.CyberPhisical_final.Actuators target )
+		{
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.DeviceHasActuator> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.DeviceHasActuator>(source, global::Company.CyberPhisical_final.DeviceHasActuator.DeviceDomainRoleId);
+			foreach ( global::Company.CyberPhisical_final.DeviceHasActuator link in links )
+			{
+				if ( target.Equals(link.Actuators) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainRelationship IoTHasControllers
+	/// Description for Company.CyberPhisical_final.IoTHasControllers
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.IoTHasControllers.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.IoTHasControllers.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("a7c1fe8b-7f0d-4395-8a3e-4ab60f31f015")]
+	public partial class IoTHasControllers : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// IoTHasControllers domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xa7c1fe8b, 0x7f0d, 0x4395, 0x8a, 0x3e, 0x4a, 0xb6, 0x0f, 0x31, 0xf0, 0x15);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a IoTHasControllers link in the same Partition as the given IoT
+		/// </summary>
+		/// <param name="source">IoT to use as the source of the relationship.</param>
+		/// <param name="target">Controller to use as the target of the relationship.</param>
+		public IoTHasControllers(IoT source, Controller target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(IoTHasControllers.IoTDomainRoleId, source), new DslModeling::RoleAssignment(IoTHasControllers.ControllerDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public IoTHasControllers(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public IoTHasControllers(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public IoTHasControllers(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public IoTHasControllers(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region IoT domain role code
+		
+		/// <summary>
+		/// IoT domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid IoTDomainRoleId = new global::System.Guid(0x0a68d31d, 0x0d00, 0x4c76, 0xb1, 0xc8, 0x94, 0xc5, 0xc0, 0x70, 0xff, 0x17);
+		
+		/// <summary>
+		/// DomainRole IoT
+		/// Description for Company.CyberPhisical_final.IoTHasControllers.IoT
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.IoTHasControllers/IoT.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.IoTHasControllers/IoT.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Controllers", PropertyDisplayNameKey="Company.CyberPhisical_final.IoTHasControllers/IoT.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("0a68d31d-0d00-4c76-b1c8-94c5c070ff17")]
+		public virtual IoT IoT
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (IoT)DslModeling::DomainRoleInfo.GetRolePlayer(this, IoTDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, IoTDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access IoT of a Controller
+		/// <summary>
+		/// Gets IoT.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static IoT GetIoT(Controller element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ControllerDomainRoleId) as IoT;
+		}
+		
+		/// <summary>
+		/// Sets IoT.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetIoT(Controller element, IoT newIoT)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ControllerDomainRoleId, newIoT);
+		}
+		#endregion
+		#region Controller domain role code
+		
+		/// <summary>
+		/// Controller domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ControllerDomainRoleId = new global::System.Guid(0x17064fc8, 0x76a1, 0x44c1, 0x88, 0x73, 0x9c, 0x8d, 0xa9, 0x71, 0x86, 0x4d);
+		
+		/// <summary>
+		/// DomainRole Controller
+		/// Description for Company.CyberPhisical_final.IoTHasControllers.Controller
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.IoTHasControllers/Controller.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.IoTHasControllers/Controller.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "IoT", PropertyDisplayNameKey="Company.CyberPhisical_final.IoTHasControllers/Controller.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("17064fc8-76a1-44c1-8873-9c8da971864d")]
+		public virtual Controller Controller
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Controller)DslModeling::DomainRoleInfo.GetRolePlayer(this, ControllerDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ControllerDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Controllers of a IoT
+		/// <summary>
+		/// Gets a list of Controllers.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Controller> GetControllers(IoT element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Controller>, Controller>(element, IoTDomainRoleId);
+		}
+		#endregion
+		#region IoT link accessor
+		/// <summary>
+		/// Get the list of IoTHasControllers links to a IoT.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.CyberPhisical_final.IoTHasControllers> GetLinksToControllers ( global::Company.CyberPhisical_final.IoT ioTInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.IoTHasControllers>(ioTInstance, global::Company.CyberPhisical_final.IoTHasControllers.IoTDomainRoleId);
+		}
+		#endregion
+		#region Controller link accessor
+		/// <summary>
+		/// Get the IoTHasControllers link to a Controller.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.CyberPhisical_final.IoTHasControllers GetLinkToIoT (global::Company.CyberPhisical_final.Controller controllerInstance)
+		{
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.IoTHasControllers> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.IoTHasControllers>(controllerInstance, global::Company.CyberPhisical_final.IoTHasControllers.ControllerDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Controller not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region IoTHasControllers instance accessors
+		
+		/// <summary>
+		/// Get any IoTHasControllers links between a given IoT and a Controller.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.CyberPhisical_final.IoTHasControllers> GetLinks( global::Company.CyberPhisical_final.IoT source, global::Company.CyberPhisical_final.Controller target )
+		{
+			global::System.Collections.Generic.List<global::Company.CyberPhisical_final.IoTHasControllers> outLinks = new global::System.Collections.Generic.List<global::Company.CyberPhisical_final.IoTHasControllers>();
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.IoTHasControllers> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.IoTHasControllers>(source, global::Company.CyberPhisical_final.IoTHasControllers.IoTDomainRoleId);
+			foreach ( global::Company.CyberPhisical_final.IoTHasControllers link in links )
+			{
+				if ( target.Equals(link.Controller) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one IoTHasControllers link between a given IoTand a Controller.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.CyberPhisical_final.IoTHasControllers GetLink( global::Company.CyberPhisical_final.IoT source, global::Company.CyberPhisical_final.Controller target )
+		{
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.IoTHasControllers> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.IoTHasControllers>(source, global::Company.CyberPhisical_final.IoTHasControllers.IoTDomainRoleId);
+			foreach ( global::Company.CyberPhisical_final.IoTHasControllers link in links )
+			{
+				if ( target.Equals(link.Controller) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainRelationship IoTHasAlarm
+	/// Description for Company.CyberPhisical_final.IoTHasAlarm
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.IoTHasAlarm.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.IoTHasAlarm.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("22524e6d-6162-4f69-9fc3-e458bb06d897")]
+	public partial class IoTHasAlarm : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// IoTHasAlarm domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x22524e6d, 0x6162, 0x4f69, 0x9f, 0xc3, 0xe4, 0x58, 0xbb, 0x06, 0xd8, 0x97);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a IoTHasAlarm link in the same Partition as the given IoT
+		/// </summary>
+		/// <param name="source">IoT to use as the source of the relationship.</param>
+		/// <param name="target">Alarms to use as the target of the relationship.</param>
+		public IoTHasAlarm(IoT source, Alarms target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(IoTHasAlarm.IoTDomainRoleId, source), new DslModeling::RoleAssignment(IoTHasAlarm.AlarmsDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public IoTHasAlarm(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public IoTHasAlarm(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public IoTHasAlarm(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public IoTHasAlarm(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region IoT domain role code
+		
+		/// <summary>
+		/// IoT domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid IoTDomainRoleId = new global::System.Guid(0x7fedd3c9, 0xf516, 0x45f9, 0xbb, 0xe4, 0x01, 0x2d, 0x2b, 0x95, 0x86, 0xf5);
+		
+		/// <summary>
+		/// DomainRole IoT
+		/// Description for Company.CyberPhisical_final.IoTHasAlarm.IoT
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.IoTHasAlarm/IoT.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.IoTHasAlarm/IoT.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Alarm", PropertyDisplayNameKey="Company.CyberPhisical_final.IoTHasAlarm/IoT.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("7fedd3c9-f516-45f9-bbe4-012d2b9586f5")]
+		public virtual IoT IoT
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (IoT)DslModeling::DomainRoleInfo.GetRolePlayer(this, IoTDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, IoTDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access IoT of a Alarms
+		/// <summary>
+		/// Gets IoT.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static IoT GetIoT(Alarms element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, AlarmsDomainRoleId) as IoT;
+		}
+		
+		/// <summary>
+		/// Sets IoT.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetIoT(Alarms element, IoT newIoT)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, AlarmsDomainRoleId, newIoT);
+		}
+		#endregion
+		#region Alarms domain role code
+		
+		/// <summary>
+		/// Alarms domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid AlarmsDomainRoleId = new global::System.Guid(0x147884ea, 0xa930, 0x4c19, 0x9b, 0x33, 0x4a, 0xb3, 0xdd, 0xf7, 0x5f, 0xb6);
+		
+		/// <summary>
+		/// DomainRole Alarms
+		/// Description for Company.CyberPhisical_final.IoTHasAlarm.Alarms
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.IoTHasAlarm/Alarms.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.IoTHasAlarm/Alarms.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "IoT", PropertyDisplayNameKey="Company.CyberPhisical_final.IoTHasAlarm/Alarms.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("147884ea-a930-4c19-9b33-4ab3ddf75fb6")]
+		public virtual Alarms Alarms
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Alarms)DslModeling::DomainRoleInfo.GetRolePlayer(this, AlarmsDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, AlarmsDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Alarm of a IoT
+		/// <summary>
+		/// Gets a list of Alarm.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Alarms> GetAlarm(IoT element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Alarms>, Alarms>(element, IoTDomainRoleId);
+		}
+		#endregion
+		#region IoT link accessor
+		/// <summary>
+		/// Get the list of IoTHasAlarm links to a IoT.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.CyberPhisical_final.IoTHasAlarm> GetLinksToAlarm ( global::Company.CyberPhisical_final.IoT ioTInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.IoTHasAlarm>(ioTInstance, global::Company.CyberPhisical_final.IoTHasAlarm.IoTDomainRoleId);
+		}
+		#endregion
+		#region Alarms link accessor
+		/// <summary>
+		/// Get the IoTHasAlarm link to a Alarms.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.CyberPhisical_final.IoTHasAlarm GetLinkToIoT (global::Company.CyberPhisical_final.Alarms alarmsInstance)
+		{
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.IoTHasAlarm> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.IoTHasAlarm>(alarmsInstance, global::Company.CyberPhisical_final.IoTHasAlarm.AlarmsDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Alarms not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region IoTHasAlarm instance accessors
+		
+		/// <summary>
+		/// Get any IoTHasAlarm links between a given IoT and a Alarms.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.CyberPhisical_final.IoTHasAlarm> GetLinks( global::Company.CyberPhisical_final.IoT source, global::Company.CyberPhisical_final.Alarms target )
+		{
+			global::System.Collections.Generic.List<global::Company.CyberPhisical_final.IoTHasAlarm> outLinks = new global::System.Collections.Generic.List<global::Company.CyberPhisical_final.IoTHasAlarm>();
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.IoTHasAlarm> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.IoTHasAlarm>(source, global::Company.CyberPhisical_final.IoTHasAlarm.IoTDomainRoleId);
+			foreach ( global::Company.CyberPhisical_final.IoTHasAlarm link in links )
+			{
+				if ( target.Equals(link.Alarms) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one IoTHasAlarm link between a given IoTand a Alarms.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.CyberPhisical_final.IoTHasAlarm GetLink( global::Company.CyberPhisical_final.IoT source, global::Company.CyberPhisical_final.Alarms target )
+		{
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.IoTHasAlarm> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.IoTHasAlarm>(source, global::Company.CyberPhisical_final.IoTHasAlarm.IoTDomainRoleId);
+			foreach ( global::Company.CyberPhisical_final.IoTHasAlarm link in links )
+			{
+				if ( target.Equals(link.Alarms) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainRelationship ControllerReferencesThing
+	/// Description for Company.CyberPhisical_final.ControllerReferencesThing
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.ControllerReferencesThing.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.ControllerReferencesThing.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("c8f9706e-d0e7-47e9-bea9-00d5d244cca9")]
+	public partial class ControllerReferencesThing : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// ControllerReferencesThing domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xc8f9706e, 0xd0e7, 0x47e9, 0xbe, 0xa9, 0x00, 0xd5, 0xd2, 0x44, 0xcc, 0xa9);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a ControllerReferencesThing link in the same Partition as the given Controller
+		/// </summary>
+		/// <param name="source">Controller to use as the source of the relationship.</param>
+		/// <param name="target">Things to use as the target of the relationship.</param>
+		public ControllerReferencesThing(Controller source, Things target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ControllerReferencesThing.ControllerDomainRoleId, source), new DslModeling::RoleAssignment(ControllerReferencesThing.ThingsDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ControllerReferencesThing(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ControllerReferencesThing(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ControllerReferencesThing(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ControllerReferencesThing(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Controller domain role code
+		
+		/// <summary>
+		/// Controller domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ControllerDomainRoleId = new global::System.Guid(0x87b71d76, 0xdf8f, 0x400c, 0xba, 0x6f, 0x66, 0xd0, 0x16, 0xa2, 0xc6, 0x74);
+		
+		/// <summary>
+		/// DomainRole Controller
+		/// Description for Company.CyberPhisical_final.ControllerReferencesThing.Controller
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.ControllerReferencesThing/Controller.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.ControllerReferencesThing/Controller.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Thing", PropertyDisplayNameKey="Company.CyberPhisical_final.ControllerReferencesThing/Controller.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("87b71d76-df8f-400c-ba6f-66d016a2c674")]
+		public virtual Controller Controller
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Controller)DslModeling::DomainRoleInfo.GetRolePlayer(this, ControllerDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ControllerDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Controllers of a Things
+		/// <summary>
+		/// Gets a list of Controllers.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Controller> GetControllers(Things element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Controller>, Controller>(element, ThingsDomainRoleId);
+		}
+		#endregion
+		#region Things domain role code
+		
+		/// <summary>
+		/// Things domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ThingsDomainRoleId = new global::System.Guid(0xc06c3d73, 0x34c2, 0x49ab, 0x9f, 0xc5, 0x60, 0x6a, 0xd2, 0x5c, 0xd7, 0x78);
+		
+		/// <summary>
+		/// DomainRole Things
+		/// Description for Company.CyberPhisical_final.ControllerReferencesThing.Things
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.ControllerReferencesThing/Things.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.ControllerReferencesThing/Things.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Controllers", PropertyDisplayNameKey="Company.CyberPhisical_final.ControllerReferencesThing/Things.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("c06c3d73-34c2-49ab-9fc5-606ad25cd778")]
+		public virtual Things Things
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Things)DslModeling::DomainRoleInfo.GetRolePlayer(this, ThingsDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ThingsDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Thing of a Controller
+		/// <summary>
+		/// Gets a list of Thing.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Things> GetThing(Controller element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Things>, Things>(element, ControllerDomainRoleId);
+		}
+		#endregion
+		#region Controller link accessor
+		/// <summary>
+		/// Get the list of ControllerReferencesThing links to a Controller.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.CyberPhisical_final.ControllerReferencesThing> GetLinksToThing ( global::Company.CyberPhisical_final.Controller controllerInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.ControllerReferencesThing>(controllerInstance, global::Company.CyberPhisical_final.ControllerReferencesThing.ControllerDomainRoleId);
+		}
+		#endregion
+		#region Things link accessor
+		/// <summary>
+		/// Get the list of ControllerReferencesThing links to a Things.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.CyberPhisical_final.ControllerReferencesThing> GetLinksToControllers ( global::Company.CyberPhisical_final.Things thingsInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.ControllerReferencesThing>(thingsInstance, global::Company.CyberPhisical_final.ControllerReferencesThing.ThingsDomainRoleId);
+		}
+		#endregion
+		#region ControllerReferencesThing instance accessors
+		
+		/// <summary>
+		/// Get any ControllerReferencesThing links between a given Controller and a Things.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.CyberPhisical_final.ControllerReferencesThing> GetLinks( global::Company.CyberPhisical_final.Controller source, global::Company.CyberPhisical_final.Things target )
+		{
+			global::System.Collections.Generic.List<global::Company.CyberPhisical_final.ControllerReferencesThing> outLinks = new global::System.Collections.Generic.List<global::Company.CyberPhisical_final.ControllerReferencesThing>();
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.ControllerReferencesThing> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.ControllerReferencesThing>(source, global::Company.CyberPhisical_final.ControllerReferencesThing.ControllerDomainRoleId);
+			foreach ( global::Company.CyberPhisical_final.ControllerReferencesThing link in links )
+			{
+				if ( target.Equals(link.Things) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one ControllerReferencesThing link between a given Controllerand a Things.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.CyberPhisical_final.ControllerReferencesThing GetLink( global::Company.CyberPhisical_final.Controller source, global::Company.CyberPhisical_final.Things target )
+		{
+			global::System.Collections.Generic.IList<global::Company.CyberPhisical_final.ControllerReferencesThing> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.CyberPhisical_final.ControllerReferencesThing>(source, global::Company.CyberPhisical_final.ControllerReferencesThing.ControllerDomainRoleId);
+			foreach ( global::Company.CyberPhisical_final.ControllerReferencesThing link in links )
+			{
+				if ( target.Equals(link.Things) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}

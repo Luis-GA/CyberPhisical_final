@@ -1,15 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<cyberPhisical_finalDiagram dslVersion="1.0.0.0" Id="8822175a-8887-4511-8f74-0c58b5dbb44c" absoluteBounds="0, 0, 11, 8.5" name="Test">
+<cyberPhisical_finalDiagram dslVersion="1.0.0.0" Id="8822175a-8887-4511-8f74-0c58b5dbb44c" absoluteBounds="0, 0, 34.5, 34.5" name="Test">
   <ioTMoniker Id="f386182d-ff8d-4ffa-a34d-702c51fbf63f" />
   <nestedChildShapes>
     <exampleShape Id="d7b8b562-bbcc-4f30-af2b-b3d5d327e4b4" absoluteBounds="3.875, 2.25, 2, 0.75">
       <deviceMoniker name="/f386182d-ff8d-4ffa-a34d-702c51fbf63f/Device1" />
     </exampleShape>
-    <temperatureImage Id="45d47832-a2ec-4bbe-b2e1-608b91556d89" absoluteBounds="4.25, 2.5, 3.2221035957336426, 3.2221035957336426">
+    <temperatureImage Id="45d47832-a2ec-4bbe-b2e1-608b91556d89" absoluteBounds="4.25, 3.625, 3.2221035957336426, 3.2221035957336426">
       <temperatureMoniker Id="68cdc1fb-ca6a-4ee6-9d26-ccd5ca1375b8" />
     </temperatureImage>
-    <humidityImage Id="5765e66c-f95e-4220-bf27-4131952c3c57" absoluteBounds="4.125, 2.75, 3.0833332538604736, 1.78125">
+    <humidityImage Id="5765e66c-f95e-4220-bf27-4131952c3c57" absoluteBounds="6.25, 3.375, 3.0833332538604736, 1.78125">
       <humidityMoniker Id="82673f65-5a37-42c2-bba5-88e63c2d6a37" />
     </humidityImage>
+    <alarmsGS Id="e9d6208a-362f-4c01-b421-e9e2ec426e4e" absoluteBounds="1, 2.75, 1.5, 1">
+      <alarmsMoniker Id="76b130a9-996b-46e9-a13b-b93dc5b2fcdc" />
+    </alarmsGS>
+    <controllerIS Id="a7bc5f4a-7867-4f86-99e9-381f79196b86" absoluteBounds="17.625, 17.625, 16.666666030883789, 16.666666030883789">
+      <controllerMoniker Id="32c9418b-957a-4cb2-82d1-d84e16e0f0b4" />
+    </controllerIS>
+    <controllerIS Id="5f25a104-6301-4993-be75-38363d5a7975" absoluteBounds="0.5, 17.625, 16.666666030883789, 16.666666030883789">
+      <controllerMoniker Id="d1b36bbe-a9e1-42ce-951d-ace7ca04a1ac" />
+    </controllerIS>
+    <controllerIS Id="fa65caf4-ae31-4337-8846-614e67578479" absoluteBounds="17.625, 0.5, 16.666666030883789, 16.666666030883789">
+      <controllerMoniker Id="db723b8d-dd2b-438c-82ac-5a83c1e12eb5" />
+    </controllerIS>
+    <sirenImage Id="43a883d4-459b-4edf-853a-551b4507ab06" absoluteBounds="4.625, 2.625, 0.5, 0.5">
+      <sirenMoniker Id="14ad8d2d-741e-4f70-8f8e-dae4594bb7c1" />
+    </sirenImage>
+    <controllerIS Id="76c4e059-8806-40a0-9734-6c6b44483bd3" absoluteBounds="8.625, 1.375, 0.4, 0.2">
+      <controllerMoniker Id="27a62134-f61b-494b-a1fc-771f51bca07a" />
+    </controllerIS>
+    <exampleConnector Id="dd016d29-3cd7-45c7-9348-760891f9ebfe" edgePoints="[(8.825 : 1.575); (8.825 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <controllerReferencesThingMoniker Id="ecd4705d-a788-4c35-aef8-f4be8615ccc8" />
+      <nodes>
+        <controllerISMoniker Id="76c4e059-8806-40a0-9734-6c6b44483bd3" />
+        <humidityImageMoniker Id="5765e66c-f95e-4220-bf27-4131952c3c57" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="9038624d-84ec-49ea-a3a5-652d1d209a49" edgePoints="[(8.625 : 1.475); (1.75 : 1.475); (1.75 : 2.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <controllerReferencesThingMoniker Id="ffbcea79-1945-4109-bbfb-2a4b60c894d0" />
+      <nodes>
+        <controllerISMoniker Id="76c4e059-8806-40a0-9734-6c6b44483bd3" />
+        <alarmsGSMoniker Id="e9d6208a-362f-4c01-b421-e9e2ec426e4e" />
+      </nodes>
+    </exampleConnector>
+    <airConditioningImage Id="2f8a8f47-a891-4fc4-8440-aeb16a88c8c8" absoluteBounds="6.625, 2.5, 0.5, 0.5">
+      <airConditioningMoniker Id="aef0845b-c5c4-4964-a366-eca35ac2ce72" />
+    </airConditioningImage>
+    <exampleConnector Id="36517c54-54ad-4937-a423-33d7ebeeee7d" edgePoints="[(8.625 : 1.5062525); (6.875 : 1.5062525); (6.875 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <controllerReferencesThingMoniker Id="0f846484-de64-4a6b-936b-45c0389c90cf" />
+      <nodes>
+        <controllerISMoniker Id="76c4e059-8806-40a0-9734-6c6b44483bd3" />
+        <airConditioningImageMoniker Id="2f8a8f47-a891-4fc4-8440-aeb16a88c8c8" />
+      </nodes>
+    </exampleConnector>
   </nestedChildShapes>
 </cyberPhisical_finalDiagram>

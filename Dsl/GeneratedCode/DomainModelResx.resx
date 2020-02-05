@@ -157,13 +157,13 @@
     <value>Sensor</value>
     <comment>DisplayName for DomainClass &apos;Sensor&apos;</comment>
   </data>
-  <data name="Company.CyberPhisical_final.Sensor/Measure.Description" xml:space="preserve">
-    <value>Description for Company.CyberPhisical_final.Sensor.Measure</value>
-    <comment>Description for DomainProperty &apos;Measure&apos; on DomainClass &apos;Sensor&apos;</comment>
+  <data name="Company.CyberPhisical_final.Sensor/type_measure.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Sensor.Type_measure</value>
+    <comment>Description for DomainProperty &apos;type_measure&apos; on DomainClass &apos;Sensor&apos;</comment>
   </data>
-  <data name="Company.CyberPhisical_final.Sensor/Measure.DisplayName" xml:space="preserve">
-    <value>Measure</value>
-    <comment>DisplayName for DomainProperty &apos;Measure&apos; on DomainClass &apos;Sensor&apos;</comment>
+  <data name="Company.CyberPhisical_final.Sensor/type_measure.DisplayName" xml:space="preserve">
+    <value>Type_measure</value>
+    <comment>DisplayName for DomainProperty &apos;type_measure&apos; on DomainClass &apos;Sensor&apos;</comment>
   </data>
   <data name="Company.CyberPhisical_final.Temperature.Description" xml:space="preserve">
     <value>Description for Company.CyberPhisical_final.Temperature</value>
@@ -205,21 +205,69 @@
     <value>Air Conditioning</value>
     <comment>DisplayName for DomainClass &apos;AirConditioning&apos;</comment>
   </data>
-  <data name="Company.CyberPhisical_final.WaterPump.Description" xml:space="preserve">
-    <value>Description for Company.CyberPhisical_final.WaterPump</value>
-    <comment>Description for DomainClass &apos;WaterPump&apos;</comment>
+  <data name="Company.CyberPhisical_final.Siren.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Siren</value>
+    <comment>Description for DomainClass &apos;Siren&apos;</comment>
   </data>
-  <data name="Company.CyberPhisical_final.WaterPump.DisplayName" xml:space="preserve">
-    <value>Water Pump</value>
-    <comment>DisplayName for DomainClass &apos;WaterPump&apos;</comment>
+  <data name="Company.CyberPhisical_final.Siren.DisplayName" xml:space="preserve">
+    <value>Siren</value>
+    <comment>DisplayName for DomainClass &apos;Siren&apos;</comment>
   </data>
-  <data name="Company.CyberPhisical_final.DomainClass1.Description" xml:space="preserve">
-    <value>Description for Company.CyberPhisical_final.DomainClass1</value>
-    <comment>Description for DomainClass &apos;DomainClass1&apos;</comment>
+  <data name="Company.CyberPhisical_final.Actuators.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Actuators</value>
+    <comment>Description for DomainClass &apos;Actuators&apos;</comment>
   </data>
-  <data name="Company.CyberPhisical_final.DomainClass1.DisplayName" xml:space="preserve">
-    <value>Domain Class1</value>
-    <comment>DisplayName for DomainClass &apos;DomainClass1&apos;</comment>
+  <data name="Company.CyberPhisical_final.Actuators.DisplayName" xml:space="preserve">
+    <value>Actuators</value>
+    <comment>DisplayName for DomainClass &apos;Actuators&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Controller.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Controller</value>
+    <comment>Description for DomainClass &apos;Controller&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Controller.DisplayName" xml:space="preserve">
+    <value>Controller</value>
+    <comment>DisplayName for DomainClass &apos;Controller&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Alarms.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Alarms</value>
+    <comment>Description for DomainClass &apos;Alarms&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Alarms.DisplayName" xml:space="preserve">
+    <value>Alarms</value>
+    <comment>DisplayName for DomainClass &apos;Alarms&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Alarms/name.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Alarms.Name</value>
+    <comment>Description for DomainProperty &apos;name&apos; on DomainClass &apos;Alarms&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Alarms/name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;name&apos; on DomainClass &apos;Alarms&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Alarms/condition.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Alarms.Condition</value>
+    <comment>Description for DomainProperty &apos;condition&apos; on DomainClass &apos;Alarms&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Alarms/condition.DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>DisplayName for DomainProperty &apos;condition&apos; on DomainClass &apos;Alarms&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Alarms/advertence.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Alarms.Advertence</value>
+    <comment>Description for DomainProperty &apos;advertence&apos; on DomainClass &apos;Alarms&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Alarms/advertence.DisplayName" xml:space="preserve">
+    <value>Advertence</value>
+    <comment>DisplayName for DomainProperty &apos;advertence&apos; on DomainClass &apos;Alarms&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Things.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Things</value>
+    <comment>Description for DomainClass &apos;Things&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Things.DisplayName" xml:space="preserve">
+    <value>Things</value>
+    <comment>DisplayName for DomainClass &apos;Things&apos;</comment>
   </data>
   <data name="Company.CyberPhisical_final.IoTHasElements.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
@@ -285,6 +333,134 @@
     <value>Device</value>
     <comment>PropertyDisplayName for DomainRole &apos;Sensor&apos; on DomainRelationship &apos;DeviceHasSensors&apos;</comment>
   </data>
+  <data name="Company.CyberPhisical_final.DeviceHasActuator.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.DeviceHasActuator</value>
+    <comment>Description for DomainClass &apos;DeviceHasActuator&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.DeviceHasActuator.DisplayName" xml:space="preserve">
+    <value>Device Has Actuator</value>
+    <comment>DisplayName for DomainClass &apos;DeviceHasActuator&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.DeviceHasActuator/Device.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.DeviceHasActuator.Device</value>
+    <comment>Description for DomainRole &apos;Device&apos; on DomainRelationship &apos;DeviceHasActuator&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.DeviceHasActuator/Device.DisplayName" xml:space="preserve">
+    <value>Device</value>
+    <comment>DisplayName for DomainRole &apos;Device&apos; on DomainRelationship &apos;DeviceHasActuator&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.DeviceHasActuator/Device.PropertyDisplayName" xml:space="preserve">
+    <value>Actuator</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Device&apos; on DomainRelationship &apos;DeviceHasActuator&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.DeviceHasActuator/Actuators.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.DeviceHasActuator.Actuators</value>
+    <comment>Description for DomainRole &apos;Actuators&apos; on DomainRelationship &apos;DeviceHasActuator&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.DeviceHasActuator/Actuators.DisplayName" xml:space="preserve">
+    <value>Actuators</value>
+    <comment>DisplayName for DomainRole &apos;Actuators&apos; on DomainRelationship &apos;DeviceHasActuator&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.DeviceHasActuator/Actuators.PropertyDisplayName" xml:space="preserve">
+    <value>Device</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Actuators&apos; on DomainRelationship &apos;DeviceHasActuator&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasControllers.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.IoTHasControllers</value>
+    <comment>Description for DomainClass &apos;IoTHasControllers&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasControllers.DisplayName" xml:space="preserve">
+    <value>Io THas Controllers</value>
+    <comment>DisplayName for DomainClass &apos;IoTHasControllers&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasControllers/IoT.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.IoTHasControllers.IoT</value>
+    <comment>Description for DomainRole &apos;IoT&apos; on DomainRelationship &apos;IoTHasControllers&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasControllers/IoT.DisplayName" xml:space="preserve">
+    <value>Io T</value>
+    <comment>DisplayName for DomainRole &apos;IoT&apos; on DomainRelationship &apos;IoTHasControllers&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasControllers/IoT.PropertyDisplayName" xml:space="preserve">
+    <value>Controllers</value>
+    <comment>PropertyDisplayName for DomainRole &apos;IoT&apos; on DomainRelationship &apos;IoTHasControllers&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasControllers/Controller.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.IoTHasControllers.Controller</value>
+    <comment>Description for DomainRole &apos;Controller&apos; on DomainRelationship &apos;IoTHasControllers&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasControllers/Controller.DisplayName" xml:space="preserve">
+    <value>Controller</value>
+    <comment>DisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;IoTHasControllers&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasControllers/Controller.PropertyDisplayName" xml:space="preserve">
+    <value>Io T</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;IoTHasControllers&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasAlarm.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.IoTHasAlarm</value>
+    <comment>Description for DomainClass &apos;IoTHasAlarm&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasAlarm.DisplayName" xml:space="preserve">
+    <value>Io THas Alarm</value>
+    <comment>DisplayName for DomainClass &apos;IoTHasAlarm&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasAlarm/IoT.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.IoTHasAlarm.IoT</value>
+    <comment>Description for DomainRole &apos;IoT&apos; on DomainRelationship &apos;IoTHasAlarm&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasAlarm/IoT.DisplayName" xml:space="preserve">
+    <value>Io T</value>
+    <comment>DisplayName for DomainRole &apos;IoT&apos; on DomainRelationship &apos;IoTHasAlarm&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasAlarm/IoT.PropertyDisplayName" xml:space="preserve">
+    <value>Alarm</value>
+    <comment>PropertyDisplayName for DomainRole &apos;IoT&apos; on DomainRelationship &apos;IoTHasAlarm&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasAlarm/Alarms.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.IoTHasAlarm.Alarms</value>
+    <comment>Description for DomainRole &apos;Alarms&apos; on DomainRelationship &apos;IoTHasAlarm&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasAlarm/Alarms.DisplayName" xml:space="preserve">
+    <value>Alarms</value>
+    <comment>DisplayName for DomainRole &apos;Alarms&apos; on DomainRelationship &apos;IoTHasAlarm&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoTHasAlarm/Alarms.PropertyDisplayName" xml:space="preserve">
+    <value>Io T</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Alarms&apos; on DomainRelationship &apos;IoTHasAlarm&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ControllerReferencesThing.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.ControllerReferencesThing</value>
+    <comment>Description for DomainClass &apos;ControllerReferencesThing&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ControllerReferencesThing.DisplayName" xml:space="preserve">
+    <value>Controller References Thing</value>
+    <comment>DisplayName for DomainClass &apos;ControllerReferencesThing&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ControllerReferencesThing/Controller.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.ControllerReferencesThing.Controller</value>
+    <comment>Description for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerReferencesThing&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ControllerReferencesThing/Controller.DisplayName" xml:space="preserve">
+    <value>Controller</value>
+    <comment>DisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerReferencesThing&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ControllerReferencesThing/Controller.PropertyDisplayName" xml:space="preserve">
+    <value>Thing</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Controller&apos; on DomainRelationship &apos;ControllerReferencesThing&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ControllerReferencesThing/Things.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.ControllerReferencesThing.Things</value>
+    <comment>Description for DomainRole &apos;Things&apos; on DomainRelationship &apos;ControllerReferencesThing&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ControllerReferencesThing/Things.DisplayName" xml:space="preserve">
+    <value>Things</value>
+    <comment>DisplayName for DomainRole &apos;Things&apos; on DomainRelationship &apos;ControllerReferencesThing&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ControllerReferencesThing/Things.PropertyDisplayName" xml:space="preserve">
+    <value>Controllers</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Things&apos; on DomainRelationship &apos;ControllerReferencesThing&apos;</comment>
+  </data>
   <data name="Company.CyberPhisical_final.ExampleShape.Description" xml:space="preserve">
     <value>Shape used to represent ExampleElements on a Diagram.</value>
     <comment>Description for DomainClass &apos;ExampleShape&apos;</comment>
@@ -332,6 +508,66 @@
   <data name="Company.CyberPhisical_final.HumidityImage.DisplayName" xml:space="preserve">
     <value>Humidity Image</value>
     <comment>DisplayName for DomainClass &apos;HumidityImage&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.SirenImage.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.SirenImage</value>
+    <comment>Description for DomainClass &apos;SirenImage&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.SirenImage.DisplayName" xml:space="preserve">
+    <value>Siren Image</value>
+    <comment>DisplayName for DomainClass &apos;SirenImage&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.AirConditioningImage.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.AirConditioningImage</value>
+    <comment>Description for DomainClass &apos;AirConditioningImage&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.AirConditioningImage.DisplayName" xml:space="preserve">
+    <value>Air Conditioning Image</value>
+    <comment>DisplayName for DomainClass &apos;AirConditioningImage&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.AlarmsGS.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.AlarmsGS</value>
+    <comment>Description for DomainClass &apos;AlarmsGS&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.AlarmsGS.DisplayName" xml:space="preserve">
+    <value>Alarms GS</value>
+    <comment>DisplayName for DomainClass &apos;AlarmsGS&apos;</comment>
+  </data>
+  <data name="AlarmsGSnameDefaultText" xml:space="preserve">
+    <value>name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="AlarmsGSconditionDefaultText" xml:space="preserve">
+    <value>condition</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="AlarmsGSadvertenceDefaultText" xml:space="preserve">
+    <value>advertence</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ControllerIS.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.ControllerIS</value>
+    <comment>Description for DomainClass &apos;ControllerIS&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ControllerIS.DisplayName" xml:space="preserve">
+    <value>Controller IS</value>
+    <comment>DisplayName for DomainClass &apos;ControllerIS&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Co2IS.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Co2IS</value>
+    <comment>Description for DomainClass &apos;Co2IS&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Co2IS.DisplayName" xml:space="preserve">
+    <value>Co2 IS</value>
+    <comment>DisplayName for DomainClass &apos;Co2IS&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ImageShape1.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.ImageShape1</value>
+    <comment>Description for DomainClass &apos;ImageShape1&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.ImageShape1.DisplayName" xml:space="preserve">
+    <value>Image Shape1</value>
+    <comment>DisplayName for DomainClass &apos;ImageShape1&apos;</comment>
   </data>
   <data name="Company.CyberPhisical_final.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
@@ -383,6 +619,46 @@
   </data>
   <data name="iconHumidityToolboxTooltip" xml:space="preserve">
     <value>Icon Humidity</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="SirenToolboxItem" xml:space="preserve">
+    <value>Siren</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="SirenToolboxTooltip" xml:space="preserve">
+    <value>Siren</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="AirConditioningToolboxItem" xml:space="preserve">
+    <value>AirConditioning</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="AirConditioningToolboxTooltip" xml:space="preserve">
+    <value>Air Conditioning</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="controllerToolboxItem" xml:space="preserve">
+    <value>controller</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="controllerToolboxTooltip" xml:space="preserve">
+    <value>Controller</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="alarmToolboxItem" xml:space="preserve">
+    <value>alarm</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="alarmToolboxTooltip" xml:space="preserve">
+    <value>Alarm</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ConnectionTool1ToolboxItem" xml:space="preserve">
+    <value>connect</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ConnectionTool1ToolboxTooltip" xml:space="preserve">
+    <value>Connection Tool1</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -518,6 +794,26 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\Images\Sensors\humidity.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>HumidityImage shape image</comment>
   </data>
+  <data name="SirenImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Images\actuator\siren.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>SirenImage shape image</comment>
+  </data>
+  <data name="AirConditioningImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Images\actuator\aire.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>AirConditioningImage shape image</comment>
+  </data>
+  <data name="ControllerISImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Images\kisspng_network_cards_adapters_computer.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>ControllerIS shape image</comment>
+  </data>
+  <data name="Co2ISImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Images\Sensors\co2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Co2IS shape image</comment>
+  </data>
+  <data name="ImageShape1Image" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Images\Sensors\smoke.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>ImageShape1 shape image</comment>
+  </data>
   <data name="DeviceToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
@@ -528,6 +824,26 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="iconHumidityToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\co2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="SirenToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="AirConditioningToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="controllerToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="alarmToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ConnectionTool1ToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

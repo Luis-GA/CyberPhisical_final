@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.10318</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{b875979e-61dc-4fbf-a029-ede61324c92e}</ProjectGuid>
+    <ProjectGuid>{B875979E-61DC-4FBF-A029-EDE61324C92E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Debugging</RootNamespace>
@@ -74,6 +74,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CyberPhisical_finalReportVB.tt</DependentUpon>
+    </Content>
+    <Content Include="generator.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>generator.tt</DependentUpon>
+    </Content>
+    <Content Include="generator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>generator.sql</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

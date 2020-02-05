@@ -12,6 +12,22 @@
             <DomainPath>IoTHasElements.Elements</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Controller" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>IoTHasControllers.Controllers</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Alarms" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>IoTHasAlarm.Alarm</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
     <DomainClass Id="01e75ad3-4060-44d7-8bc3-dbc5fe5fc65f" Description="Elements embedded in the model. Appear as boxes on the diagram." Name="Device" DisplayName="Device" Namespace="Company.CyberPhisical_final">
@@ -31,13 +47,24 @@
             <DomainPath>DeviceHasSensors.Sensors</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Actuators" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>DeviceHasActuator.Actuator</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
     <DomainClass Id="ee1b923b-99cf-44b2-9c74-1c489b1e42c4" Description="Description for Company.CyberPhisical_final.Sensor" Name="Sensor" DisplayName="Sensor" InheritanceModifier="Abstract" Namespace="Company.CyberPhisical_final">
+      <BaseClass>
+        <DomainClassMoniker Name="Things" />
+      </BaseClass>
       <Properties>
-        <DomainProperty Id="1d201e7b-3d92-498e-a325-4b1612867089" Description="Description for Company.CyberPhisical_final.Sensor.Measure" Name="Measure" DisplayName="Measure">
+        <DomainProperty Id="1d201e7b-3d92-498e-a325-4b1612867089" Description="Description for Company.CyberPhisical_final.Sensor.Type_measure" Name="type_measure" DisplayName="Type_measure">
           <Type>
-            <ExternalTypeMoniker Name="/System/Double" />
+            <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
       </Properties>
@@ -62,9 +89,45 @@
         <DomainClassMoniker Name="Sensor" />
       </BaseClass>
     </DomainClass>
-    <DomainClass Id="e7387979-1b82-4db6-9f43-7488484b652a" Description="Description for Company.CyberPhisical_final.AirConditioning" Name="AirConditioning" DisplayName="Air Conditioning" Namespace="Company.CyberPhisical_final" />
-    <DomainClass Id="d29e4c68-900f-4a34-9421-38cb1bb83432" Description="Description for Company.CyberPhisical_final.WaterPump" Name="WaterPump" DisplayName="Water Pump" Namespace="Company.CyberPhisical_final" />
-    <DomainClass Id="1250097d-8a44-4cde-be0d-6e8e468ac023" Description="Description for Company.CyberPhisical_final.DomainClass1" Name="DomainClass1" DisplayName="Domain Class1" Namespace="Company.CyberPhisical_final" />
+    <DomainClass Id="e7387979-1b82-4db6-9f43-7488484b652a" Description="Description for Company.CyberPhisical_final.AirConditioning" Name="AirConditioning" DisplayName="Air Conditioning" Namespace="Company.CyberPhisical_final">
+      <BaseClass>
+        <DomainClassMoniker Name="Actuators" />
+      </BaseClass>
+    </DomainClass>
+    <DomainClass Id="d29e4c68-900f-4a34-9421-38cb1bb83432" Description="Description for Company.CyberPhisical_final.Siren" Name="Siren" DisplayName="Siren" Namespace="Company.CyberPhisical_final">
+      <BaseClass>
+        <DomainClassMoniker Name="Actuators" />
+      </BaseClass>
+    </DomainClass>
+    <DomainClass Id="1250097d-8a44-4cde-be0d-6e8e468ac023" Description="Description for Company.CyberPhisical_final.Actuators" Name="Actuators" DisplayName="Actuators" InheritanceModifier="Abstract" Namespace="Company.CyberPhisical_final">
+      <BaseClass>
+        <DomainClassMoniker Name="Things" />
+      </BaseClass>
+    </DomainClass>
+    <DomainClass Id="b26fec0f-d73c-4bc8-84fa-acf11637d229" Description="Description for Company.CyberPhisical_final.Controller" Name="Controller" DisplayName="Controller" Namespace="Company.CyberPhisical_final" />
+    <DomainClass Id="3f35d373-8d61-4246-aa24-3b1383304ef7" Description="Description for Company.CyberPhisical_final.Alarms" Name="Alarms" DisplayName="Alarms" Namespace="Company.CyberPhisical_final">
+      <BaseClass>
+        <DomainClassMoniker Name="Things" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="3e751e1e-8e43-4be2-8007-c9f9e55a0d7f" Description="Description for Company.CyberPhisical_final.Alarms.Name" Name="name" DisplayName="Name">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="938b0120-2f33-473a-a54e-ed274dc86768" Description="Description for Company.CyberPhisical_final.Alarms.Condition" Name="condition" DisplayName="Condition">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="fbe86373-5c0d-4440-9161-1922f9ccc2af" Description="Description for Company.CyberPhisical_final.Alarms.Advertence" Name="advertence" DisplayName="Advertence">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="302e1d16-0280-4047-918d-0cf5b1ea7df7" Description="Description for Company.CyberPhisical_final.Things" Name="Things" DisplayName="Things" InheritanceModifier="Abstract" Namespace="Company.CyberPhisical_final" />
   </Classes>
   <Relationships>
     <DomainRelationship Id="3a3d0156-0947-40ab-8e32-a2ad861fb292" Description="Embedding relationship between the Model and Elements" Name="IoTHasElements" DisplayName="Io THas Elements" Namespace="Company.CyberPhisical_final" IsEmbedding="true">
@@ -95,6 +158,70 @@
         <DomainRole Id="4335be7a-a045-476b-8d76-041af60cbd55" Description="Description for Company.CyberPhisical_final.DeviceHasSensors.Sensor" Name="Sensor" DisplayName="Sensor" PropertyName="Device" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Device">
           <RolePlayer>
             <DomainClassMoniker Name="Sensor" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="05c552e7-7d97-430c-a99d-8f58eed9580d" Description="Description for Company.CyberPhisical_final.DeviceHasActuator" Name="DeviceHasActuator" DisplayName="Device Has Actuator" Namespace="Company.CyberPhisical_final" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="9f14e0bd-bcd2-4767-92d5-a4beec367987" Description="Description for Company.CyberPhisical_final.DeviceHasActuator.Device" Name="Device" DisplayName="Device" PropertyName="Actuator" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Actuator">
+          <RolePlayer>
+            <DomainClassMoniker Name="Device" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="b571352a-7a3c-442c-aa22-d5d4a7cbde6c" Description="Description for Company.CyberPhisical_final.DeviceHasActuator.Actuators" Name="Actuators" DisplayName="Actuators" PropertyName="Device" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Device">
+          <RolePlayer>
+            <DomainClassMoniker Name="Actuators" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="a7c1fe8b-7f0d-4395-8a3e-4ab60f31f015" Description="Description for Company.CyberPhisical_final.IoTHasControllers" Name="IoTHasControllers" DisplayName="Io THas Controllers" Namespace="Company.CyberPhisical_final" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="0a68d31d-0d00-4c76-b1c8-94c5c070ff17" Description="Description for Company.CyberPhisical_final.IoTHasControllers.IoT" Name="IoT" DisplayName="Io T" PropertyName="Controllers" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Controllers">
+          <RolePlayer>
+            <DomainClassMoniker Name="IoT" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="17064fc8-76a1-44c1-8873-9c8da971864d" Description="Description for Company.CyberPhisical_final.IoTHasControllers.Controller" Name="Controller" DisplayName="Controller" PropertyName="IoT" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Io T">
+          <RolePlayer>
+            <DomainClassMoniker Name="Controller" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="22524e6d-6162-4f69-9fc3-e458bb06d897" Description="Description for Company.CyberPhisical_final.IoTHasAlarm" Name="IoTHasAlarm" DisplayName="Io THas Alarm" Namespace="Company.CyberPhisical_final" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="7fedd3c9-f516-45f9-bbe4-012d2b9586f5" Description="Description for Company.CyberPhisical_final.IoTHasAlarm.IoT" Name="IoT" DisplayName="Io T" PropertyName="Alarm" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Alarm">
+          <RolePlayer>
+            <DomainClassMoniker Name="IoT" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="147884ea-a930-4c19-9b33-4ab3ddf75fb6" Description="Description for Company.CyberPhisical_final.IoTHasAlarm.Alarms" Name="Alarms" DisplayName="Alarms" PropertyName="IoT" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Io T">
+          <RolePlayer>
+            <DomainClassMoniker Name="Alarms" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="c8f9706e-d0e7-47e9-bea9-00d5d244cca9" Description="Description for Company.CyberPhisical_final.ControllerReferencesThing" Name="ControllerReferencesThing" DisplayName="Controller References Thing" Namespace="Company.CyberPhisical_final">
+      <Source>
+        <DomainRole Id="87b71d76-df8f-400c-ba6f-66d016a2c674" Description="Description for Company.CyberPhisical_final.ControllerReferencesThing.Controller" Name="Controller" DisplayName="Controller" PropertyName="Thing" PropertyDisplayName="Thing">
+          <RolePlayer>
+            <DomainClassMoniker Name="Controller" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="c06c3d73-34c2-49ab-9fc5-606ad25cd778" Description="Description for Company.CyberPhisical_final.ControllerReferencesThing.Things" Name="Things" DisplayName="Things" PropertyName="Controllers" PropertyDisplayName="Controllers">
+          <RolePlayer>
+            <DomainClassMoniker Name="Things" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -135,7 +262,23 @@
       </ShapeHasDecorators>
     </GeometryShape>
     <ImageShape Id="d14bf511-2142-4908-9b04-b73dc518aea9" Description="Description for Company.CyberPhisical_final.TemperatureImage" Name="TemperatureImage" DisplayName="Temperature Image" Namespace="Company.CyberPhisical_final" FixedTooltipText="Temperature Image" InitialHeight="1" Image="Resources\Images\Sensors\termometro.png" />
-    <ImageShape Id="ab93a8f0-0f97-453f-9809-dc5d556ca58a" Description="Description for Company.CyberPhisical_final.HumidityImage" Name="HumidityImage" DisplayName="Humidity Image" Namespace="Company.CyberPhisical_final" FixedTooltipText="Humidity Image" InitialHeight="1" Image="Resources\Images\Sensors\humidity.png" />
+    <ImageShape Id="ab93a8f0-0f97-453f-9809-dc5d556ca58a" Description="Description for Company.CyberPhisical_final.HumidityImage" Name="HumidityImage" DisplayName="Humidity Image" Namespace="Company.CyberPhisical_final" FixedTooltipText="Humidity Image" InitialWidth="1" InitialHeight="1" Image="Resources\Images\Sensors\humidity.png" />
+    <ImageShape Id="d1a6ae15-fda6-4b08-aa3c-04727d85570e" Description="Description for Company.CyberPhisical_final.SirenImage" Name="SirenImage" DisplayName="Siren Image" Namespace="Company.CyberPhisical_final" FixedTooltipText="Siren Image" InitialWidth="0.5" InitialHeight="0.5" Image="Resources\Images\actuator\siren.png" />
+    <ImageShape Id="afe4a4b9-7baf-4e69-94e2-2a7a588a3b86" Description="Description for Company.CyberPhisical_final.AirConditioningImage" Name="AirConditioningImage" DisplayName="Air Conditioning Image" Namespace="Company.CyberPhisical_final" FixedTooltipText="Air Conditioning Image" InitialWidth="0.5" InitialHeight="0.5" Image="Resources\Images\actuator\aire.png" />
+    <GeometryShape Id="461c2def-db50-4e61-96c3-3d3e7e3586a2" Description="Description for Company.CyberPhisical_final.AlarmsGS" Name="AlarmsGS" DisplayName="Alarms GS" Namespace="Company.CyberPhisical_final" FixedTooltipText="Alarms GS" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="name" DisplayName="Name" DefaultText="name" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="condition" DisplayName="Condition" DefaultText="condition" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="advertence" DisplayName="Advertence" DefaultText="advertence" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <ImageShape Id="405598f7-1607-4124-853a-617fff159590" Description="Description for Company.CyberPhisical_final.ControllerIS" Name="ControllerIS" DisplayName="Controller IS" Namespace="Company.CyberPhisical_final" FixedTooltipText="Controller IS" InitialWidth="0.4" InitialHeight="0.2" Image="Resources\Images\kisspng_network_cards_adapters_computer.png" />
+    <ImageShape Id="0dc1d5ed-8b0d-4631-82c6-95d386567188" Description="Description for Company.CyberPhisical_final.Co2IS" Name="Co2IS" DisplayName="Co2 IS" Namespace="Company.CyberPhisical_final" FixedTooltipText="Co2 IS" InitialWidth="0.5" InitialHeight="0.5" Image="Resources\Images\Sensors\co2.png" />
+    <ImageShape Id="14a0de5f-2303-416e-81ae-f79186abd675" Description="Description for Company.CyberPhisical_final.ImageShape1" Name="ImageShape1" DisplayName="Image Shape1" Namespace="Company.CyberPhisical_final" FixedTooltipText="Image Shape1" InitialWidth="0.5" InitialHeight="0.5" Image="Resources\Images\Sensors\smoke.png" />
   </Shapes>
   <Connectors>
     <Connector Id="d956db30-97a6-4124-be00-1a4cc6791184" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="Company.CyberPhisical_final" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01" />
@@ -148,6 +291,12 @@
           <XmlRelationshipData RoleElementName="elements">
             <DomainRelationshipMoniker Name="IoTHasElements" />
           </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="controllers">
+            <DomainRelationshipMoniker Name="IoTHasControllers" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="alarm">
+            <DomainRelationshipMoniker Name="IoTHasAlarm" />
+          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="Device" MonikerAttributeName="name" SerializeId="true" MonikerElementName="deviceMoniker" ElementName="device" MonikerTypeName="DeviceMoniker">
@@ -158,6 +307,9 @@
           </XmlPropertyData>
           <XmlRelationshipData UseFullForm="true" RoleElementName="sensors">
             <DomainRelationshipMoniker Name="DeviceHasSensors" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="actuator">
+            <DomainRelationshipMoniker Name="DeviceHasActuator" />
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
@@ -176,8 +328,8 @@
       <XmlClassData TypeName="Sensor" MonikerAttributeName="" SerializeId="true" MonikerElementName="sensorMoniker" ElementName="sensor" MonikerTypeName="SensorMoniker">
         <DomainClassMoniker Name="Sensor" />
         <ElementData>
-          <XmlPropertyData XmlName="measure">
-            <DomainPropertyMoniker Name="Sensor/Measure" />
+          <XmlPropertyData XmlName="type_measure">
+            <DomainPropertyMoniker Name="Sensor/type_measure" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -208,18 +360,94 @@
       <XmlClassData TypeName="AirConditioning" MonikerAttributeName="" SerializeId="true" MonikerElementName="airConditioningMoniker" ElementName="airConditioning" MonikerTypeName="AirConditioningMoniker">
         <DomainClassMoniker Name="AirConditioning" />
       </XmlClassData>
-      <XmlClassData TypeName="WaterPump" MonikerAttributeName="" SerializeId="true" MonikerElementName="waterPumpMoniker" ElementName="waterPump" MonikerTypeName="WaterPumpMoniker">
-        <DomainClassMoniker Name="WaterPump" />
+      <XmlClassData TypeName="Siren" MonikerAttributeName="" SerializeId="true" MonikerElementName="sirenMoniker" ElementName="siren" MonikerTypeName="SirenMoniker">
+        <DomainClassMoniker Name="Siren" />
       </XmlClassData>
-      <XmlClassData TypeName="DomainClass1" MonikerAttributeName="" SerializeId="true" MonikerElementName="domainClass1Moniker" ElementName="domainClass1" MonikerTypeName="DomainClass1Moniker">
-        <DomainClassMoniker Name="DomainClass1" />
+      <XmlClassData TypeName="Actuators" MonikerAttributeName="" SerializeId="true" MonikerElementName="actuatorsMoniker" ElementName="actuators" MonikerTypeName="ActuatorsMoniker">
+        <DomainClassMoniker Name="Actuators" />
       </XmlClassData>
       <XmlClassData TypeName="HumidityImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="humidityImageMoniker" ElementName="humidityImage" MonikerTypeName="HumidityImageMoniker">
         <ImageShapeMoniker Name="HumidityImage" />
       </XmlClassData>
+      <XmlClassData TypeName="SirenImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="sirenImageMoniker" ElementName="sirenImage" MonikerTypeName="SirenImageMoniker">
+        <ImageShapeMoniker Name="SirenImage" />
+      </XmlClassData>
+      <XmlClassData TypeName="AirConditioningImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="airConditioningImageMoniker" ElementName="airConditioningImage" MonikerTypeName="AirConditioningImageMoniker">
+        <ImageShapeMoniker Name="AirConditioningImage" />
+      </XmlClassData>
+      <XmlClassData TypeName="DeviceHasActuator" MonikerAttributeName="" SerializeId="true" MonikerElementName="deviceHasActuatorMoniker" ElementName="deviceHasActuator" MonikerTypeName="DeviceHasActuatorMoniker">
+        <DomainRelationshipMoniker Name="DeviceHasActuator" />
+      </XmlClassData>
+      <XmlClassData TypeName="Controller" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerMoniker" ElementName="controller" MonikerTypeName="ControllerMoniker">
+        <DomainClassMoniker Name="Controller" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="thing">
+            <DomainRelationshipMoniker Name="ControllerReferencesThing" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="IoTHasControllers" MonikerAttributeName="" SerializeId="true" MonikerElementName="ioTHasControllersMoniker" ElementName="ioTHasControllers" MonikerTypeName="IoTHasControllersMoniker">
+        <DomainRelationshipMoniker Name="IoTHasControllers" />
+      </XmlClassData>
+      <XmlClassData TypeName="Alarms" MonikerAttributeName="" SerializeId="true" MonikerElementName="alarmsMoniker" ElementName="alarms" MonikerTypeName="AlarmsMoniker">
+        <DomainClassMoniker Name="Alarms" />
+        <ElementData>
+          <XmlPropertyData XmlName="name">
+            <DomainPropertyMoniker Name="Alarms/name" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="condition">
+            <DomainPropertyMoniker Name="Alarms/condition" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="advertence">
+            <DomainPropertyMoniker Name="Alarms/advertence" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="IoTHasAlarm" MonikerAttributeName="" SerializeId="true" MonikerElementName="ioTHasAlarmMoniker" ElementName="ioTHasAlarm" MonikerTypeName="IoTHasAlarmMoniker">
+        <DomainRelationshipMoniker Name="IoTHasAlarm" />
+      </XmlClassData>
+      <XmlClassData TypeName="AlarmsGS" MonikerAttributeName="" SerializeId="true" MonikerElementName="alarmsGSMoniker" ElementName="alarmsGS" MonikerTypeName="AlarmsGSMoniker">
+        <GeometryShapeMoniker Name="AlarmsGS" />
+      </XmlClassData>
+      <XmlClassData TypeName="ControllerIS" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerISMoniker" ElementName="controllerIS" MonikerTypeName="ControllerISMoniker">
+        <ImageShapeMoniker Name="ControllerIS" />
+      </XmlClassData>
+      <XmlClassData TypeName="Co2IS" MonikerAttributeName="" SerializeId="true" MonikerElementName="co2ISMoniker" ElementName="co2IS" MonikerTypeName="Co2ISMoniker">
+        <ImageShapeMoniker Name="Co2IS" />
+      </XmlClassData>
+      <XmlClassData TypeName="ImageShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="imageShape1Moniker" ElementName="imageShape1" MonikerTypeName="ImageShape1Moniker">
+        <ImageShapeMoniker Name="ImageShape1" />
+      </XmlClassData>
+      <XmlClassData TypeName="Things" MonikerAttributeName="" SerializeId="true" MonikerElementName="thingsMoniker" ElementName="things" MonikerTypeName="ThingsMoniker">
+        <DomainClassMoniker Name="Things" />
+      </XmlClassData>
+      <XmlClassData TypeName="ControllerReferencesThing" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerReferencesThingMoniker" ElementName="controllerReferencesThing" MonikerTypeName="ControllerReferencesThingMoniker">
+        <DomainRelationshipMoniker Name="ControllerReferencesThing" />
+      </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="CyberPhisical_finalExplorer" />
+  <ConnectionBuilders>
+    <ConnectionBuilder Name="ControllerReferencesThingBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="ControllerReferencesThing" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Controller" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Things" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
+  </ConnectionBuilders>
   <Diagram Id="be7b0bc4-2a33-41ae-8797-1564c66cdfc0" Description="Description for Company.CyberPhisical_final.CyberPhisical_finalDiagram" Name="CyberPhisical_finalDiagram" DisplayName="Minimal Language Diagram" Namespace="Company.CyberPhisical_final">
     <Class>
       <DomainClassMoniker Name="IoT" />
@@ -254,7 +482,79 @@
         </ParentElementPath>
         <ImageShapeMoniker Name="HumidityImage" />
       </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="Siren" />
+        <ParentElementPath>
+          <DomainPath>DeviceHasActuator.Device/!Device/IoTHasElements.IoT/!IoT</DomainPath>
+        </ParentElementPath>
+        <ImageShapeMoniker Name="SirenImage" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="AirConditioning" />
+        <ParentElementPath>
+          <DomainPath>DeviceHasActuator.Device/!Device/IoTHasElements.IoT/!IoT</DomainPath>
+        </ParentElementPath>
+        <ImageShapeMoniker Name="AirConditioningImage" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="Alarms" />
+        <ParentElementPath>
+          <DomainPath>IoTHasAlarm.IoT/!IoT</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="AlarmsGS/name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Alarms/name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="AlarmsGS/condition" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Alarms/condition" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="AlarmsGS/advertence" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Alarms/advertence" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="AlarmsGS" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="Controller" />
+        <ParentElementPath>
+          <DomainPath>IoTHasControllers.IoT/!IoT</DomainPath>
+        </ParentElementPath>
+        <ImageShapeMoniker Name="ControllerIS" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="CO2Level" />
+        <ParentElementPath>
+          <DomainPath>DeviceHasSensors.Device/!Device/IoTHasElements.IoT/!IoT</DomainPath>
+        </ParentElementPath>
+        <ImageShapeMoniker Name="Co2IS" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="SmokeSensor" />
+        <ParentElementPath>
+          <DomainPath>DeviceHasSensors.Device/!Device/IoTHasElements.IoT/!IoT</DomainPath>
+        </ParentElementPath>
+        <ImageShapeMoniker Name="ImageShape1" />
+      </ShapeMap>
     </ShapeMaps>
+    <ConnectorMaps>
+      <ConnectorMap>
+        <ConnectorMoniker Name="ExampleConnector" />
+        <DomainRelationshipMoniker Name="ControllerReferencesThing" />
+      </ConnectorMap>
+    </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="CyberPhisicalfinal" EditorGuid="26c240b3-67f9-4e61-92e6-ccb33db0a8dd">
     <RootClass>
@@ -273,6 +573,21 @@
       <ElementTool Name="iconHumidity" ToolboxIcon="Resources\co2.bmp" Caption="iconHumidity" Tooltip="Icon Humidity" HelpKeyword="iconHumidity">
         <DomainClassMoniker Name="Humidity" />
       </ElementTool>
+      <ElementTool Name="Siren" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Siren" Tooltip="Siren" HelpKeyword="Siren">
+        <DomainClassMoniker Name="Siren" />
+      </ElementTool>
+      <ElementTool Name="AirConditioning" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="AirConditioning" Tooltip="Air Conditioning" HelpKeyword="AirConditioning">
+        <DomainClassMoniker Name="AirConditioning" />
+      </ElementTool>
+      <ElementTool Name="controller" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="controller" Tooltip="Controller" HelpKeyword="controller">
+        <DomainClassMoniker Name="Controller" />
+      </ElementTool>
+      <ElementTool Name="alarm" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="alarm" Tooltip="Alarm" HelpKeyword="alarm">
+        <DomainClassMoniker Name="Alarms" />
+      </ElementTool>
+      <ConnectionTool Name="ConnectionTool1" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="connect" Tooltip="Connection Tool1" HelpKeyword="ConnectionTool1">
+        <ConnectionBuilderMoniker Name="CyberPhisical_final/ControllerReferencesThingBuilder" />
+      </ConnectionTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="CyberPhisical_finalDiagram" />
