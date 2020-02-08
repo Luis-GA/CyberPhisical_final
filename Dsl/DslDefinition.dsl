@@ -630,13 +630,13 @@
       <ElementTool Name="Siren" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Siren" Tooltip="Siren" HelpKeyword="Siren">
         <DomainClassMoniker Name="Siren" />
       </ElementTool>
-      <ElementTool Name="AirConditioning" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="AirConditioning" Tooltip="Air Conditioning" HelpKeyword="AirConditioning">
+      <ElementTool Name="AirConditioning" ToolboxIcon="Resources\fan.bmp" Caption="AirConditioning" Tooltip="Air Conditioning" HelpKeyword="AirConditioning">
         <DomainClassMoniker Name="AirConditioning" />
       </ElementTool>
-      <ElementTool Name="Controller" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Controller" Tooltip="Controller" HelpKeyword="Controller">
+      <ElementTool Name="Controller" ToolboxIcon="Resources\setting.bmp" Caption="Controller" Tooltip="Controller" HelpKeyword="Controller">
         <DomainClassMoniker Name="Controller" />
       </ElementTool>
-      <ElementTool Name="Alarm" ToolboxIcon="Resources\alert.bmp" Caption="Alarm" Tooltip="Alarm" HelpKeyword="Alarm">
+      <ElementTool Name="Alarm" ToolboxIcon="Resources\Alert-icon.bmp" Caption="Alarm" Tooltip="Alarm" HelpKeyword="Alarm">
         <DomainClassMoniker Name="Alarms" />
       </ElementTool>
       <ConnectionTool Name="ConnectionTool1" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Controller_connection" Tooltip="Connection Tool1" HelpKeyword="ConnectionTool1">
@@ -648,7 +648,7 @@
       <ElementTool Name="Custom_Actuator" ToolboxIcon="Resources\steam.bmp" Caption="Custom Actuator" Tooltip="Custom Actuator" HelpKeyword="">
         <DomainClassMoniker Name="custom_actuator" />
       </ElementTool>
-      <ElementTool Name="Humedity" ToolboxIcon="Resources\humedity.bmp" Caption="Humedity" Tooltip="Humedity" HelpKeyword="Humedity">
+      <ElementTool Name="Humedity" ToolboxIcon="Resources\humedity (1).bmp" Caption="Humedity" Tooltip="Humedity" HelpKeyword="Humedity">
         <DomainClassMoniker Name="Humidity" />
       </ElementTool>
       <ElementTool Name="Smoke" ToolboxIcon="Resources\smoke.bmp" Caption="Smoke" Tooltip="Smoke" HelpKeyword="Smoke">

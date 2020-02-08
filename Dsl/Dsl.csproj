@@ -159,8 +159,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\air.bmp" />
+    <Content Include="Resources\Alert-icon.bmp" />
     <Content Include="Resources\alert.bmp" />
+    <Content Include="Resources\fan.bmp" />
+    <Content Include="Resources\humedity %281%29.bmp" />
     <Content Include="Resources\humedity.bmp" />
+    <Content Include="Resources\setting.bmp" />
+    <Content Include="Resources\siren-icon-trendy-flat-style-260nw-407306275.bmp" />
     <Content Include="Resources\smoke.bmp" />
     <Content Include="Resources\steam.bmp" />
     <Content Include="Resources\weather.bmp" />
