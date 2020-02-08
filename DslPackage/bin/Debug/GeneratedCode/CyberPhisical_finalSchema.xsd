@@ -254,9 +254,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- CO2Level -->
-  <xsd:element name="cO2Level" type="CO2Level" substitutionGroup="sensor" />
-  <xsd:complexType name="CO2Level">
+  <!-- Custom_sensor -->
+  <xsd:element name="custom_sensor" type="Custom_sensor" substitutionGroup="sensor" />
+  <xsd:complexType name="Custom_sensor">
     <xsd:complexContent>
       <xsd:extension base="Sensor">
         <!-- Id -->
@@ -269,11 +269,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- CO2Level Moniker -->
-  <xsd:element name="cO2LevelMoniker" type="CO2LevelMoniker" substitutionGroup="sensorMoniker" />
-  <xsd:complexType name="CO2LevelMoniker">
+  <!-- Custom_sensor Moniker -->
+  <xsd:element name="custom_sensorMoniker" type="Custom_sensorMoniker" substitutionGroup="sensorMoniker" />
+  <xsd:complexType name="Custom_sensorMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for CO2Level instance.</xsd:documentation>
+      <xsd:documentation>Moniker for Custom_sensor instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="SensorMoniker">
@@ -503,6 +503,33 @@
             <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- custom_actuator -->
+  <xsd:element name="custom_actuator" type="Custom_actuator" substitutionGroup="actuators" />
+  <xsd:complexType name="Custom_actuator">
+    <xsd:complexContent>
+      <xsd:extension base="Actuators">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- custom_actuator Moniker -->
+  <xsd:element name="custom_actuatorMoniker" type="Custom_actuatorMoniker" substitutionGroup="actuatorsMoniker" />
+  <xsd:complexType name="Custom_actuatorMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for custom_actuator instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ActuatorsMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

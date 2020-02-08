@@ -159,6 +159,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\alert.bmp" />
+    <Content Include="Resources\humedity.bmp" />
+    <Content Include="Resources\smoke.bmp" />
+    <Content Include="Resources\steam.bmp" />
+    <Content Include="Resources\weather.bmp" />
     <None Include="DslDefinition.dsl.diagram">
       <DependentUpon>DslDefinition.dsl</DependentUpon>
     </None>

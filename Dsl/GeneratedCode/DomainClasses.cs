@@ -1035,20 +1035,20 @@ namespace Company.CyberPhisical_final
 namespace Company.CyberPhisical_final
 {
 	/// <summary>
-	/// DomainClass CO2Level
-	/// Description for Company.CyberPhisical_final.CO2Level
+	/// DomainClass Custom_sensor
+	/// Description for Company.CyberPhisical_final.Custom_sensor
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.CO2Level.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.CyberPhisical_final.CO2Level.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Custom_sensor.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.Custom_sensor.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("4ba904f6-171f-4956-8e5d-585ba8a7918d")]
-	public partial class CO2Level : Sensor
+	public partial class Custom_sensor : Sensor
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// CO2Level domain class Id.
+		/// Custom_sensor domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4ba904f6, 0x171f, 0x4956, 0x8e, 0x5d, 0x58, 0x5b, 0xa8, 0xa7, 0x91, 0x8d);
 		/// <summary>
@@ -1056,7 +1056,7 @@ namespace Company.CyberPhisical_final
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CO2Level(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public Custom_sensor(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -1066,7 +1066,7 @@ namespace Company.CyberPhisical_final
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CO2Level(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public Custom_sensor(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -1858,6 +1858,47 @@ namespace Company.CyberPhisical_final
 			{
 				return GetRoleCollection<DslModeling::LinkedElementCollection<Controller>, Controller>(global::Company.CyberPhisical_final.ControllerReferencesThing.ThingsDomainRoleId);
 			}
+		}
+		#endregion
+	}
+}
+namespace Company.CyberPhisical_final
+{
+	/// <summary>
+	/// DomainClass custom_actuator
+	/// Description for Company.CyberPhisical_final.custom_actuator
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.CyberPhisical_final.custom_actuator.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.CyberPhisical_final.custom_actuator.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("8ee57918-17b2-492b-9381-70e5a08c74cb")]
+	public partial class custom_actuator : Actuators
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// custom_actuator domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x8ee57918, 0x17b2, 0x492b, 0x93, 0x81, 0x70, 0xe5, 0xa0, 0x8c, 0x74, 0xcb);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public custom_actuator(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public custom_actuator(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
 		}
 		#endregion
 	}

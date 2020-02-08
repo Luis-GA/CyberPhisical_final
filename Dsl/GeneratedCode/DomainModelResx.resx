@@ -205,13 +205,13 @@
     <value>Humidity</value>
     <comment>DisplayName for DomainClass &apos;Humidity&apos;</comment>
   </data>
-  <data name="Company.CyberPhisical_final.CO2Level.Description" xml:space="preserve">
-    <value>Description for Company.CyberPhisical_final.CO2Level</value>
-    <comment>Description for DomainClass &apos;CO2Level&apos;</comment>
+  <data name="Company.CyberPhisical_final.Custom_sensor.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Custom_sensor</value>
+    <comment>Description for DomainClass &apos;Custom_sensor&apos;</comment>
   </data>
-  <data name="Company.CyberPhisical_final.CO2Level.DisplayName" xml:space="preserve">
-    <value>CO2 Level</value>
-    <comment>DisplayName for DomainClass &apos;CO2Level&apos;</comment>
+  <data name="Company.CyberPhisical_final.Custom_sensor.DisplayName" xml:space="preserve">
+    <value>Custom_sensor</value>
+    <comment>DisplayName for DomainClass &apos;Custom_sensor&apos;</comment>
   </data>
   <data name="Company.CyberPhisical_final.SmokeSensor.Description" xml:space="preserve">
     <value>Description for Company.CyberPhisical_final.SmokeSensor</value>
@@ -308,6 +308,14 @@
   <data name="Company.CyberPhisical_final.Things.DisplayName" xml:space="preserve">
     <value>Things</value>
     <comment>DisplayName for DomainClass &apos;Things&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.custom_actuator.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.custom_actuator</value>
+    <comment>Description for DomainClass &apos;custom_actuator&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.custom_actuator.DisplayName" xml:space="preserve">
+    <value>Custom_actuator</value>
+    <comment>DisplayName for DomainClass &apos;custom_actuator&apos;</comment>
   </data>
   <data name="Company.CyberPhisical_final.IoTHasElements.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
@@ -513,26 +521,6 @@
     <value>NameDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
-  <data name="Company.CyberPhisical_final.GeometryShape1.Description" xml:space="preserve">
-    <value>Description for Company.CyberPhisical_final.GeometryShape1</value>
-    <comment>Description for DomainClass &apos;GeometryShape1&apos;</comment>
-  </data>
-  <data name="Company.CyberPhisical_final.GeometryShape1.DisplayName" xml:space="preserve">
-    <value>Geometry Shape1</value>
-    <comment>DisplayName for DomainClass &apos;GeometryShape1&apos;</comment>
-  </data>
-  <data name="Company.CyberPhisical_final.GeometryShape2.Description" xml:space="preserve">
-    <value>Description for Company.CyberPhisical_final.GeometryShape2</value>
-    <comment>Description for DomainClass &apos;GeometryShape2&apos;</comment>
-  </data>
-  <data name="Company.CyberPhisical_final.GeometryShape2.DisplayName" xml:space="preserve">
-    <value>Geometry Shape2</value>
-    <comment>DisplayName for DomainClass &apos;GeometryShape2&apos;</comment>
-  </data>
-  <data name="GeometryShape2NameDecoratorDefaultText" xml:space="preserve">
-    <value>NameDecorator</value>
-    <comment>Text decorator default text</comment>
-  </data>
   <data name="Company.CyberPhisical_final.TemperatureImage.Description" xml:space="preserve">
     <value>Description for Company.CyberPhisical_final.TemperatureImage</value>
     <comment>Description for DomainClass &apos;TemperatureImage&apos;</comment>
@@ -585,14 +573,6 @@
     <value>Controller IS</value>
     <comment>DisplayName for DomainClass &apos;ControllerIS&apos;</comment>
   </data>
-  <data name="Company.CyberPhisical_final.Co2IS.Description" xml:space="preserve">
-    <value>Description for Company.CyberPhisical_final.Co2IS</value>
-    <comment>Description for DomainClass &apos;Co2IS&apos;</comment>
-  </data>
-  <data name="Company.CyberPhisical_final.Co2IS.DisplayName" xml:space="preserve">
-    <value>Co2 IS</value>
-    <comment>DisplayName for DomainClass &apos;Co2IS&apos;</comment>
-  </data>
   <data name="Company.CyberPhisical_final.ImageShape1.Description" xml:space="preserve">
     <value>Description for Company.CyberPhisical_final.ImageShape1</value>
     <comment>Description for DomainClass &apos;ImageShape1&apos;</comment>
@@ -600,6 +580,30 @@
   <data name="Company.CyberPhisical_final.ImageShape1.DisplayName" xml:space="preserve">
     <value>Image Shape1</value>
     <comment>DisplayName for DomainClass &apos;ImageShape1&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.CustomSensorGS.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.CustomSensorGS</value>
+    <comment>Description for DomainClass &apos;CustomSensorGS&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.CustomSensorGS.DisplayName" xml:space="preserve">
+    <value>Custom Sensor GS</value>
+    <comment>DisplayName for DomainClass &apos;CustomSensorGS&apos;</comment>
+  </data>
+  <data name="CustomSensorGSNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.CustomActuatorGS.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.CustomActuatorGS</value>
+    <comment>Description for DomainClass &apos;CustomActuatorGS&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.CustomActuatorGS.DisplayName" xml:space="preserve">
+    <value>Custom Actuator GS</value>
+    <comment>DisplayName for DomainClass &apos;CustomActuatorGS&apos;</comment>
+  </data>
+  <data name="CustomActuatorGSNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
   </data>
   <data name="Company.CyberPhisical_final.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
@@ -634,23 +638,15 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="DeviceToolboxTooltip" xml:space="preserve">
-    <value>Create an ExampleElement</value>
+    <value></value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="iconTempToolboxItem" xml:space="preserve">
-    <value>iconTemp</value>
+  <data name="temperatureToolboxItem" xml:space="preserve">
+    <value>Temperature</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="iconTempToolboxTooltip" xml:space="preserve">
-    <value>Icon Temp</value>
-    <comment>Toolbox tooltip text</comment>
-  </data>
-  <data name="iconHumidityToolboxItem" xml:space="preserve">
-    <value>Humidity</value>
-    <comment>Toolbox item name</comment>
-  </data>
-  <data name="iconHumidityToolboxTooltip" xml:space="preserve">
-    <value>Icon Humidity</value>
+  <data name="temperatureToolboxTooltip" xml:space="preserve">
+    <value>Temperature</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="SirenToolboxItem" xml:space="preserve">
@@ -686,11 +682,43 @@
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="ConnectionTool1ToolboxItem" xml:space="preserve">
-    <value>connect</value>
+    <value>Controller_connection</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="ConnectionTool1ToolboxTooltip" xml:space="preserve">
     <value>Connection Tool1</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="custom_SensorToolboxItem" xml:space="preserve">
+    <value>custom_Sensor</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="custom_SensorToolboxTooltip" xml:space="preserve">
+    <value>Custom_ Sensor</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="custom_ActuatorToolboxItem" xml:space="preserve">
+    <value>Custom Actuator</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="custom_ActuatorToolboxTooltip" xml:space="preserve">
+    <value>Custom Actuator</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="humedityToolboxItem" xml:space="preserve">
+    <value>humedity</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="humedityToolboxTooltip" xml:space="preserve">
+    <value>Humedity</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="SmokeSensorToolboxItem" xml:space="preserve">
+    <value>SmokeSensor</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="SmokeSensorToolboxTooltip" xml:space="preserve">
+    <value>Smoke Sensor</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -834,13 +862,13 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\Images\actuator\aire.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>AirConditioningImage shape image</comment>
   </data>
+  <data name="AlarmsGSIconDecorator1DefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\alert.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
   <data name="ControllerISImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\Images\kisspng_network_cards_adapters_computer.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>ControllerIS shape image</comment>
-  </data>
-  <data name="Co2ISImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\Images\Sensors\co2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Co2IS shape image</comment>
   </data>
   <data name="ImageShape1Image" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\Images\Sensors\smoke.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -850,12 +878,8 @@ A DomainClass can be serialized as a moniker only if
     <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="iconTempToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\Images\weather.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Toolbox item image</comment>
-  </data>
-  <data name="iconHumidityToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\co2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="temperatureToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\weather.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="SirenToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
@@ -871,11 +895,27 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="alarmToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="ConnectionTool1ToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="custom_SensorToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\steam.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="custom_ActuatorToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\steam.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="humedityToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\humedity.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="SmokeSensorToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\smoke.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

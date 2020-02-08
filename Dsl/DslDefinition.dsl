@@ -96,7 +96,7 @@
         <DomainClassMoniker Name="Sensor" />
       </BaseClass>
     </DomainClass>
-    <DomainClass Id="4ba904f6-171f-4956-8e5d-585ba8a7918d" Description="Description for Company.CyberPhisical_final.CO2Level" Name="CO2Level" DisplayName="CO2 Level" Namespace="Company.CyberPhisical_final">
+    <DomainClass Id="4ba904f6-171f-4956-8e5d-585ba8a7918d" Description="Description for Company.CyberPhisical_final.Custom_sensor" Name="Custom_sensor" DisplayName="Custom_sensor" Namespace="Company.CyberPhisical_final">
       <BaseClass>
         <DomainClassMoniker Name="Sensor" />
       </BaseClass>
@@ -160,6 +160,11 @@
       </Properties>
     </DomainClass>
     <DomainClass Id="302e1d16-0280-4047-918d-0cf5b1ea7df7" Description="Description for Company.CyberPhisical_final.Things" Name="Things" DisplayName="Things" InheritanceModifier="Abstract" Namespace="Company.CyberPhisical_final" />
+    <DomainClass Id="8ee57918-17b2-492b-9381-70e5a08c74cb" Description="Description for Company.CyberPhisical_final.custom_actuator" Name="custom_actuator" DisplayName="Custom_actuator" Namespace="Company.CyberPhisical_final">
+      <BaseClass>
+        <DomainClassMoniker Name="Actuators" />
+      </BaseClass>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="3a3d0156-0947-40ab-8e32-a2ad861fb292" Description="Embedding relationship between the Model and Elements" Name="IoTHasElements" DisplayName="Io THas Elements" Namespace="Company.CyberPhisical_final" IsEmbedding="true">
@@ -283,28 +288,30 @@
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <GeometryShape Id="b2dfc7e7-30ea-40cc-bda4-03fb319b838e" Description="Description for Company.CyberPhisical_final.GeometryShape1" Name="GeometryShape1" DisplayName="Geometry Shape1" Namespace="Company.CyberPhisical_final" FixedTooltipText="Geometry Shape1" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="NameDecorator" DisplayName="" DefaultText="" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="59aa67b9-85d8-41ea-b5a7-8693b564404b" Description="Description for Company.CyberPhisical_final.GeometryShape2" Name="GeometryShape2" DisplayName="Geometry Shape2" Namespace="Company.CyberPhisical_final" FixedTooltipText="Geometry Shape2" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
-      </ShapeHasDecorators>
-    </GeometryShape>
     <ImageShape Id="d14bf511-2142-4908-9b04-b73dc518aea9" Description="Description for Company.CyberPhisical_final.TemperatureImage" Name="TemperatureImage" DisplayName="Temperature Image" Namespace="Company.CyberPhisical_final" FixedTooltipText="Temperature Image" InitialWidth="0.75" InitialHeight="0.5" Image="Resources\Images\Sensors\termometro.png" />
     <ImageShape Id="ab93a8f0-0f97-453f-9809-dc5d556ca58a" Description="Description for Company.CyberPhisical_final.HumidityImage" Name="HumidityImage" DisplayName="Humidity Image" Namespace="Company.CyberPhisical_final" FixedTooltipText="Humidity Image" InitialWidth="0.6" InitialHeight="0.6" Image="Resources\Images\Sensors\humidity.png" />
     <ImageShape Id="d1a6ae15-fda6-4b08-aa3c-04727d85570e" Description="Description for Company.CyberPhisical_final.SirenImage" Name="SirenImage" DisplayName="Siren Image" Namespace="Company.CyberPhisical_final" FixedTooltipText="Siren Image" InitialWidth="0.5" InitialHeight="0.5" Image="Resources\Images\actuator\siren.png" />
     <ImageShape Id="afe4a4b9-7baf-4e69-94e2-2a7a588a3b86" Description="Description for Company.CyberPhisical_final.AirConditioningImage" Name="AirConditioningImage" DisplayName="Air Conditioning Image" Namespace="Company.CyberPhisical_final" FixedTooltipText="Air Conditioning Image" InitialWidth="0.8" InitialHeight="0.8" Image="Resources\Images\actuator\aire.png" />
     <GeometryShape Id="461c2def-db50-4e61-96c3-3d3e7e3586a2" Description="Description for Company.CyberPhisical_final.AlarmsGS" Name="AlarmsGS" DisplayName="Alarms GS" Namespace="Company.CyberPhisical_final" FixedTooltipText="Alarms GS" FillColor="Orange" InitialWidth="1" InitialHeight="0.8" Geometry="RoundedRectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="name" DisplayName="Name" DefaultText="name" />
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="name" DisplayName="Name" DefaultText="name" FontSize="10" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="IconDecorator1" DisplayName="Icon Decorator1" DefaultIcon="Resources\alert.bmp" />
       </ShapeHasDecorators>
     </GeometryShape>
     <ImageShape Id="405598f7-1607-4124-853a-617fff159590" Description="Description for Company.CyberPhisical_final.ControllerIS" Name="ControllerIS" DisplayName="Controller IS" Namespace="Company.CyberPhisical_final" FixedTooltipText="Controller IS" InitialWidth="1" InitialHeight="0.8" Image="Resources\Images\kisspng_network_cards_adapters_computer.png" />
-    <ImageShape Id="0dc1d5ed-8b0d-4631-82c6-95d386567188" Description="Description for Company.CyberPhisical_final.Co2IS" Name="Co2IS" DisplayName="Co2 IS" Namespace="Company.CyberPhisical_final" FixedTooltipText="Co2 IS" InitialWidth="0.5" InitialHeight="0.5" Image="Resources\Images\Sensors\co2.png" />
     <ImageShape Id="14a0de5f-2303-416e-81ae-f79186abd675" Description="Description for Company.CyberPhisical_final.ImageShape1" Name="ImageShape1" DisplayName="Image Shape1" Namespace="Company.CyberPhisical_final" FixedTooltipText="Image Shape1" InitialWidth="0.5" InitialHeight="0.5" Image="Resources\Images\Sensors\smoke.png" />
+    <GeometryShape Id="84c267c6-efec-444c-b3c3-cbb7254a287b" Description="Description for Company.CyberPhisical_final.CustomSensorGS" Name="CustomSensorGS" DisplayName="Custom Sensor GS" Namespace="Company.CyberPhisical_final" FixedTooltipText="Custom Sensor GS" FillColor="RosyBrown" InitialWidth="0.7" InitialHeight="0.5" Geometry="Rectangle">
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <GeometryShape Id="c299a596-a6e5-484e-9190-b35008cf2b30" Description="Description for Company.CyberPhisical_final.CustomActuatorGS" Name="CustomActuatorGS" DisplayName="Custom Actuator GS" Namespace="Company.CyberPhisical_final" FixedTooltipText="Custom Actuator GS" InitialWidth="0.7" InitialHeight="0.5" Geometry="Rectangle">
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      </ShapeHasDecorators>
+    </GeometryShape>
   </Shapes>
   <Connectors>
     <Connector Id="d956db30-97a6-4124-be00-1a4cc6791184" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="Company.CyberPhisical_final" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01" />
@@ -368,14 +375,8 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="GeometryShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="geometryShape1Moniker" ElementName="geometryShape1" MonikerTypeName="GeometryShape1Moniker">
-        <GeometryShapeMoniker Name="GeometryShape1" />
-      </XmlClassData>
       <XmlClassData TypeName="DeviceHasSensors" MonikerAttributeName="" SerializeId="true" MonikerElementName="deviceHasSensorsMoniker" ElementName="deviceHasSensors" MonikerTypeName="DeviceHasSensorsMoniker">
         <DomainRelationshipMoniker Name="DeviceHasSensors" />
-      </XmlClassData>
-      <XmlClassData TypeName="GeometryShape2" MonikerAttributeName="" SerializeId="true" MonikerElementName="geometryShape2Moniker" ElementName="geometryShape2" MonikerTypeName="GeometryShape2Moniker">
-        <GeometryShapeMoniker Name="GeometryShape2" />
       </XmlClassData>
       <XmlClassData TypeName="Temperature" MonikerAttributeName="" SerializeId="true" MonikerElementName="temperatureMoniker" ElementName="temperature" MonikerTypeName="TemperatureMoniker">
         <DomainClassMoniker Name="Temperature" />
@@ -383,8 +384,8 @@
       <XmlClassData TypeName="Humidity" MonikerAttributeName="" SerializeId="true" MonikerElementName="humidityMoniker" ElementName="humidity" MonikerTypeName="HumidityMoniker">
         <DomainClassMoniker Name="Humidity" />
       </XmlClassData>
-      <XmlClassData TypeName="CO2Level" MonikerAttributeName="" SerializeId="true" MonikerElementName="cO2LevelMoniker" ElementName="cO2Level" MonikerTypeName="CO2LevelMoniker">
-        <DomainClassMoniker Name="CO2Level" />
+      <XmlClassData TypeName="Custom_sensor" MonikerAttributeName="" SerializeId="true" MonikerElementName="custom_sensorMoniker" ElementName="custom_sensor" MonikerTypeName="Custom_sensorMoniker">
+        <DomainClassMoniker Name="Custom_sensor" />
       </XmlClassData>
       <XmlClassData TypeName="SmokeSensor" MonikerAttributeName="" SerializeId="true" MonikerElementName="smokeSensorMoniker" ElementName="smokeSensor" MonikerTypeName="SmokeSensorMoniker">
         <DomainClassMoniker Name="SmokeSensor" />
@@ -455,9 +456,6 @@
       <XmlClassData TypeName="ControllerIS" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerISMoniker" ElementName="controllerIS" MonikerTypeName="ControllerISMoniker">
         <ImageShapeMoniker Name="ControllerIS" />
       </XmlClassData>
-      <XmlClassData TypeName="Co2IS" MonikerAttributeName="" SerializeId="true" MonikerElementName="co2ISMoniker" ElementName="co2IS" MonikerTypeName="Co2ISMoniker">
-        <ImageShapeMoniker Name="Co2IS" />
-      </XmlClassData>
       <XmlClassData TypeName="ImageShape1" MonikerAttributeName="" SerializeId="true" MonikerElementName="imageShape1Moniker" ElementName="imageShape1" MonikerTypeName="ImageShape1Moniker">
         <ImageShapeMoniker Name="ImageShape1" />
       </XmlClassData>
@@ -466,6 +464,15 @@
       </XmlClassData>
       <XmlClassData TypeName="ControllerReferencesThing" MonikerAttributeName="" SerializeId="true" MonikerElementName="controllerReferencesThingMoniker" ElementName="controllerReferencesThing" MonikerTypeName="ControllerReferencesThingMoniker">
         <DomainRelationshipMoniker Name="ControllerReferencesThing" />
+      </XmlClassData>
+      <XmlClassData TypeName="CustomSensorGS" MonikerAttributeName="" SerializeId="true" MonikerElementName="customSensorGSMoniker" ElementName="customSensorGS" MonikerTypeName="CustomSensorGSMoniker">
+        <GeometryShapeMoniker Name="CustomSensorGS" />
+      </XmlClassData>
+      <XmlClassData TypeName="Custom_actuator" MonikerAttributeName="" SerializeId="true" MonikerElementName="custom_actuatorMoniker" ElementName="custom_actuator" MonikerTypeName="Custom_actuatorMoniker">
+        <DomainClassMoniker Name="custom_actuator" />
+      </XmlClassData>
+      <XmlClassData TypeName="CustomActuatorGS" MonikerAttributeName="" SerializeId="true" MonikerElementName="customActuatorGSMoniker" ElementName="customActuatorGS" MonikerTypeName="CustomActuatorGSMoniker">
+        <GeometryShapeMoniker Name="CustomActuatorGS" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -562,18 +569,41 @@
         <ImageShapeMoniker Name="ControllerIS" />
       </ShapeMap>
       <ShapeMap>
-        <DomainClassMoniker Name="CO2Level" />
-        <ParentElementPath>
-          <DomainPath>DeviceHasSensors.Device/!Device/IoTHasElements.IoT/!IoT</DomainPath>
-        </ParentElementPath>
-        <ImageShapeMoniker Name="Co2IS" />
-      </ShapeMap>
-      <ShapeMap>
         <DomainClassMoniker Name="SmokeSensor" />
         <ParentElementPath>
           <DomainPath>DeviceHasSensors.Device/!Device/IoTHasElements.IoT/!IoT</DomainPath>
         </ParentElementPath>
         <ImageShapeMoniker Name="ImageShape1" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="Custom_sensor" />
+        <ParentElementPath>
+          <DomainPath>DeviceHasSensors.Device/!Device/IoTHasElements.IoT/!IoT</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="CustomSensorGS/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Sensor/name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="CustomSensorGS" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="custom_actuator" />
+        <ParentElementPath>
+          <DomainPath>DeviceHasActuator.Device/!Device/IoTHasElements.IoT/!IoT</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="CustomActuatorGS/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Actuators/name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="CustomActuatorGS" />
       </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
@@ -591,14 +621,11 @@
       <XmlSerializationBehaviorMoniker Name="CyberPhisical_finalSerializationBehavior" />
     </XmlSerializationDefinition>
     <ToolboxTab TabText="CyberPhisical_final">
-      <ElementTool Name="Device" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="Device" Tooltip="Create an ExampleElement" HelpKeyword="CreateExampleClassF1Keyword">
+      <ElementTool Name="Device" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="Device" Tooltip="" HelpKeyword="CreateExampleClassF1Keyword">
         <DomainClassMoniker Name="Device" />
       </ElementTool>
-      <ElementTool Name="iconTemp" ToolboxIcon="Resources\Images\weather.bmp" Caption="iconTemp" Tooltip="Icon Temp" HelpKeyword="iconTemp">
+      <ElementTool Name="temperature" ToolboxIcon="Resources\weather.bmp" Caption="Temperature" Tooltip="Temperature" HelpKeyword="Tempertature">
         <DomainClassMoniker Name="Temperature" />
-      </ElementTool>
-      <ElementTool Name="iconHumidity" ToolboxIcon="Resources\co2.bmp" Caption="Humidity" Tooltip="Icon Humidity" HelpKeyword="iconHumidity">
-        <DomainClassMoniker Name="Humidity" />
       </ElementTool>
       <ElementTool Name="Siren" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Siren" Tooltip="Siren" HelpKeyword="Siren">
         <DomainClassMoniker Name="Siren" />
@@ -609,12 +636,24 @@
       <ElementTool Name="controller" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="controller" Tooltip="Controller" HelpKeyword="controller">
         <DomainClassMoniker Name="Controller" />
       </ElementTool>
-      <ElementTool Name="alarm" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="alarm" Tooltip="Alarm" HelpKeyword="alarm">
+      <ElementTool Name="alarm" ToolboxIcon="Resources\alert.bmp" Caption="alarm" Tooltip="Alarm" HelpKeyword="alarm">
         <DomainClassMoniker Name="Alarms" />
       </ElementTool>
-      <ConnectionTool Name="ConnectionTool1" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="connect" Tooltip="Connection Tool1" HelpKeyword="ConnectionTool1">
+      <ConnectionTool Name="ConnectionTool1" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Controller_connection" Tooltip="Connection Tool1" HelpKeyword="ConnectionTool1">
         <ConnectionBuilderMoniker Name="CyberPhisical_final/ControllerReferencesThingBuilder" />
       </ConnectionTool>
+      <ElementTool Name="custom_Sensor" ToolboxIcon="Resources\steam.bmp" Caption="custom_Sensor" Tooltip="Custom_ Sensor" HelpKeyword="custom_Sensor">
+        <DomainClassMoniker Name="Custom_sensor" />
+      </ElementTool>
+      <ElementTool Name="custom_Actuator" ToolboxIcon="Resources\steam.bmp" Caption="Custom Actuator" Tooltip="Custom Actuator" HelpKeyword="">
+        <DomainClassMoniker Name="custom_actuator" />
+      </ElementTool>
+      <ElementTool Name="humedity" ToolboxIcon="Resources\humedity.bmp" Caption="humedity" Tooltip="Humedity" HelpKeyword="humedity">
+        <DomainClassMoniker Name="Humidity" />
+      </ElementTool>
+      <ElementTool Name="SmokeSensor" ToolboxIcon="Resources\smoke.bmp" Caption="SmokeSensor" Tooltip="Smoke Sensor" HelpKeyword="SmokeSensor">
+        <DomainClassMoniker Name="SmokeSensor" />
+      </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="CyberPhisical_finalDiagram" />

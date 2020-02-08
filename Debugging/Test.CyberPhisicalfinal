@@ -1,48 +1,132 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ioT xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f386182d-ff8d-4ffa-a34d-702c51fbf63f" nameDDBB="Tes" xmlns="http://schemas.microsoft.com/dsltools/CyberPhisical_final">
+<ioT xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f386182d-ff8d-4ffa-a34d-702c51fbf63f" nameDDBB="Emergency" xmlns="http://schemas.microsoft.com/dsltools/CyberPhisical_final">
   <elements>
-    <device Id="e3562308-6501-4f04-981d-15b4f00ccbfe" name="Device1">
+    <device Id="42735888-83e0-4f2c-b278-260d85fd8f5b" name="Drone Device">
       <sensors>
-        <deviceHasSensors Id="1c2b9dc2-9501-4dea-8c1d-dbe4e91816e7">
-          <temperature Id="99b59aec-7ba9-4b1d-b154-fc0166a72364" current_mesure="0" name="culu" type_measure="pitos" />
+        <deviceHasSensors Id="28957e83-a65f-42cf-b5c2-4d47db0f0850">
+          <smokeSensor Id="e57722b0-a393-4cd1-a7fd-bf343c73f95f" current_mesure="0" name="Smoke_drone" type_measure="percentage" />
         </deviceHasSensors>
-        <deviceHasSensors Id="ccca335d-5584-4fcb-a769-160492452bb7">
-          <humidity Id="e1767b5d-07d8-4f6d-99e8-6a3e457ba775" current_mesure="0" name="caca" type_measure="limones" />
+        <deviceHasSensors Id="69814352-adfc-4e62-aad0-827bebb9ed4f">
+          <custom_sensor Id="20471727-b565-456c-b44a-71d44f3fc653" current_mesure="102" name="camera" type_measure="jpg" />
         </deviceHasSensors>
       </sensors>
       <actuator>
-        <deviceHasActuator Id="b7dbe122-ce65-4a41-a9c8-26306e8e2712">
-          <siren Id="50ddfdba-99df-42de-b61c-882f56885c0e" name="pene" />
+        <deviceHasActuator Id="c6af1de5-76ab-422c-82ba-ae05d35ba130">
+          <siren Id="899cbb37-6140-4397-ab54-654cb06c48ff" name="Siren" />
         </deviceHasActuator>
-        <deviceHasActuator Id="0915c43a-1df9-4061-a134-f3c950a544b7">
-          <airConditioning Id="d1b80b82-e4ed-41c5-a1cd-db0b75247c5c" name="pena" />
+      </actuator>
+    </device>
+    <device Id="cd406c58-9601-45a7-96a9-899e32a2d8d1" name="Emergency Office">
+      <sensors>
+        <deviceHasSensors Id="d72de193-1cd1-4b03-8571-a5d3afaa0d59">
+          <temperature Id="3b07f48c-b89d-4b42-8148-da023c3ecbdd" current_mesure="0" name="termometer_office" type_measure="centrigrades" />
+        </deviceHasSensors>
+        <deviceHasSensors Id="774d3c7e-6a2e-4185-8e27-6358fed8945f">
+          <humidity Id="46006e50-c1bf-47a9-90f9-17f456885dae" current_mesure="0" name="humidity_office" type_measure="percentage" />
+        </deviceHasSensors>
+      </sensors>
+      <actuator>
+        <deviceHasActuator Id="e4627614-19ea-4662-9a52-56b92e1257b3">
+          <airConditioning Id="2d632b7d-4f7c-4bc4-b12a-8327a4bff6e6" name="airc_conditioning" />
+        </deviceHasActuator>
+      </actuator>
+    </device>
+    <device Id="68c5e375-205b-4957-8477-637c13716627" name="eCall">
+      <sensors>
+        <deviceHasSensors Id="ad2c6dab-b821-4012-bcc3-ec81fad442c7">
+          <custom_sensor Id="6bf9e77c-196a-48b4-a411-c6b1bb7feb5b" current_mesure="0" name="collision_detect" type_measure="percentage" />
+        </deviceHasSensors>
+        <deviceHasSensors Id="80b64938-ffa9-4458-9728-4a80f08a8b12">
+          <smokeSensor Id="01f784e6-d9af-43da-961d-328a61052fca" current_mesure="0" name="smoke_eCall" type_measure="percentage" />
+        </deviceHasSensors>
+      </sensors>
+      <actuator>
+        <deviceHasActuator Id="ab468f23-365c-4a70-aa43-b95af02854e3">
+          <custom_actuator Id="449c72a2-f690-494b-90e4-19e2425982c9" name="alert_sender" />
         </deviceHasActuator>
       </actuator>
     </device>
   </elements>
   <controllers>
-    <ioTHasControllers Id="798ee7c6-761a-4ac1-a1a8-5f082e5014a9">
-      <controller Id="9e3a8428-5518-4455-9798-e47a44cc6628" name="terminator">
+    <ioTHasControllers Id="6e08f329-cfc9-4a93-b326-281d1b6be116">
+      <controller Id="cf013a1f-db92-4df6-830a-b1c1b4b291fe" name="Dron Controller">
         <thing>
-          <controllerReferencesThing Id="f6bf4690-9815-4fb3-8b6b-dda3664a81a6">
-            <humidityMoniker Id="e1767b5d-07d8-4f6d-99e8-6a3e457ba775" />
+          <controllerReferencesThing Id="545ccda2-9d6f-4538-aa3c-856ffc363922">
+            <custom_sensorMoniker Id="20471727-b565-456c-b44a-71d44f3fc653" />
           </controllerReferencesThing>
-          <controllerReferencesThing Id="7230f8e6-d2e6-4076-8d3f-6954d8b38ae9">
-            <alarmsMoniker Id="82003893-d26e-4623-a666-0253c7e770a6" />
+          <controllerReferencesThing Id="10a75ba4-0c22-43d4-be6b-9a9a05c5c7f9">
+            <smokeSensorMoniker Id="e57722b0-a393-4cd1-a7fd-bf343c73f95f" />
           </controllerReferencesThing>
-          <controllerReferencesThing Id="9abba973-3252-46f9-8afc-aae9fa95f1a2">
-            <sirenMoniker Id="50ddfdba-99df-42de-b61c-882f56885c0e" />
+          <controllerReferencesThing Id="c2265ba9-86d5-49a1-848d-a74605bf2085">
+            <sirenMoniker Id="899cbb37-6140-4397-ab54-654cb06c48ff" />
           </controllerReferencesThing>
-          <controllerReferencesThing Id="5799fd4b-8cdb-4450-9819-ecef6c0045b1">
-            <airConditioningMoniker Id="d1b80b82-e4ed-41c5-a1cd-db0b75247c5c" />
+          <controllerReferencesThing Id="c7217d04-7f02-4d38-9d8a-65a349044a74">
+            <alarmsMoniker Id="6c94d97a-bb44-413c-86c4-9d3df44bfe10" />
+          </controllerReferencesThing>
+        </thing>
+      </controller>
+    </ioTHasControllers>
+    <ioTHasControllers Id="565ee41e-0b63-4e6b-9124-e1296a2979f3">
+      <controller Id="019ef78c-12c9-4c58-bf3a-3639e782b084" name="Office_controller">
+        <thing>
+          <controllerReferencesThing Id="dbf4466e-f57a-4067-9ea8-1a6a0ac708fa">
+            <airConditioningMoniker Id="2d632b7d-4f7c-4bc4-b12a-8327a4bff6e6" />
+          </controllerReferencesThing>
+          <controllerReferencesThing Id="3a9f9f11-7727-489c-b26c-6043f0ba0b58">
+            <humidityMoniker Id="46006e50-c1bf-47a9-90f9-17f456885dae" />
+          </controllerReferencesThing>
+          <controllerReferencesThing Id="34e1ed01-cdbf-46c6-a848-1ff2c16c6bd6">
+            <temperatureMoniker Id="3b07f48c-b89d-4b42-8148-da023c3ecbdd" />
+          </controllerReferencesThing>
+          <controllerReferencesThing Id="a0412a40-6c36-488e-b0e9-513b5107ebcb">
+            <alarmsMoniker Id="f0480878-f87e-4286-9089-2fd755bf4666" />
+          </controllerReferencesThing>
+        </thing>
+      </controller>
+    </ioTHasControllers>
+    <ioTHasControllers Id="dfcedcf6-d5a1-4ccc-bdd4-bfbf5fe10bdd">
+      <controller Id="8c90041c-057e-425e-9116-1623970a0c67" name="eCallController">
+        <thing>
+          <controllerReferencesThing Id="e33d0de3-4761-4898-9b44-e062af11eeac">
+            <custom_sensorMoniker Id="6bf9e77c-196a-48b4-a411-c6b1bb7feb5b" />
+          </controllerReferencesThing>
+          <controllerReferencesThing Id="8e2a89e5-26d6-4f03-9637-52c8642c30df">
+            <smokeSensorMoniker Id="01f784e6-d9af-43da-961d-328a61052fca" />
+          </controllerReferencesThing>
+          <controllerReferencesThing Id="36801234-c529-4392-a360-4950d3b2fe53">
+            <custom_actuatorMoniker Id="449c72a2-f690-494b-90e4-19e2425982c9" />
+          </controllerReferencesThing>
+          <controllerReferencesThing Id="f95ea563-49c8-4a88-9eba-775e4bf698b0">
+            <alarmsMoniker Id="6c94d97a-bb44-413c-86c4-9d3df44bfe10" />
+          </controllerReferencesThing>
+        </thing>
+      </controller>
+    </ioTHasControllers>
+    <ioTHasControllers Id="7e9d301d-2902-4d22-ba71-822eb14aa8a0">
+      <controller Id="5359e614-6e31-48db-acbf-ceb055ad4762" name="Emergency_system">
+        <thing>
+          <controllerReferencesThing Id="3ea08dde-d74a-4a03-b663-1b66c021f87b">
+            <custom_sensorMoniker Id="20471727-b565-456c-b44a-71d44f3fc653" />
+          </controllerReferencesThing>
+          <controllerReferencesThing Id="11fe0793-eb3f-41ca-82da-8447c5a36f7c">
+            <smokeSensorMoniker Id="e57722b0-a393-4cd1-a7fd-bf343c73f95f" />
+          </controllerReferencesThing>
+          <controllerReferencesThing Id="cbe286d8-201c-4ba0-89cc-e6bd5b3f700a">
+            <custom_sensorMoniker Id="6bf9e77c-196a-48b4-a411-c6b1bb7feb5b" />
+          </controllerReferencesThing>
+          <controllerReferencesThing Id="8213a865-2f99-498f-9d06-86ae6bc3e595">
+            <smokeSensorMoniker Id="01f784e6-d9af-43da-961d-328a61052fca" />
           </controllerReferencesThing>
         </thing>
       </controller>
     </ioTHasControllers>
   </controllers>
   <alarm>
-    <ioTHasAlarm Id="bb8af701-ae71-46ea-bf5f-a0090b8ab745">
-      <alarms Id="82003893-d26e-4623-a666-0253c7e770a6" name="Hola" condition="Helo" advertence="hi" />
+    <ioTHasAlarm Id="5ded68b2-615a-4921-8233-dec2ec05e29c">
+      <alarms Id="f0480878-f87e-4286-9089-2fd755bf4666" name="Acclimate the room" condition="temp &gt;30 or temp &lt; 15" advertence="Set the air" />
+    </ioTHasAlarm>
+    <ioTHasAlarm Id="f1e5299e-24de-43c3-b34b-8aaacf468f01">
+      <alarms Id="6c94d97a-bb44-413c-86c4-9d3df44bfe10" name="Accitent Detect" condition="smoke&gt;30" advertence="Send There is a car accident" />
     </ioTHasAlarm>
   </alarm>
 </ioT>

@@ -215,15 +215,21 @@ namespace Company.CyberPhisical_final
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Company.CyberPhisical_final.CO2Level)
-			{
-				global::Company.CyberPhisical_final.Co2IS newShape = new global::Company.CyberPhisical_final.Co2IS(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
 			if(element is global::Company.CyberPhisical_final.SmokeSensor)
 			{
 				global::Company.CyberPhisical_final.ImageShape1 newShape = new global::Company.CyberPhisical_final.ImageShape1(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.CyberPhisical_final.Custom_sensor)
+			{
+				global::Company.CyberPhisical_final.CustomSensorGS newShape = new global::Company.CyberPhisical_final.CustomSensorGS(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Company.CyberPhisical_final.custom_actuator)
+			{
+				global::Company.CyberPhisical_final.CustomActuatorGS newShape = new global::Company.CyberPhisical_final.CustomActuatorGS(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -263,6 +269,8 @@ namespace Company.CyberPhisical_final
 			base.InitializeShapeFields(shapeFields);
 			global::Company.CyberPhisical_final.ExampleShape.DecoratorsInitialized += ExampleShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Company.CyberPhisical_final.AlarmsGS.DecoratorsInitialized += AlarmsGSDecoratorMap.OnDecoratorsInitialized;
+			global::Company.CyberPhisical_final.CustomSensorGS.DecoratorsInitialized += CustomSensorGSDecoratorMap.OnDecoratorsInitialized;
+			global::Company.CyberPhisical_final.CustomActuatorGS.DecoratorsInitialized += CustomActuatorGSDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
@@ -298,6 +306,42 @@ namespace Company.CyberPhisical_final
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.CyberPhisical_final.Alarms.nameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "name").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for CustomSensorGS.
+		/// </summary>
+		internal static partial class CustomSensorGSDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for CustomSensorGS.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.CyberPhisical_final.Sensor.nameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for CustomActuatorGS.
+		/// </summary>
+		internal static partial class CustomActuatorGSDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for CustomActuatorGS.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.CyberPhisical_final.Actuators.nameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -456,8 +500,9 @@ namespace Company.CyberPhisical_final
 		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Humidity), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Siren), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.AirConditioning), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.CO2Level), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.SmokeSensor), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Custom_sensor), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.custom_actuator), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Alarms), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Device), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.CyberPhisical_final.Controller), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
@@ -493,13 +538,17 @@ namespace Company.CyberPhisical_final
 				{
 					parentElement = GetParentForAirConditioning((global::Company.CyberPhisical_final.AirConditioning)childElement);
 				} else
-				if(childElement is global::Company.CyberPhisical_final.CO2Level)
-				{
-					parentElement = GetParentForCO2Level((global::Company.CyberPhisical_final.CO2Level)childElement);
-				} else
 				if(childElement is global::Company.CyberPhisical_final.SmokeSensor)
 				{
 					parentElement = GetParentForSmokeSensor((global::Company.CyberPhisical_final.SmokeSensor)childElement);
+				} else
+				if(childElement is global::Company.CyberPhisical_final.Custom_sensor)
+				{
+					parentElement = GetParentForCustom_sensor((global::Company.CyberPhisical_final.Custom_sensor)childElement);
+				} else
+				if(childElement is global::Company.CyberPhisical_final.custom_actuator)
+				{
+					parentElement = GetParentForcustom_actuator((global::Company.CyberPhisical_final.custom_actuator)childElement);
 				} else
 				if(childElement is global::Company.CyberPhisical_final.Alarms)
 				{
@@ -583,7 +632,7 @@ namespace Company.CyberPhisical_final
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Company.CyberPhisical_final.IoT GetParentForCO2Level( global::Company.CyberPhisical_final.Sensor root )
+			public static global::Company.CyberPhisical_final.IoT GetParentForSmokeSensor( global::Company.CyberPhisical_final.Sensor root )
 			{
 				// Segments 0 and 1
 				global::Company.CyberPhisical_final.Device root2 = root.Device;
@@ -593,7 +642,17 @@ namespace Company.CyberPhisical_final
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Company.CyberPhisical_final.IoT GetParentForSmokeSensor( global::Company.CyberPhisical_final.Sensor root )
+			public static global::Company.CyberPhisical_final.IoT GetParentForCustom_sensor( global::Company.CyberPhisical_final.Sensor root )
+			{
+				// Segments 0 and 1
+				global::Company.CyberPhisical_final.Device root2 = root.Device;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Company.CyberPhisical_final.IoT result = root2.IoT;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.CyberPhisical_final.IoT GetParentForcustom_actuator( global::Company.CyberPhisical_final.Actuators root )
 			{
 				// Segments 0 and 1
 				global::Company.CyberPhisical_final.Device root2 = root.Device;

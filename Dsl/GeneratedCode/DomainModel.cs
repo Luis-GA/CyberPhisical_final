@@ -72,7 +72,7 @@ namespace Company.CyberPhisical_final
 				typeof(Sensor),
 				typeof(Temperature),
 				typeof(Humidity),
-				typeof(CO2Level),
+				typeof(Custom_sensor),
 				typeof(SmokeSensor),
 				typeof(AirConditioning),
 				typeof(Siren),
@@ -80,6 +80,7 @@ namespace Company.CyberPhisical_final
 				typeof(Controller),
 				typeof(Alarms),
 				typeof(Things),
+				typeof(custom_actuator),
 				typeof(IoTHasElements),
 				typeof(DeviceHasSensors),
 				typeof(DeviceHasActuator),
@@ -89,15 +90,14 @@ namespace Company.CyberPhisical_final
 				typeof(CyberPhisical_finalDiagram),
 				typeof(ExampleConnector),
 				typeof(ExampleShape),
-				typeof(GeometryShape1),
-				typeof(GeometryShape2),
 				typeof(AlarmsGS),
+				typeof(CustomSensorGS),
+				typeof(CustomActuatorGS),
 				typeof(TemperatureImage),
 				typeof(HumidityImage),
 				typeof(SirenImage),
 				typeof(AirConditioningImage),
 				typeof(ControllerIS),
-				typeof(Co2IS),
 				typeof(ImageShape1),
 				typeof(global::Company.CyberPhisical_final.FixUpDiagram),
 				typeof(global::Company.CyberPhisical_final.ConnectorRolePlayerChanged),
@@ -170,24 +170,24 @@ namespace Company.CyberPhisical_final
 				createElementMap.Add(typeof(Device), 1);
 				createElementMap.Add(typeof(Temperature), 2);
 				createElementMap.Add(typeof(Humidity), 3);
-				createElementMap.Add(typeof(CO2Level), 4);
+				createElementMap.Add(typeof(Custom_sensor), 4);
 				createElementMap.Add(typeof(SmokeSensor), 5);
 				createElementMap.Add(typeof(AirConditioning), 6);
 				createElementMap.Add(typeof(Siren), 7);
 				createElementMap.Add(typeof(Controller), 8);
 				createElementMap.Add(typeof(Alarms), 9);
-				createElementMap.Add(typeof(CyberPhisical_finalDiagram), 10);
-				createElementMap.Add(typeof(ExampleConnector), 11);
-				createElementMap.Add(typeof(ExampleShape), 12);
-				createElementMap.Add(typeof(GeometryShape1), 13);
-				createElementMap.Add(typeof(GeometryShape2), 14);
-				createElementMap.Add(typeof(AlarmsGS), 15);
-				createElementMap.Add(typeof(TemperatureImage), 16);
-				createElementMap.Add(typeof(HumidityImage), 17);
-				createElementMap.Add(typeof(SirenImage), 18);
-				createElementMap.Add(typeof(AirConditioningImage), 19);
-				createElementMap.Add(typeof(ControllerIS), 20);
-				createElementMap.Add(typeof(Co2IS), 21);
+				createElementMap.Add(typeof(custom_actuator), 10);
+				createElementMap.Add(typeof(CyberPhisical_finalDiagram), 11);
+				createElementMap.Add(typeof(ExampleConnector), 12);
+				createElementMap.Add(typeof(ExampleShape), 13);
+				createElementMap.Add(typeof(AlarmsGS), 14);
+				createElementMap.Add(typeof(CustomSensorGS), 15);
+				createElementMap.Add(typeof(CustomActuatorGS), 16);
+				createElementMap.Add(typeof(TemperatureImage), 17);
+				createElementMap.Add(typeof(HumidityImage), 18);
+				createElementMap.Add(typeof(SirenImage), 19);
+				createElementMap.Add(typeof(AirConditioningImage), 20);
+				createElementMap.Add(typeof(ControllerIS), 21);
 				createElementMap.Add(typeof(ImageShape1), 22);
 			}
 			int index;
@@ -206,24 +206,24 @@ namespace Company.CyberPhisical_final
 				case 1: return new Device(partition, propertyAssignments);
 				case 2: return new Temperature(partition, propertyAssignments);
 				case 3: return new Humidity(partition, propertyAssignments);
-				case 4: return new CO2Level(partition, propertyAssignments);
+				case 4: return new Custom_sensor(partition, propertyAssignments);
 				case 5: return new SmokeSensor(partition, propertyAssignments);
 				case 6: return new AirConditioning(partition, propertyAssignments);
 				case 7: return new Siren(partition, propertyAssignments);
 				case 8: return new Controller(partition, propertyAssignments);
 				case 9: return new Alarms(partition, propertyAssignments);
-				case 10: return new CyberPhisical_finalDiagram(partition, propertyAssignments);
-				case 11: return new ExampleConnector(partition, propertyAssignments);
-				case 12: return new ExampleShape(partition, propertyAssignments);
-				case 13: return new GeometryShape1(partition, propertyAssignments);
-				case 14: return new GeometryShape2(partition, propertyAssignments);
-				case 15: return new AlarmsGS(partition, propertyAssignments);
-				case 16: return new TemperatureImage(partition, propertyAssignments);
-				case 17: return new HumidityImage(partition, propertyAssignments);
-				case 18: return new SirenImage(partition, propertyAssignments);
-				case 19: return new AirConditioningImage(partition, propertyAssignments);
-				case 20: return new ControllerIS(partition, propertyAssignments);
-				case 21: return new Co2IS(partition, propertyAssignments);
+				case 10: return new custom_actuator(partition, propertyAssignments);
+				case 11: return new CyberPhisical_finalDiagram(partition, propertyAssignments);
+				case 12: return new ExampleConnector(partition, propertyAssignments);
+				case 13: return new ExampleShape(partition, propertyAssignments);
+				case 14: return new AlarmsGS(partition, propertyAssignments);
+				case 15: return new CustomSensorGS(partition, propertyAssignments);
+				case 16: return new CustomActuatorGS(partition, propertyAssignments);
+				case 17: return new TemperatureImage(partition, propertyAssignments);
+				case 18: return new HumidityImage(partition, propertyAssignments);
+				case 19: return new SirenImage(partition, propertyAssignments);
+				case 20: return new AirConditioningImage(partition, propertyAssignments);
+				case 21: return new ControllerIS(partition, propertyAssignments);
 				case 22: return new ImageShape1(partition, propertyAssignments);
 				default: return null;
 			}

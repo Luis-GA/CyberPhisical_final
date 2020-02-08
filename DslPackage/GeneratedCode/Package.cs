@@ -37,21 +37,13 @@ namespace Company.CyberPhisical_final
 					0xff00ff,
 					Index = 0)]
 	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
-					"@iconTempToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
-					"Company.CyberPhisical_final.iconTempToolboxItem", 
+					"@temperatureToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
+					"Company.CyberPhisical_final.temperatureToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"iconTemp", 
-					"@iconTempToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
+					"Tempertature", 
+					"@temperatureToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
 					0xff00ff,
 					Index = 1)]
-	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
-					"@iconHumidityToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
-					"Company.CyberPhisical_final.iconHumidityToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"iconHumidity", 
-					"@iconHumidityToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
-					0xff00ff,
-					Index = 2)]
 	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
 					"@SirenToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
 					"Company.CyberPhisical_final.SirenToolboxItem", 
@@ -59,7 +51,7 @@ namespace Company.CyberPhisical_final
 					"Siren", 
 					"@SirenToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
 					0xff00ff,
-					Index = 3)]
+					Index = 2)]
 	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
 					"@AirConditioningToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
 					"Company.CyberPhisical_final.AirConditioningToolboxItem", 
@@ -67,7 +59,7 @@ namespace Company.CyberPhisical_final
 					"AirConditioning", 
 					"@AirConditioningToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
 					0xff00ff,
-					Index = 4)]
+					Index = 3)]
 	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
 					"@controllerToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
 					"Company.CyberPhisical_final.controllerToolboxItem", 
@@ -75,7 +67,7 @@ namespace Company.CyberPhisical_final
 					"controller", 
 					"@controllerToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
 					0xff00ff,
-					Index = 5)]
+					Index = 4)]
 	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
 					"@alarmToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
 					"Company.CyberPhisical_final.alarmToolboxItem", 
@@ -83,7 +75,7 @@ namespace Company.CyberPhisical_final
 					"alarm", 
 					"@alarmToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
 					0xff00ff,
-					Index = 6)]
+					Index = 5)]
 	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
 					"@ConnectionTool1ToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
 					"Company.CyberPhisical_final.ConnectionTool1ToolboxItem", 
@@ -91,7 +83,39 @@ namespace Company.CyberPhisical_final
 					"ConnectionTool1", 
 					"@ConnectionTool1ToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
 					0xff00ff,
+					Index = 6)]
+	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
+					"@custom_SensorToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
+					"Company.CyberPhisical_final.custom_SensorToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"custom_Sensor", 
+					"@custom_SensorToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
+					0xff00ff,
 					Index = 7)]
+	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
+					"@custom_ActuatorToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
+					"Company.CyberPhisical_final.custom_ActuatorToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"", 
+					"@custom_ActuatorToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
+					0xff00ff,
+					Index = 8)]
+	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
+					"@humedityToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
+					"Company.CyberPhisical_final.humedityToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"humedity", 
+					"@humedityToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
+					0xff00ff,
+					Index = 9)]
+	[VSShell::ProvideStaticToolboxItem("Company.CyberPhisical_final.CyberPhisical_finalToolboxTab",
+					"@SmokeSensorToolboxItem;Company.CyberPhisical_final.Dsl.dll", 
+					"Company.CyberPhisical_final.SmokeSensorToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"SmokeSensor", 
+					"@SmokeSensorToolboxBitmap;Company.CyberPhisical_final.Dsl.dll", 
+					0xff00ff,
+					Index = 10)]
 	[VSShell::ProvideEditorFactory(typeof(CyberPhisical_finalEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(CyberPhisical_finalEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(CyberPhisical_finalEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer
