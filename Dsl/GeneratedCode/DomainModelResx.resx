@@ -641,11 +641,11 @@
     <value></value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="temperatureToolboxItem" xml:space="preserve">
+  <data name="TemperatureToolboxItem" xml:space="preserve">
     <value>Temperature</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="temperatureToolboxTooltip" xml:space="preserve">
+  <data name="TemperatureToolboxTooltip" xml:space="preserve">
     <value>Temperature</value>
     <comment>Toolbox tooltip text</comment>
   </data>
@@ -665,19 +665,19 @@
     <value>Air Conditioning</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="controllerToolboxItem" xml:space="preserve">
-    <value>controller</value>
+  <data name="ControllerToolboxItem" xml:space="preserve">
+    <value>Controller</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="controllerToolboxTooltip" xml:space="preserve">
+  <data name="ControllerToolboxTooltip" xml:space="preserve">
     <value>Controller</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="alarmToolboxItem" xml:space="preserve">
-    <value>alarm</value>
+  <data name="AlarmToolboxItem" xml:space="preserve">
+    <value>Alarm</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="alarmToolboxTooltip" xml:space="preserve">
+  <data name="AlarmToolboxTooltip" xml:space="preserve">
     <value>Alarm</value>
     <comment>Toolbox tooltip text</comment>
   </data>
@@ -689,36 +689,36 @@
     <value>Connection Tool1</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="custom_SensorToolboxItem" xml:space="preserve">
-    <value>custom_Sensor</value>
+  <data name="Custom_SensorToolboxItem" xml:space="preserve">
+    <value>Custom_Sensor</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="custom_SensorToolboxTooltip" xml:space="preserve">
+  <data name="Custom_SensorToolboxTooltip" xml:space="preserve">
     <value>Custom_ Sensor</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="custom_ActuatorToolboxItem" xml:space="preserve">
+  <data name="Custom_ActuatorToolboxItem" xml:space="preserve">
     <value>Custom Actuator</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="custom_ActuatorToolboxTooltip" xml:space="preserve">
+  <data name="Custom_ActuatorToolboxTooltip" xml:space="preserve">
     <value>Custom Actuator</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="humedityToolboxItem" xml:space="preserve">
-    <value>humedity</value>
+  <data name="HumedityToolboxItem" xml:space="preserve">
+    <value>Humedity</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="humedityToolboxTooltip" xml:space="preserve">
+  <data name="HumedityToolboxTooltip" xml:space="preserve">
     <value>Humedity</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="SmokeSensorToolboxItem" xml:space="preserve">
-    <value>SmokeSensor</value>
+  <data name="SmokeToolboxItem" xml:space="preserve">
+    <value>Smoke</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="SmokeSensorToolboxTooltip" xml:space="preserve">
-    <value>Smoke Sensor</value>
+  <data name="SmokeToolboxTooltip" xml:space="preserve">
+    <value>Smoke</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -878,7 +878,7 @@ A DomainClass can be serialized as a moniker only if
     <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="temperatureToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="TemperatureToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\weather.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
@@ -890,11 +890,11 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="controllerToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="ControllerToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="alarmToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="AlarmToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\alert.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
@@ -902,19 +902,19 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="custom_SensorToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="Custom_SensorToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\steam.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="custom_ActuatorToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="Custom_ActuatorToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\steam.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="humedityToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="HumedityToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\humedity.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="SmokeSensorToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="SmokeToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\smoke.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

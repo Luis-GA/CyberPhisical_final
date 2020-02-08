@@ -163,17 +163,17 @@ namespace Company.CyberPhisical_final
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "Company.CyberPhisical_final.temperatureToolboxItem":
-					// Add temperature shape tool.
+				case "Company.CyberPhisical_final.TemperatureToolboxItem":
+					// Add Temperature shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Company.CyberPhisical_final.temperatureToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Company.CyberPhisical_final.TemperatureToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						2, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("temperatureToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("temperatureToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("TemperatureToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("TemperatureToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Company.CyberPhisical_final.CyberPhisical_finalToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("CyberPhisical_finalToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"Tempertature", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("temperatureToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						resourceManager.GetString("TemperatureToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::Company.CyberPhisical_final.Temperature.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
@@ -211,33 +211,33 @@ namespace Company.CyberPhisical_final
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "Company.CyberPhisical_final.controllerToolboxItem":
-					// Add controller shape tool.
+				case "Company.CyberPhisical_final.ControllerToolboxItem":
+					// Add Controller shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Company.CyberPhisical_final.controllerToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Company.CyberPhisical_final.ControllerToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						5, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("controllerToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("controllerToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("ControllerToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ControllerToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Company.CyberPhisical_final.CyberPhisical_finalToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("CyberPhisical_finalToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"controller", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("controllerToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						"Controller", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ControllerToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::Company.CyberPhisical_final.Controller.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "Company.CyberPhisical_final.alarmToolboxItem":
-					// Add alarm shape tool.
+				case "Company.CyberPhisical_final.AlarmToolboxItem":
+					// Add Alarm shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Company.CyberPhisical_final.alarmToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Company.CyberPhisical_final.AlarmToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						6, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("alarmToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("alarmToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("AlarmToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("AlarmToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Company.CyberPhisical_final.CyberPhisical_finalToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("CyberPhisical_finalToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"alarm", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("alarmToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						"Alarm", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("AlarmToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::Company.CyberPhisical_final.Alarms.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
@@ -261,65 +261,65 @@ namespace Company.CyberPhisical_final
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(ConnectionTool1FilterString)
 						});
 					break;
-				case "Company.CyberPhisical_final.custom_SensorToolboxItem":
-					// Add custom_Sensor shape tool.
+				case "Company.CyberPhisical_final.Custom_SensorToolboxItem":
+					// Add Custom_Sensor shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Company.CyberPhisical_final.custom_SensorToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Company.CyberPhisical_final.Custom_SensorToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						8, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("custom_SensorToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("custom_SensorToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("Custom_SensorToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("Custom_SensorToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Company.CyberPhisical_final.CyberPhisical_finalToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("CyberPhisical_finalToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"custom_Sensor", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("custom_SensorToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						"Custom_Sensor", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("Custom_SensorToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::Company.CyberPhisical_final.Custom_sensor.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "Company.CyberPhisical_final.custom_ActuatorToolboxItem":
-					// Add custom_Actuator shape tool.
+				case "Company.CyberPhisical_final.Custom_ActuatorToolboxItem":
+					// Add Custom_Actuator shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Company.CyberPhisical_final.custom_ActuatorToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Company.CyberPhisical_final.Custom_ActuatorToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						9, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("custom_ActuatorToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("custom_ActuatorToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("Custom_ActuatorToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("Custom_ActuatorToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Company.CyberPhisical_final.CyberPhisical_finalToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("CyberPhisical_finalToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("custom_ActuatorToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						resourceManager.GetString("Custom_ActuatorToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::Company.CyberPhisical_final.custom_actuator.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "Company.CyberPhisical_final.humedityToolboxItem":
-					// Add humedity shape tool.
+				case "Company.CyberPhisical_final.HumedityToolboxItem":
+					// Add Humedity shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Company.CyberPhisical_final.humedityToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Company.CyberPhisical_final.HumedityToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						10, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("humedityToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("humedityToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("HumedityToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("HumedityToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Company.CyberPhisical_final.CyberPhisical_finalToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("CyberPhisical_finalToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"humedity", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("humedityToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						"Humedity", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("HumedityToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::Company.CyberPhisical_final.Humidity.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "Company.CyberPhisical_final.SmokeSensorToolboxItem":
-					// Add SmokeSensor shape tool.
+				case "Company.CyberPhisical_final.SmokeToolboxItem":
+					// Add Smoke shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Company.CyberPhisical_final.SmokeSensorToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Company.CyberPhisical_final.SmokeToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						11, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("SmokeSensorToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("SmokeSensorToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("SmokeToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("SmokeToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Company.CyberPhisical_final.CyberPhisical_finalToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("CyberPhisical_finalToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"SmokeSensor", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("SmokeSensorToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						"Smoke", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("SmokeToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::Company.CyberPhisical_final.SmokeSensor.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 

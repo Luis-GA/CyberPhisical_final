@@ -89,39 +89,39 @@ ALTER TABLE `Measures` ADD CONSTRAINT `Measures_fk0` FOREIGN KEY (`sensor_id`) R
 
 INSERT INTO Devices (`name`) VALUES ('Drone Device');
 INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('1', 'Smoke_drone', 'percentage');
-INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('1', 'Camera', 'jpg');
+INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('1', 'camera', 'jpg');
 INSERT INTO Actuators (`device_id`, `name`) VALUES ('1', 'Siren');
 INSERT INTO Devices (`name`) VALUES ('Emergency Office');
 INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('2', 'termometer_office', 'centrigrades');
 INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('2', 'humidity_office', 'percentage');
-INSERT INTO Actuators (`device_id`, `name`) VALUES ('2', '');
+INSERT INTO Actuators (`device_id`, `name`) VALUES ('2', 'airc_conditioning');
 INSERT INTO Devices (`name`) VALUES ('eCall');
-INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('3', 'Collision_detect', 'percentage');
-INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('3', 'Smoke_eCall', 'percentage');
-INSERT INTO Actuators (`device_id`, `name`) VALUES ('3', 'Send Alert');
+INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('3', 'collision_detect', 'percentage');
+INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('3', 'smoke_eCall', 'percentage');
+INSERT INTO Actuators (`device_id`, `name`) VALUES ('3', 'alert_sender');
 
 INSERT INTO Alerts (`name`, `condition`, `advertence`) VALUES('Acclimate the room', 'temp >30 or temp < 15', 'Set the air');
 INSERT INTO Alerts (`name`, `condition`, `advertence`) VALUES('Accitent Detect', 'smoke>30', 'Send There is a car accident');
 
 INSERT INTO Controllers (`name`) VALUES ('Dron Controller');
-INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('1', (SELECT id from Sensors where name ='Camera'));
+INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('1', (SELECT id from Sensors where name ='camera'));
 INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('1', (SELECT id from Sensors where name ='Smoke_drone'));
 INSERT INTO controllerhasActuator (`controller_id`, `actuator_id`) VALUES ('1', (SELECT id from Actuators where name ='Siren'));
 INSERT INTO controllerhasAlerts (`controller_id`, `alert_id`) VALUES ('1', (SELECT id from Alerts where name ='Accitent Detect'));
-INSERT INTO Controllers (`name`) VALUES ('office_controller');
-INSERT INTO controllerhasActuator (`controller_id`, `actuator_id`) VALUES ('2', (SELECT id from Actuators where name =''));
+INSERT INTO Controllers (`name`) VALUES ('Office_controller');
+INSERT INTO controllerhasActuator (`controller_id`, `actuator_id`) VALUES ('2', (SELECT id from Actuators where name ='airc_conditioning'));
 INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('2', (SELECT id from Sensors where name ='humidity_office'));
 INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('2', (SELECT id from Sensors where name ='termometer_office'));
 INSERT INTO controllerhasAlerts (`controller_id`, `alert_id`) VALUES ('2', (SELECT id from Alerts where name ='Acclimate the room'));
 INSERT INTO Controllers (`name`) VALUES ('eCallController');
-INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('3', (SELECT id from Sensors where name ='Collision_detect'));
-INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('3', (SELECT id from Sensors where name ='Smoke_eCall'));
-INSERT INTO controllerhasActuator (`controller_id`, `actuator_id`) VALUES ('3', (SELECT id from Actuators where name ='Send Alert'));
+INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('3', (SELECT id from Sensors where name ='collision_detect'));
+INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('3', (SELECT id from Sensors where name ='smoke_eCall'));
+INSERT INTO controllerhasActuator (`controller_id`, `actuator_id`) VALUES ('3', (SELECT id from Actuators where name ='alert_sender'));
 INSERT INTO controllerhasAlerts (`controller_id`, `alert_id`) VALUES ('3', (SELECT id from Alerts where name ='Accitent Detect'));
 INSERT INTO Controllers (`name`) VALUES ('Emergency_system');
-INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('4', (SELECT id from Sensors where name ='Camera'));
+INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('4', (SELECT id from Sensors where name ='camera'));
 INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('4', (SELECT id from Sensors where name ='Smoke_drone'));
-INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('4', (SELECT id from Sensors where name ='Collision_detect'));
-INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('4', (SELECT id from Sensors where name ='Smoke_eCall'));
+INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('4', (SELECT id from Sensors where name ='collision_detect'));
+INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('4', (SELECT id from Sensors where name ='smoke_eCall'));
 
 

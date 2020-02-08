@@ -624,7 +624,7 @@
       <ElementTool Name="Device" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="Device" Tooltip="" HelpKeyword="CreateExampleClassF1Keyword">
         <DomainClassMoniker Name="Device" />
       </ElementTool>
-      <ElementTool Name="temperature" ToolboxIcon="Resources\weather.bmp" Caption="Temperature" Tooltip="Temperature" HelpKeyword="Tempertature">
+      <ElementTool Name="Temperature" ToolboxIcon="Resources\weather.bmp" Caption="Temperature" Tooltip="Temperature" HelpKeyword="Tempertature">
         <DomainClassMoniker Name="Temperature" />
       </ElementTool>
       <ElementTool Name="Siren" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Siren" Tooltip="Siren" HelpKeyword="Siren">
@@ -633,25 +633,25 @@
       <ElementTool Name="AirConditioning" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="AirConditioning" Tooltip="Air Conditioning" HelpKeyword="AirConditioning">
         <DomainClassMoniker Name="AirConditioning" />
       </ElementTool>
-      <ElementTool Name="controller" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="controller" Tooltip="Controller" HelpKeyword="controller">
+      <ElementTool Name="Controller" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Controller" Tooltip="Controller" HelpKeyword="Controller">
         <DomainClassMoniker Name="Controller" />
       </ElementTool>
-      <ElementTool Name="alarm" ToolboxIcon="Resources\alert.bmp" Caption="alarm" Tooltip="Alarm" HelpKeyword="alarm">
+      <ElementTool Name="Alarm" ToolboxIcon="Resources\alert.bmp" Caption="Alarm" Tooltip="Alarm" HelpKeyword="Alarm">
         <DomainClassMoniker Name="Alarms" />
       </ElementTool>
       <ConnectionTool Name="ConnectionTool1" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Controller_connection" Tooltip="Connection Tool1" HelpKeyword="ConnectionTool1">
         <ConnectionBuilderMoniker Name="CyberPhisical_final/ControllerReferencesThingBuilder" />
       </ConnectionTool>
-      <ElementTool Name="custom_Sensor" ToolboxIcon="Resources\steam.bmp" Caption="custom_Sensor" Tooltip="Custom_ Sensor" HelpKeyword="custom_Sensor">
+      <ElementTool Name="Custom_Sensor" ToolboxIcon="Resources\steam.bmp" Caption="Custom_Sensor" Tooltip="Custom_ Sensor" HelpKeyword="Custom_Sensor">
         <DomainClassMoniker Name="Custom_sensor" />
       </ElementTool>
-      <ElementTool Name="custom_Actuator" ToolboxIcon="Resources\steam.bmp" Caption="Custom Actuator" Tooltip="Custom Actuator" HelpKeyword="">
+      <ElementTool Name="Custom_Actuator" ToolboxIcon="Resources\steam.bmp" Caption="Custom Actuator" Tooltip="Custom Actuator" HelpKeyword="">
         <DomainClassMoniker Name="custom_actuator" />
       </ElementTool>
-      <ElementTool Name="humedity" ToolboxIcon="Resources\humedity.bmp" Caption="humedity" Tooltip="Humedity" HelpKeyword="humedity">
+      <ElementTool Name="Humedity" ToolboxIcon="Resources\humedity.bmp" Caption="Humedity" Tooltip="Humedity" HelpKeyword="Humedity">
         <DomainClassMoniker Name="Humidity" />
       </ElementTool>
-      <ElementTool Name="SmokeSensor" ToolboxIcon="Resources\smoke.bmp" Caption="SmokeSensor" Tooltip="Smoke Sensor" HelpKeyword="SmokeSensor">
+      <ElementTool Name="Smoke" ToolboxIcon="Resources\smoke.bmp" Caption="Smoke" Tooltip="Smoke" HelpKeyword="Smoke">
         <DomainClassMoniker Name="SmokeSensor" />
       </ElementTool>
     </ToolboxTab>
