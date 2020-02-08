@@ -112,8 +112,13 @@ namespace Company.CyberPhisical_final
 		{
 			return new DomainMemberInfo[]
 			{
+				new DomainMemberInfo(typeof(IoT), "NameDDBB", IoT.NameDDBBDomainPropertyId, typeof(IoT.NameDDBBPropertyHandler)),
 				new DomainMemberInfo(typeof(Device), "Name", Device.NameDomainPropertyId, typeof(Device.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(Sensor), "current_mesure", Sensor.current_mesureDomainPropertyId, typeof(Sensor.current_mesurePropertyHandler)),
+				new DomainMemberInfo(typeof(Sensor), "name", Sensor.nameDomainPropertyId, typeof(Sensor.namePropertyHandler)),
 				new DomainMemberInfo(typeof(Sensor), "type_measure", Sensor.type_measureDomainPropertyId, typeof(Sensor.type_measurePropertyHandler)),
+				new DomainMemberInfo(typeof(Actuators), "name", Actuators.nameDomainPropertyId, typeof(Actuators.namePropertyHandler)),
+				new DomainMemberInfo(typeof(Controller), "Name", Controller.NameDomainPropertyId, typeof(Controller.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(Alarms), "name", Alarms.nameDomainPropertyId, typeof(Alarms.namePropertyHandler)),
 				new DomainMemberInfo(typeof(Alarms), "condition", Alarms.conditionDomainPropertyId, typeof(Alarms.conditionPropertyHandler)),
 				new DomainMemberInfo(typeof(Alarms), "advertence", Alarms.advertenceDomainPropertyId, typeof(Alarms.advertencePropertyHandler)),

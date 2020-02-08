@@ -2,6 +2,11 @@
 <#@ output extension=".sql" #>
 <#@ CyberPhisical_final processor="CyberPhisical_finalDirectiveProcessor" requires="fileName='Test.CyberPhisicalfinal'" #>
 
+<#
+WriteLine("CREATE DATABASE " + this.IoT.NameDDBB + ";");
+WriteLine("USE " + this.IoT.NameDDBB + ";\n");
+#>
+
 CREATE TABLE `Devices` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255),
@@ -12,21 +17,20 @@ CREATE TABLE `Sensors` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`device_id` INT,
 	`name` VARCHAR(255),
+	`type_measure` VARCHAR(255),
 	PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Controllers` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255),
-	`created_at` DATETIME NOT NULL,
-	`updated_at` DATETIME NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Actuators` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`device_id` INT NOT NULL,
-	`name` INT NOT NULL,
+	`name` VARCHAR(255),
 	PRIMARY KEY (`id`)
 );
 
@@ -46,9 +50,9 @@ CREATE TABLE `controllerhasActuator` (
 
 CREATE TABLE `Alerts` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(255) NOT NULL AUTO_INCREMENT,
-	`condition` VARCHAR(255) NOT NULL AUTO_INCREMENT,
-	`advertence` VARCHAR(255) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(255) NOT NULL,
+	`condition` VARCHAR(255) NOT NULL,
+	`advertence` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -84,4 +88,66 @@ ALTER TABLE `controllerhasAlerts` ADD CONSTRAINT `controllerhasAlerts_fk0` FOREI
 ALTER TABLE `controllerhasAlerts` ADD CONSTRAINT `controllerhasAlerts_fk1` FOREIGN KEY (`alert_id`) REFERENCES `Alerts`(`id`);
 
 ALTER TABLE `Measures` ADD CONSTRAINT `Measures_fk0` FOREIGN KEY (`sensor_id`) REFERENCES `Sensors`(`id`);
+
+
+
+<#
+int cont=1;
+foreach(Device device in this.IoT.Elements) {
+	WriteLine("INSERT INTO Devices (`name`) VALUES " 	+	 "('"	+ device.Name +	"');");
+	foreach(Sensor sensor in device.Sensors) {
+		WriteLine("INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES " 	+	"('"	+ cont +"', '" +sensor.name +"', '" + sensor.type_measure +	"');");
+}
+	foreach(Actuators actuator in device.Actuator) {
+		WriteLine("INSERT INTO Actuators (`device_id`, `name`) VALUES " 	+	"('"	+ cont +"', '" +actuator.name +"');");
+}
+cont++;
+}
+#>
+
+<#
+foreach(Alarms alarm in this.IoT.Alarm) {
+WriteLine("INSERT INTO Alerts (`name`, `condition`, `advertence`) VALUES" 	+	 "('"	+ alarm.name +"', '" +alarm.condition +"', '" + alarm.advertence +	"');");
+
+}
+#>
+
+<#
+cont=1;
+Actuators actaux;
+Sensor senaux;
+Alarms alaux;
+foreach(Controller controller in this.IoT.Controllers) {
+	WriteLine("INSERT INTO Controllers (`name`) VALUES " 	+	 "('"	+ controller.Name +	"');");
+
+	foreach(Things thing in controller.Thing) {
+	string strName = thing.GetType().BaseType.Name;
+	switch(strName){
+		case "Actuators" :
+		actaux = (Actuators) thing;
+		WriteLine("INSERT INTO controllerhasActuator (`controller_id`, `actuator_id`) VALUES ('"	+	cont	+	"', (SELECT id from Actuators where name ='"	+	actaux.name	+	"'));");
+		break;
+
+	   case "Sensor" :
+		senaux = (Sensor) thing;
+
+		WriteLine("INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('"	+	cont	+	"', (SELECT id from Sensors where name ='"	+	senaux.name	+	"'));");
+
+		break;
+
+	    case "Things" :
+		alaux = (Alarms) thing;
+		WriteLine("INSERT INTO controllerhasAlerts (`controller_id`, `alert_id`) VALUES ('"	+	cont	+	"', (SELECT id from Alerts where name ='"	+	alaux.name	+	"'));");
+
+		break;
+	}
+
+	}
+cont ++;
+}
+#>
+
+<#
+
+#>
 

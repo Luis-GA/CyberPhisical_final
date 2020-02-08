@@ -1,4 +1,8 @@
 ﻿
+CREATE DATABASE Tes;
+USE Tes;
+
+
 CREATE TABLE `Devices` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255),
@@ -9,21 +13,20 @@ CREATE TABLE `Sensors` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`device_id` INT,
 	`name` VARCHAR(255),
+	`type_measure` VARCHAR(255),
 	PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Controllers` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255),
-	`created_at` DATETIME NOT NULL,
-	`updated_at` DATETIME NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Actuators` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`device_id` INT NOT NULL,
-	`name` INT NOT NULL,
+	`name` VARCHAR(255),
 	PRIMARY KEY (`id`)
 );
 
@@ -43,9 +46,9 @@ CREATE TABLE `controllerhasActuator` (
 
 CREATE TABLE `Alerts` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(255) NOT NULL AUTO_INCREMENT,
-	`condition` VARCHAR(255) NOT NULL AUTO_INCREMENT,
-	`advertence` VARCHAR(255) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(255) NOT NULL,
+	`condition` VARCHAR(255) NOT NULL,
+	`advertence` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -81,4 +84,21 @@ ALTER TABLE `controllerhasAlerts` ADD CONSTRAINT `controllerhasAlerts_fk0` FOREI
 ALTER TABLE `controllerhasAlerts` ADD CONSTRAINT `controllerhasAlerts_fk1` FOREIGN KEY (`alert_id`) REFERENCES `Alerts`(`id`);
 
 ALTER TABLE `Measures` ADD CONSTRAINT `Measures_fk0` FOREIGN KEY (`sensor_id`) REFERENCES `Sensors`(`id`);
+
+
+
+INSERT INTO Devices (`name`) VALUES ('Device1');
+INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('1', 'culu', 'pitos');
+INSERT INTO Sensors (`device_id`, `name`, `type_measure`) VALUES ('1', 'caca', 'limones');
+INSERT INTO Actuators (`device_id`, `name`) VALUES ('1', 'pene');
+INSERT INTO Actuators (`device_id`, `name`) VALUES ('1', 'pena');
+
+INSERT INTO Alerts (`name`, `condition`, `advertence`) VALUES('Hola', 'Helo', 'hi');
+
+INSERT INTO Controllers (`name`) VALUES ('terminator');
+INSERT INTO controllerhasSensor (`controller_id`, `sensor_id`) VALUES ('1', (SELECT id from Sensors where name ='caca'));
+INSERT INTO controllerhasAlerts (`controller_id`, `alert_id`) VALUES ('1', (SELECT id from Alerts where name ='Hola'));
+INSERT INTO controllerhasActuator (`controller_id`, `actuator_id`) VALUES ('1', (SELECT id from Actuators where name ='pene'));
+INSERT INTO controllerhasActuator (`controller_id`, `actuator_id`) VALUES ('1', (SELECT id from Actuators where name ='pena'));
+
 

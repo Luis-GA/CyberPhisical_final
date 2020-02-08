@@ -777,6 +777,17 @@ namespace Company.CyberPhisical_final
 		
 		#endregion
 		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(0.75, 0.5);
+			}
+		}
 		#endregion
 		#region Shape styles
 		#endregion
@@ -913,7 +924,7 @@ namespace Company.CyberPhisical_final
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(1, 1);
+				return new DslDiagrams::SizeD(0.6, 0.6);
 			}
 		}
 		#endregion
@@ -1191,7 +1202,7 @@ namespace Company.CyberPhisical_final
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(0.5, 0.5);
+				return new DslDiagrams::SizeD(0.8, 0.8);
 			}
 		}
 		#endregion
@@ -1348,11 +1359,26 @@ namespace Company.CyberPhisical_final
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(1.5, 1);
+				return new DslDiagrams::SizeD(1, 0.8);
 			}
 		}
 		#endregion
 		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Fill brush settings for this shape.
+			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
+			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.Orange);
+			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
+		
+		}
+		
 		/// <summary>
 		/// Indicates whether this shape displays a background gradient.
 		/// </summary>
@@ -1374,6 +1400,16 @@ namespace Company.CyberPhisical_final
 				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
 			}
 		}
+		/// <summary>
+		/// Specifies the geometry used by this shape
+		/// </summary>
+		public override DslDiagrams::ShapeGeometry ShapeGeometry
+		{
+			get
+			{
+				return DslDiagrams::ShapeGeometries.RoundedRectangle;
+			}
+		}
 		#endregion
 		#region Decorators
 		/// <summary>
@@ -1391,24 +1427,6 @@ namespace Company.CyberPhisical_final
 			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
 			shapeFields.Add(field1);
 			
-			DslDiagrams::TextField field2 = new DslDiagrams::TextField("condition");
-			field2.DefaultText = global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel.SingletonResourceManager.GetString("AlarmsGSconditionDefaultText");
-			field2.DefaultFocusable = true;
-			field2.DefaultAutoSize = true;
-			field2.AnchoringBehavior.MinimumHeightInLines = 1;
-			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field2);
-			
-			DslDiagrams::TextField field3 = new DslDiagrams::TextField("advertence");
-			field3.DefaultText = global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel.SingletonResourceManager.GetString("AlarmsGSadvertenceDefaultText");
-			field3.DefaultFocusable = true;
-			field3.DefaultAutoSize = true;
-			field3.AnchoringBehavior.MinimumHeightInLines = 1;
-			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field3);
-			
 		}
 		
 		/// <summary>
@@ -1423,14 +1441,6 @@ namespace Company.CyberPhisical_final
 			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "name");
 			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
-				
-			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "condition");
-			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator2);
-				
-			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "advertence");
-			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator3);
 				
 		}
 		
@@ -1576,7 +1586,7 @@ namespace Company.CyberPhisical_final
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(0.4, 0.2);
+				return new DslDiagrams::SizeD(1, 0.8);
 			}
 		}
 		#endregion

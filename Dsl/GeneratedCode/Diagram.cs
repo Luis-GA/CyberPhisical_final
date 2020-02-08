@@ -298,12 +298,6 @@ namespace Company.CyberPhisical_final
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.CyberPhisical_final.Alarms.nameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "name").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.CyberPhisical_final.Alarms.conditionDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "condition").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.CyberPhisical_final.Alarms.advertenceDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "advertence").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		

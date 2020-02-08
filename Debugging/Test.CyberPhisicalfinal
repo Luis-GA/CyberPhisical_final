@@ -1,54 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ioT xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f386182d-ff8d-4ffa-a34d-702c51fbf63f" xmlns="http://schemas.microsoft.com/dsltools/CyberPhisical_final">
+<ioT xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f386182d-ff8d-4ffa-a34d-702c51fbf63f" nameDDBB="Tes" xmlns="http://schemas.microsoft.com/dsltools/CyberPhisical_final">
   <elements>
-    <device Id="763ffc53-c434-485f-8d36-347dc8c0fe7e" name="Device1">
+    <device Id="e3562308-6501-4f04-981d-15b4f00ccbfe" name="Device1">
       <sensors>
-        <deviceHasSensors Id="268da28e-4d06-4eeb-8282-c054e376b6a6">
-          <temperature Id="68cdc1fb-ca6a-4ee6-9d26-ccd5ca1375b8" />
+        <deviceHasSensors Id="1c2b9dc2-9501-4dea-8c1d-dbe4e91816e7">
+          <temperature Id="99b59aec-7ba9-4b1d-b154-fc0166a72364" current_mesure="0" name="culu" type_measure="pitos" />
         </deviceHasSensors>
-        <deviceHasSensors Id="de01885c-d526-4fb5-bff7-ef26845efb49">
-          <humidity Id="82673f65-5a37-42c2-bba5-88e63c2d6a37" />
+        <deviceHasSensors Id="ccca335d-5584-4fcb-a769-160492452bb7">
+          <humidity Id="e1767b5d-07d8-4f6d-99e8-6a3e457ba775" current_mesure="0" name="caca" type_measure="limones" />
         </deviceHasSensors>
       </sensors>
       <actuator>
-        <deviceHasActuator Id="872f8eda-322d-4027-a8f6-91ce44f8ff7b">
-          <siren Id="14ad8d2d-741e-4f70-8f8e-dae4594bb7c1" />
+        <deviceHasActuator Id="b7dbe122-ce65-4a41-a9c8-26306e8e2712">
+          <siren Id="50ddfdba-99df-42de-b61c-882f56885c0e" name="pene" />
         </deviceHasActuator>
-        <deviceHasActuator Id="4a409313-7be3-448f-b4ab-5087dc1fce5b">
-          <airConditioning Id="aef0845b-c5c4-4964-a366-eca35ac2ce72" />
+        <deviceHasActuator Id="0915c43a-1df9-4061-a134-f3c950a544b7">
+          <airConditioning Id="d1b80b82-e4ed-41c5-a1cd-db0b75247c5c" name="pena" />
         </deviceHasActuator>
       </actuator>
     </device>
   </elements>
   <controllers>
-    <ioTHasControllers Id="2635c45d-757a-409c-b7e7-f56d4273652f">
-      <controller Id="32c9418b-957a-4cb2-82d1-d84e16e0f0b4" />
-    </ioTHasControllers>
-    <ioTHasControllers Id="f6105fee-fdfc-4988-b758-d908d7307150">
-      <controller Id="d1b36bbe-a9e1-42ce-951d-ace7ca04a1ac" />
-    </ioTHasControllers>
-    <ioTHasControllers Id="caacc386-45d7-4d93-9b03-8d4fff9539fd">
-      <controller Id="db723b8d-dd2b-438c-82ac-5a83c1e12eb5" />
-    </ioTHasControllers>
-    <ioTHasControllers Id="6deac2e6-415b-4f81-944f-5daf27738b3e">
-      <controller Id="27a62134-f61b-494b-a1fc-771f51bca07a">
+    <ioTHasControllers Id="798ee7c6-761a-4ac1-a1a8-5f082e5014a9">
+      <controller Id="9e3a8428-5518-4455-9798-e47a44cc6628" name="terminator">
         <thing>
-          <controllerReferencesThing Id="ecd4705d-a788-4c35-aef8-f4be8615ccc8">
-            <humidityMoniker Id="82673f65-5a37-42c2-bba5-88e63c2d6a37" />
+          <controllerReferencesThing Id="f6bf4690-9815-4fb3-8b6b-dda3664a81a6">
+            <humidityMoniker Id="e1767b5d-07d8-4f6d-99e8-6a3e457ba775" />
           </controllerReferencesThing>
-          <controllerReferencesThing Id="ffbcea79-1945-4109-bbfb-2a4b60c894d0">
-            <alarmsMoniker Id="76b130a9-996b-46e9-a13b-b93dc5b2fcdc" />
+          <controllerReferencesThing Id="7230f8e6-d2e6-4076-8d3f-6954d8b38ae9">
+            <alarmsMoniker Id="82003893-d26e-4623-a666-0253c7e770a6" />
           </controllerReferencesThing>
-          <controllerReferencesThing Id="0f846484-de64-4a6b-936b-45c0389c90cf">
-            <airConditioningMoniker Id="aef0845b-c5c4-4964-a366-eca35ac2ce72" />
+          <controllerReferencesThing Id="9abba973-3252-46f9-8afc-aae9fa95f1a2">
+            <sirenMoniker Id="50ddfdba-99df-42de-b61c-882f56885c0e" />
+          </controllerReferencesThing>
+          <controllerReferencesThing Id="5799fd4b-8cdb-4450-9819-ecef6c0045b1">
+            <airConditioningMoniker Id="d1b80b82-e4ed-41c5-a1cd-db0b75247c5c" />
           </controllerReferencesThing>
         </thing>
       </controller>
     </ioTHasControllers>
   </controllers>
   <alarm>
-    <ioTHasAlarm Id="c9a40d43-1178-4259-8ace-f5e70cc962e1">
-      <alarms Id="76b130a9-996b-46e9-a13b-b93dc5b2fcdc" name="hi" condition="hols" advertence="hols" />
+    <ioTHasAlarm Id="bb8af701-ae71-46ea-bf5f-a0090b8ab745">
+      <alarms Id="82003893-d26e-4623-a666-0253c7e770a6" name="Hola" condition="Helo" advertence="hi" />
     </ioTHasAlarm>
   </alarm>
 </ioT>

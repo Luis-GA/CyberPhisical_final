@@ -103,7 +103,7 @@ namespace Company.CyberPhisical_final
 			
 			// Read properties serialized as XML attributes.
 			ReadPropertiesFromAttributes(serializationContext, element, reader);
-				
+	
 			// Read nested XML elements.
 			if (!serializationContext.Result.Failed)
 			{
@@ -151,7 +151,26 @@ namespace Company.CyberPhisical_final
 			// Always call the base class so any extensions are deserialized
 			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			// There is no property to read; do nothing
+			IoT instanceOfIoT = element as IoT;
+			global::System.Diagnostics.Debug.Assert(instanceOfIoT != null, "Expecting an instance of IoT");
+	
+			// NameDDBB
+			if (!serializationContext.Result.Failed)
+			{
+				string attribNameDDBB = CyberPhisical_finalSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "nameDDBB");
+				if (attribNameDDBB != null)
+				{
+					global::System.String valueOfNameDDBB;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribNameDDBB, out valueOfNameDDBB))
+					{
+						instanceOfIoT.NameDDBB = valueOfNameDDBB;
+					}
+					else
+					{	// Invalid property value, ignored.
+						CyberPhisical_finalSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "nameDDBB", typeof(global::System.String), attribNameDDBB);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -785,7 +804,20 @@ namespace Company.CyberPhisical_final
 			// Always call the base class so any extensions are serialized
 			base.WritePropertiesAsAttributes(serializationContext, element, writer);
 	
-			// There are no properties; do nothing
+			IoT instanceOfIoT = element as IoT;
+			global::System.Diagnostics.Debug.Assert(instanceOfIoT != null, "Expecting an instance of IoT");
+	
+			// NameDDBB
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfIoT.NameDDBB;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						CyberPhisical_finalSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "nameDDBB", propValue);
+	
+				}
+			}
 		}
 	
 		/// <summary>
@@ -1920,6 +1952,40 @@ namespace Company.CyberPhisical_final
 			Sensor instanceOfSensor = element as Sensor;
 			global::System.Diagnostics.Debug.Assert(instanceOfSensor != null, "Expecting an instance of Sensor");
 	
+			// current_mesure
+			if (!serializationContext.Result.Failed)
+			{
+				string attribcurrent_mesure = CyberPhisical_finalSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "current_mesure");
+				if (attribcurrent_mesure != null)
+				{
+					global::System.Double valueOfcurrent_mesure;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.Double>(serializationContext, attribcurrent_mesure, out valueOfcurrent_mesure))
+					{
+						instanceOfSensor.current_mesure = valueOfcurrent_mesure;
+					}
+					else
+					{	// Invalid property value, ignored.
+						CyberPhisical_finalSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "current_mesure", typeof(global::System.Double), attribcurrent_mesure);
+					}
+				}
+			}
+			// name
+			if (!serializationContext.Result.Failed)
+			{
+				string attribname = CyberPhisical_finalSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "name");
+				if (attribname != null)
+				{
+					global::System.String valueOfname;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribname, out valueOfname))
+					{
+						instanceOfSensor.name = valueOfname;
+					}
+					else
+					{	// Invalid property value, ignored.
+						CyberPhisical_finalSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "name", typeof(global::System.String), attribname);
+					}
+				}
+			}
 			// type_measure
 			if (!serializationContext.Result.Failed)
 			{
@@ -2236,6 +2302,27 @@ namespace Company.CyberPhisical_final
 			Sensor instanceOfSensor = element as Sensor;
 			global::System.Diagnostics.Debug.Assert(instanceOfSensor != null, "Expecting an instance of Sensor");
 	
+			// current_mesure
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.Double propValue = instanceOfSensor.current_mesure;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<global::System.Double>(serializationContext, propValue);
+				if (!serializationContext.Result.Failed)
+				{
+					CyberPhisical_finalSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "current_mesure", serializedPropValue);
+				}
+			}
+			// name
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfSensor.name;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						CyberPhisical_finalSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "name", propValue);
+	
+				}
+			}
 			// type_measure
 			if (!serializationContext.Result.Failed)
 			{
@@ -5762,6 +5849,44 @@ namespace Company.CyberPhisical_final
 			throw new global::System.NotSupportedException();
 		}
 	
+		/// <summary>
+		/// This method deserializes all properties that are serialized as XML attributes.
+		/// </summary>
+		/// <remarks>
+		/// Because this method only handles properties serialized as XML attributes, the passed-in reader shouldn't be moved inside this method.
+		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory Actuators instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			// Always call the base class so any extensions are deserialized
+			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+	
+			Actuators instanceOfActuators = element as Actuators;
+			global::System.Diagnostics.Debug.Assert(instanceOfActuators != null, "Expecting an instance of Actuators");
+	
+			// name
+			if (!serializationContext.Result.Failed)
+			{
+				string attribname = CyberPhisical_finalSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "name");
+				if (attribname != null)
+				{
+					global::System.String valueOfname;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribname, out valueOfname))
+					{
+						instanceOfActuators.name = valueOfname;
+					}
+					else
+					{	// Invalid property value, ignored.
+						CyberPhisical_finalSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "name", typeof(global::System.String), attribname);
+					}
+				}
+			}
+		}
+	
 		#region TryCreateInstance
 		/// <summary>
 		/// This method creates a correct instance of Actuators based on the tag currently pointed by the reader. If the reader
@@ -6043,6 +6168,34 @@ namespace Company.CyberPhisical_final
 		{
 			throw new global::System.NotSupportedException();
 		}
+	
+		/// <summary>
+		/// Write all properties that need to be serialized as XML attributes.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">Actuators instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param> 
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
+		{
+			// Always call the base class so any extensions are serialized
+			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+	
+			Actuators instanceOfActuators = element as Actuators;
+			global::System.Diagnostics.Debug.Assert(instanceOfActuators != null, "Expecting an instance of Actuators");
+	
+			// name
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfActuators.name;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						CyberPhisical_finalSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "name", propValue);
+	
+				}
+			}
+		}
 		#endregion
 	
 		#region Moniker Support
@@ -6190,7 +6343,7 @@ namespace Company.CyberPhisical_final
 			
 			// Read properties serialized as XML attributes.
 			ReadPropertiesFromAttributes(serializationContext, element, reader);
-				
+	
 			// Read nested XML elements.
 			if (!serializationContext.Result.Failed)
 			{
@@ -6238,7 +6391,26 @@ namespace Company.CyberPhisical_final
 			// Always call the base class so any extensions are deserialized
 			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			// There is no property to read; do nothing
+			Controller instanceOfController = element as Controller;
+			global::System.Diagnostics.Debug.Assert(instanceOfController != null, "Expecting an instance of Controller");
+	
+			// Name
+			if (!serializationContext.Result.Failed)
+			{
+				string attribName = CyberPhisical_finalSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "name");
+				if (attribName != null)
+				{
+					global::System.String valueOfName;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribName, out valueOfName))
+					{
+						instanceOfController.Name = valueOfName;
+					}
+					else
+					{	// Invalid property value, ignored.
+						CyberPhisical_finalSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "name", typeof(global::System.String), attribName);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -6747,7 +6919,20 @@ namespace Company.CyberPhisical_final
 			// Always call the base class so any extensions are serialized
 			base.WritePropertiesAsAttributes(serializationContext, element, writer);
 	
-			// There are no properties; do nothing
+			Controller instanceOfController = element as Controller;
+			global::System.Diagnostics.Debug.Assert(instanceOfController != null, "Expecting an instance of Controller");
+	
+			// Name
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfController.Name;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						CyberPhisical_finalSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "name", propValue);
+	
+				}
+			}
 		}
 	
 		/// <summary>

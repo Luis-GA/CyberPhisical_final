@@ -1,5 +1,0 @@
-C:\Users\wizse\source\repos\CyberPhisical_final\Debugging\bin\Debug\Debugging.dll
-C:\Users\wizse\source\repos\CyberPhisical_final\Debugging\bin\Debug\Debugging.pdb
-C:\Users\wizse\source\repos\CyberPhisical_final\Debugging\obj\Debug\Debugging.csprojAssemblyReference.cache
-C:\Users\wizse\source\repos\CyberPhisical_final\Debugging\obj\Debug\Debugging.dll
-C:\Users\wizse\source\repos\CyberPhisical_final\Debugging\obj\Debug\Debugging.pdb

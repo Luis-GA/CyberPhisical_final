@@ -48,6 +48,93 @@ namespace Company.CyberPhisical_final
 		{
 		}
 		#endregion
+		#region NameDDBB domain property code
+		
+		/// <summary>
+		/// NameDDBB domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NameDDBBDomainPropertyId = new global::System.Guid(0x99328630, 0x6e9d, 0x4451, 0xb1, 0xeb, 0x43, 0xc7, 0x3c, 0xc6, 0x7e, 0xb0);
+		
+		/// <summary>
+		/// Storage for NameDDBB
+		/// </summary>
+		private global::System.String nameDDBBPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of NameDDBB domain property.
+		/// Description for Company.CyberPhisical_final.IoT.Name DDBB
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.IoT/NameDDBB.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.IoT/NameDDBB.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("99328630-6e9d-4451-b1eb-43c73cc67eb0")]
+		public global::System.String NameDDBB
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return nameDDBBPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NameDDBBPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the IoT.NameDDBB domain property.
+		/// </summary>
+		internal sealed partial class NameDDBBPropertyHandler : DslModeling::DomainPropertyValueHandler<IoT, global::System.String>
+		{
+			private NameDDBBPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the IoT.NameDDBB domain property value handler.
+			/// </summary>
+			public static readonly NameDDBBPropertyHandler Instance = new NameDDBBPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the IoT.NameDDBB domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NameDDBBDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(IoT element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.nameDDBBPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(IoT element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.nameDDBBPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Elements opposite domain role accessor
 		
 		/// <summary>
@@ -580,12 +667,187 @@ namespace Company.CyberPhisical_final
 		{
 		}
 		#endregion
+		#region current_mesure domain property code
+		
+		/// <summary>
+		/// current_mesure domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid current_mesureDomainPropertyId = new global::System.Guid(0x1d201e7b, 0x3d92, 0x498e, 0xa3, 0x25, 0x4b, 0x16, 0x12, 0x86, 0x70, 0x89);
+		
+		/// <summary>
+		/// Storage for current_mesure
+		/// </summary>
+		private global::System.Double current_mesurePropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of current_mesure domain property.
+		/// Description for Company.CyberPhisical_final.Sensor.Current_mesure
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Sensor/current_mesure.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.Sensor/current_mesure.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("1d201e7b-3d92-498e-a325-4b1612867089")]
+		public global::System.Double current_mesure
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return current_mesurePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				current_mesurePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Sensor.current_mesure domain property.
+		/// </summary>
+		internal sealed partial class current_mesurePropertyHandler : DslModeling::DomainPropertyValueHandler<Sensor, global::System.Double>
+		{
+			private current_mesurePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Sensor.current_mesure domain property value handler.
+			/// </summary>
+			public static readonly current_mesurePropertyHandler Instance = new current_mesurePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Sensor.current_mesure domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return current_mesureDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Double GetValue(Sensor element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.current_mesurePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Sensor element, global::System.Double newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Double oldValue = GetValue(element);
+				// double type precision is guaranteed only to 15th digit.
+				if (global::System.Math.Abs(newValue - oldValue) > 1e-15)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.current_mesurePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region name domain property code
+		
+		/// <summary>
+		/// name domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid nameDomainPropertyId = new global::System.Guid(0x41ea660f, 0xbe4d, 0x4bb3, 0xbb, 0xd8, 0xa3, 0x37, 0x34, 0xc0, 0xd8, 0xab);
+		
+		/// <summary>
+		/// Storage for name
+		/// </summary>
+		private global::System.String namePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of name domain property.
+		/// Description for Company.CyberPhisical_final.Sensor.Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Sensor/name.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.Sensor/name.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("41ea660f-be4d-4bb3-bbd8-a33734c0d8ab")]
+		public global::System.String name
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return namePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				namePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Sensor.name domain property.
+		/// </summary>
+		internal sealed partial class namePropertyHandler : DslModeling::DomainPropertyValueHandler<Sensor, global::System.String>
+		{
+			private namePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Sensor.name domain property value handler.
+			/// </summary>
+			public static readonly namePropertyHandler Instance = new namePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Sensor.name domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return nameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Sensor element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.namePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Sensor element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.namePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region type_measure domain property code
 		
 		/// <summary>
 		/// type_measure domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid type_measureDomainPropertyId = new global::System.Guid(0x1d201e7b, 0x3d92, 0x498e, 0xa3, 0x25, 0x4b, 0x16, 0x12, 0x86, 0x70, 0x89);
+		public static readonly global::System.Guid type_measureDomainPropertyId = new global::System.Guid(0x7f596f97, 0x6e8e, 0x460a, 0x86, 0xb8, 0x86, 0x51, 0xb7, 0x11, 0x27, 0xeb);
 		
 		/// <summary>
 		/// Storage for type_measure
@@ -598,7 +860,7 @@ namespace Company.CyberPhisical_final
 		/// </summary>
 		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Sensor/type_measure.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("Company.CyberPhisical_final.Sensor/type_measure.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainObjectId("1d201e7b-3d92-498e-a325-4b1612867089")]
+		[DslModeling::DomainObjectId("7f596f97-6e8e-460a-86b8-8651b71127eb")]
 		public global::System.String type_measure
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -963,6 +1225,93 @@ namespace Company.CyberPhisical_final
 		{
 		}
 		#endregion
+		#region name domain property code
+		
+		/// <summary>
+		/// name domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid nameDomainPropertyId = new global::System.Guid(0xd6e3eb2a, 0xefb7, 0x4212, 0xaa, 0x29, 0x46, 0xdf, 0x0f, 0x17, 0x92, 0x50);
+		
+		/// <summary>
+		/// Storage for name
+		/// </summary>
+		private global::System.String namePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of name domain property.
+		/// Description for Company.CyberPhisical_final.Actuators.Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Actuators/name.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.Actuators/name.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("d6e3eb2a-efb7-4212-aa29-46df0f179250")]
+		public global::System.String name
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return namePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				namePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Actuators.name domain property.
+		/// </summary>
+		internal sealed partial class namePropertyHandler : DslModeling::DomainPropertyValueHandler<Actuators, global::System.String>
+		{
+			private namePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Actuators.name domain property value handler.
+			/// </summary>
+			public static readonly namePropertyHandler Instance = new namePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Actuators.name domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return nameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Actuators element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.namePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Actuators element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.namePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Device opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Device.
@@ -1022,6 +1371,93 @@ namespace Company.CyberPhisical_final
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region Name domain property code
+		
+		/// <summary>
+		/// Name domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0x7c5760ab, 0xdf4c, 0x4a59, 0xa6, 0x42, 0xf1, 0x9d, 0xd1, 0x0d, 0xd3, 0x82);
+		
+		/// <summary>
+		/// Storage for Name
+		/// </summary>
+		private global::System.String namePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Name domain property.
+		/// Description for Company.CyberPhisical_final.Controller.Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.CyberPhisical_final.Controller/Name.DisplayName", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.CyberPhisical_final.Controller/Name.Description", typeof(global::Company.CyberPhisical_final.CyberPhisical_finalDomainModel), "Company.CyberPhisical_final.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("7c5760ab-df4c-4a59-a642-f19dd10dd382")]
+		public global::System.String Name
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return namePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Controller.Name domain property.
+		/// </summary>
+		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<Controller, global::System.String>
+		{
+			private NamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Controller.Name domain property value handler.
+			/// </summary>
+			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Controller.Name domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Controller element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.namePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Controller element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.namePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 		#region IoT opposite domain role accessor
 		/// <summary>

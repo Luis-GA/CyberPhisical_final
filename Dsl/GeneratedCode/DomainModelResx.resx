@@ -133,6 +133,14 @@
     <value>Io T</value>
     <comment>DisplayName for DomainClass &apos;IoT&apos;</comment>
   </data>
+  <data name="Company.CyberPhisical_final.IoT/NameDDBB.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.IoT.Name DDBB</value>
+    <comment>Description for DomainProperty &apos;NameDDBB&apos; on DomainClass &apos;IoT&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.IoT/NameDDBB.DisplayName" xml:space="preserve">
+    <value>Name DDBB</value>
+    <comment>DisplayName for DomainProperty &apos;NameDDBB&apos; on DomainClass &apos;IoT&apos;</comment>
+  </data>
   <data name="Company.CyberPhisical_final.Device.Description" xml:space="preserve">
     <value>Elements embedded in the model. Appear as boxes on the diagram.</value>
     <comment>Description for DomainClass &apos;Device&apos;</comment>
@@ -156,6 +164,22 @@
   <data name="Company.CyberPhisical_final.Sensor.DisplayName" xml:space="preserve">
     <value>Sensor</value>
     <comment>DisplayName for DomainClass &apos;Sensor&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Sensor/current_mesure.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Sensor.Current_mesure</value>
+    <comment>Description for DomainProperty &apos;current_mesure&apos; on DomainClass &apos;Sensor&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Sensor/current_mesure.DisplayName" xml:space="preserve">
+    <value>Current_mesure</value>
+    <comment>DisplayName for DomainProperty &apos;current_mesure&apos; on DomainClass &apos;Sensor&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Sensor/name.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Sensor.Name</value>
+    <comment>Description for DomainProperty &apos;name&apos; on DomainClass &apos;Sensor&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Sensor/name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;name&apos; on DomainClass &apos;Sensor&apos;</comment>
   </data>
   <data name="Company.CyberPhisical_final.Sensor/type_measure.Description" xml:space="preserve">
     <value>Description for Company.CyberPhisical_final.Sensor.Type_measure</value>
@@ -221,6 +245,14 @@
     <value>Actuators</value>
     <comment>DisplayName for DomainClass &apos;Actuators&apos;</comment>
   </data>
+  <data name="Company.CyberPhisical_final.Actuators/name.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Actuators.Name</value>
+    <comment>Description for DomainProperty &apos;name&apos; on DomainClass &apos;Actuators&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Actuators/name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;name&apos; on DomainClass &apos;Actuators&apos;</comment>
+  </data>
   <data name="Company.CyberPhisical_final.Controller.Description" xml:space="preserve">
     <value>Description for Company.CyberPhisical_final.Controller</value>
     <comment>Description for DomainClass &apos;Controller&apos;</comment>
@@ -228,6 +260,14 @@
   <data name="Company.CyberPhisical_final.Controller.DisplayName" xml:space="preserve">
     <value>Controller</value>
     <comment>DisplayName for DomainClass &apos;Controller&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Controller/Name.Description" xml:space="preserve">
+    <value>Description for Company.CyberPhisical_final.Controller.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;Controller&apos;</comment>
+  </data>
+  <data name="Company.CyberPhisical_final.Controller/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Controller&apos;</comment>
   </data>
   <data name="Company.CyberPhisical_final.Alarms.Description" xml:space="preserve">
     <value>Description for Company.CyberPhisical_final.Alarms</value>
@@ -537,14 +577,6 @@
     <value>name</value>
     <comment>Text decorator default text</comment>
   </data>
-  <data name="AlarmsGSconditionDefaultText" xml:space="preserve">
-    <value>condition</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="AlarmsGSadvertenceDefaultText" xml:space="preserve">
-    <value>advertence</value>
-    <comment>Text decorator default text</comment>
-  </data>
   <data name="Company.CyberPhisical_final.ControllerIS.Description" xml:space="preserve">
     <value>Description for Company.CyberPhisical_final.ControllerIS</value>
     <comment>Description for DomainClass &apos;ControllerIS&apos;</comment>
@@ -614,7 +646,7 @@
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="iconHumidityToolboxItem" xml:space="preserve">
-    <value>iconHumidity</value>
+    <value>Humidity</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="iconHumidityToolboxTooltip" xml:space="preserve">
