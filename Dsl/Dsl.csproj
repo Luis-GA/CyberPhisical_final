@@ -162,6 +162,7 @@
     <Content Include="Resources\air.bmp" />
     <Content Include="Resources\Alert-icon.bmp" />
     <Content Include="Resources\alert.bmp" />
+    <Content Include="Resources\controller2.bmp" />
     <Content Include="Resources\device.bmp" />
     <Content Include="Resources\fan.bmp" />
     <Content Include="Resources\humedity %281%29.bmp" />

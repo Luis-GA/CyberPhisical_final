@@ -633,7 +633,7 @@
       <ElementTool Name="AirConditioning" ToolboxIcon="Resources\fan.bmp" Caption="AirConditioning" Tooltip="Air Conditioning" HelpKeyword="AirConditioning">
         <DomainClassMoniker Name="AirConditioning" />
       </ElementTool>
-      <ElementTool Name="Controller" ToolboxIcon="Resources\setting.bmp" Caption="Controller" Tooltip="Controller" HelpKeyword="Controller">
+      <ElementTool Name="Controller" ToolboxIcon="Resources\controller2.bmp" Caption="Controller" Tooltip="Controller" HelpKeyword="Controller">
         <DomainClassMoniker Name="Controller" />
       </ElementTool>
       <ElementTool Name="Alarm" ToolboxIcon="Resources\Alert-icon.bmp" Caption="Alarm" Tooltip="Alarm" HelpKeyword="Alarm">
