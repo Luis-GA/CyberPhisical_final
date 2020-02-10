@@ -113,7 +113,7 @@
         <customSensorGSMoniker Id="afe7db87-7ec5-428f-85a8-5bb020743737" />
       </nodes>
     </exampleConnector>
-    <exampleConnector Id="23d29827-32a0-4d09-8598-a16cc570bdfa" edgePoints="[(8.05880176344086 : 3.175); (8.05880176344086 : 5.125); (11 : 5.125); (11 : 4.75)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <exampleConnector Id="23d29827-32a0-4d09-8598-a16cc570bdfa" edgePoints="[(8.05880176344086 : 3.175); (8.05880176344086 : 5.125); (9.29166666666667 : 5.125 : JumpStart); (9.45833333333333 : 5.125 : JumpEnd); (11 : 5.125); (11 : 4.75)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <controllerReferencesThingMoniker Id="8e2a89e5-26d6-4f03-9637-52c8642c30df" />
       <nodes>
         <controllerISMoniker Id="cf25c749-e069-4a14-8be8-9699ca2bb8ec" />

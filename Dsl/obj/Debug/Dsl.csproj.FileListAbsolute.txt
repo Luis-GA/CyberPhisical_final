@@ -61,9 +61,9 @@ C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\bin\Debug\Microsoft.VisualSt
 C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\bin\Debug\Microsoft.VisualStudio.Shell.Interop.11.0.xml
 C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\bin\Debug\en\Microsoft.VisualStudio.Modeling.Sdk.Integration.Shell.15.0.resources.dll
 C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\bin\Debug\en\Microsoft.VisualStudio.Imaging.resources.dll
-C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\obj\Debug\Dsl.csprojAssemblyReference.cache
 C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\obj\Debug\Company.CyberPhisical_final.GeneratedCode.DomainModelResx.resources
 C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\obj\Debug\Dsl.csproj.GenerateResource.cache
 C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\obj\Debug\Dsl.csproj.CopyComplete
 C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\obj\Debug\Company.CyberPhisical_final.Dsl.dll
 C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\obj\Debug\Company.CyberPhisical_final.Dsl.pdb
+C:\Users\wizse\source\repos\CyberPhisical_final\Dsl\obj\Debug\Dsl.csprojAssemblyReference.cache
