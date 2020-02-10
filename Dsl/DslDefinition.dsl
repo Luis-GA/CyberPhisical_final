@@ -621,13 +621,13 @@
       <XmlSerializationBehaviorMoniker Name="CyberPhisical_finalSerializationBehavior" />
     </XmlSerializationDefinition>
     <ToolboxTab TabText="CyberPhisical_final">
-      <ElementTool Name="Device" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="Device" Tooltip="" HelpKeyword="CreateExampleClassF1Keyword">
+      <ElementTool Name="Device" ToolboxIcon="Resources\device.bmp" Caption="Device" Tooltip="" HelpKeyword="CreateExampleClassF1Keyword">
         <DomainClassMoniker Name="Device" />
       </ElementTool>
       <ElementTool Name="Temperature" ToolboxIcon="Resources\weather.bmp" Caption="Temperature" Tooltip="Temperature" HelpKeyword="Tempertature">
         <DomainClassMoniker Name="Temperature" />
       </ElementTool>
-      <ElementTool Name="Siren" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Siren" Tooltip="Siren" HelpKeyword="Siren">
+      <ElementTool Name="Siren" ToolboxIcon="Resources\siren.bmp" Caption="Siren" Tooltip="Siren" HelpKeyword="Siren">
         <DomainClassMoniker Name="Siren" />
       </ElementTool>
       <ElementTool Name="AirConditioning" ToolboxIcon="Resources\fan.bmp" Caption="AirConditioning" Tooltip="Air Conditioning" HelpKeyword="AirConditioning">
